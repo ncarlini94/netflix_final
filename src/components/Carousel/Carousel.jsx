@@ -12,7 +12,8 @@ const Carousel = ({entity, state, language, title}) => {
 
     return(
         <>
-            <div>
+        <div className="container-fluid">
+            <div className="">
                 <h1 style={{color:"rgba(188, 188, 188, 0.8)"}}>
                     {title}
                 </h1>
@@ -21,15 +22,19 @@ const Carousel = ({entity, state, language, title}) => {
                 {
                     values.map((value) => (
                         <Card
+                        entity={entity}
                         id= {value.id}
                         key= {value.id}
+                        language= {language}
                         title= {value.title || value.name}
-                        imgPath= {value.backdrop_path}
+                        imgPath= {value.backdrop_path || value.poster_path}
                         quality= {apiNetflix.quality.backdropw500}
+                        value= {value}
                         />
                     ))
                 }
             </Slider>
+            </div>
         </>
     )
 

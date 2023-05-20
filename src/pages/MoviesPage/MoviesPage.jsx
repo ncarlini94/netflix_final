@@ -6,7 +6,6 @@ import Banner from "../../components/Banner/Banner";
 const MoviePage = () => {
 
 
-
     return(
         <>
         <Banner

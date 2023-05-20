@@ -6,9 +6,11 @@ const useApi = (entity ,state ,language , page) => {
 
 const [values, setValues] = useState([])
 
+
 useEffect(() => {
 getData()
 },[])
+
 
 const getData = async () => {
     const res = await apiBuilder.tryGet(entity, state, language, page)

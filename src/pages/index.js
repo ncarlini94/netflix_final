@@ -1,6 +1,9 @@
-export {default as SeriesPage} from './SeriesPage/SeriesPage';
 export {default as HomePage} from './Homepage/HomePage';
+export {default as SeriesPage} from './SeriesPage/SeriesPage';
 export {default as MoviesPage} from './MoviesPage/MoviesPage';
 export {default as PopularPage} from './PopularPage/PopularPage';
-export {default as MovieTrailerPage} from './MovieTrailerPage/MovieTrailerPage';
-export {default as SeriesDetailPage} from './SeriesDetailPage/SeriesDetailPage';
+export {default as TrailerPage} from './TrailerPage/TrailerPage';
+export {default as DetailPage} from './DetailPage/DetailPage';
+export {default as SingInPage} from './SigninPage/SingInPage';
+export {default as SingUpPage} from './SignUpPage/SingUpPage';
+export {default as ErrorPage} from './ErrorPage/ErrorPage';

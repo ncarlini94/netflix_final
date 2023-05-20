@@ -1,0 +1,37 @@
+.navbar{
+
+}
+
+.explorer{
+  color: #ffffff;
+}
+
+
+.dropmenu{
+  background: transparent;
+}
+
+@media (max-width: 800px) {
+  .dropmenu{
+    background-color: #3d3d3d;
+  }
+}
+
+
+
+.nav_link {
+    color: #ffffff
+}
+
+.nav_link:hover{
+    color: #ffffff52;
+}
+
+.logo{
+        width: 16vh;
+        height: 10vh;
+}
+
+.dropuser{
+  color: #ffffff;
+}

@@ -3,18 +3,19 @@ import styles from "./Card.module.css";
 import apiBuilder from "../../hooks/getApi";
 import { Link } from "react-router-dom";
 
-const Card = ({title, imgPath, quality, id}) => {
+const Card = ({entity, title, imgPath, quality, id, value, language}) => {
 
     const [img, setImg] = useState(null);
 
+
     useEffect(() => {
-        const url = apiBuilder.tryGetImg(imgPath, quality = "backdropw500")
+        const url = apiBuilder.tryGetImg(imgPath, quality = "backdropw1280")
         setImg(url)
-    }, [imgPath])
+    }, [imgPath, entity])
 
     return(
         <>
-        <Link to={`MovieTrailerPage/${id}`}>
+        <Link to={{pathname:`/Detail/${id}`}} state={{entity: entity, language:language, value:value, img: img}}>
         <div
         style={{
             backgroundImage: `url(${img})`

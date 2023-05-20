@@ -49,17 +49,20 @@ return (
     >
 
     <div className={styles.banner_gradient}>
+
         <div className={styles.banner_title}>
-        <h1>{loading ? "Loading..." : randomValue?.title}</h1>
+        <h1>{loading ? "Loading..." : randomValue?.title || randomValue.name}</h1>
         </div>
 
-        <div>
+        <div className={styles.banner_description}>
         <h2>{loading ? "Loading..." : randomValue?.overview}</h2>
         </div>
-            <div className={styles.banner_buttons}>
-            <button className={styles.banner_button}>MAS INFORMACION</button>
-            <Link to={`/MovieDetailPage/${randomValue.id}`}><button className={styles.banner_button}>REPRODUCIR</button></Link>
+
+            <div className={`${styles.banner_buttons} pb-4`}>
+            <Link to={`/Trailer/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button}>REPRODUCIR</button></Link>
+            <Link to={`/Detail/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button}>MAS INFORMACION</button></Link>
         </div>
+
     </div>
     </div>
     </>

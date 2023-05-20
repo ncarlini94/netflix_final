@@ -8,7 +8,7 @@ const PopularPage = () => {
 
     return(
         <>
-        <Separator height={"40px"}/>
+        <Separator height={"100px"}/>
         <Carousel
             entity={"movies"}
             state={"upComing"}

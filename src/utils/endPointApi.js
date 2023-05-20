@@ -15,6 +15,7 @@ const apiNetflix = {
         topRated: "/top_rated",
         popular: "/popular",
         upComing: "/upcoming",
+        similar: "/similar",
     },
     language: {
         english: "&language=en-US",
