@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <>
-    <div className='pt-5'>
+    <div className='container-fluid pt-5'>
         <ul className={`${styles.list} row ms-5 mb-5`}>
 
             <div className='col-sm'>

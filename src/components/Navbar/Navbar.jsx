@@ -12,9 +12,6 @@ const Navbar = () => {
   const [avatar, setAvatar] = useState(null);
 
 
-
-  console.log(avatar)
-
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -91,7 +88,7 @@ const Navbar = () => {
               <li><h5 style={{color: '#d3d3d380', fontSize: "20px", paddingLeft:"0.6em", paddingBottom: "0.2em"}}>{user.name}</h5></li>
               <li><Link className={`${styles.dropuser} dropdown-item`}>Cuenta</Link></li>
               <li><Link className={`${styles.dropuser} dropdown-item`}>Centro de Ayuda</Link></li>
-              <li><hr class="dropdown-divider"></hr></li>
+              <li><hr className="dropdown-divider"></hr></li>
               <li><Link className={`${styles.dropuser} dropdown-item`} onClick={closeSession}>Cerrar Session</Link></li>
             </ul>
           </div>
