@@ -46,7 +46,7 @@ const Navbar = () => {
     return(
         <>
         <div className={`nav row fixed-top`}>
-            <Link className="navbar-brand col-auto mx-5" to="/">
+            <Link className="navbar-brand col-auto mx-5" to="/home">
               <NetflixLogo className={`${styles.logo}`}/>
             </Link>
 
@@ -61,13 +61,13 @@ const Navbar = () => {
               <Link className={`${styles.nav_link} nav-link`} to="/">Inicio</Link>
             </li>
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`} to="SeriesPage">Series</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="series">Series</Link>
             </li>
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`} to="MoviesPage">Peliculas</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="movies">Peliculas</Link>
             </li>
             <li className="nav-item">
-            <Link className={`${styles.nav_link} nav-link`} to="PopularPage">Novedades Populares</Link>
+            <Link className={`${styles.nav_link} nav-link`} to="popular">Novedades Populares</Link>
             </li>
             <li className="nav-item">
               <Link className={`${styles.nav_link} nav-link`}>Mi Lista</Link>

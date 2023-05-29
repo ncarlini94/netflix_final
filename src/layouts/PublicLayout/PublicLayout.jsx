@@ -24,18 +24,19 @@ const PublicLayout = () => {
 
   return (
     <>
+    <LoginNavbar/>
     <div style={{
         backgroundSize: 'cover',
         backgroundColor: '#000',
-        width: "100vw",
-        height:"100vh",
+        width: "90vw",
+        height:"90vh",
         paddingBottom:"152px",
         backgroundPosition: 'center',
         backgroundImage: `url(https://assets.nflxext.com/ffe/siteui/vlv3/efb4855d-e702-43e5-9997-bba0154152e0/479b19fa-00ec-4db3-8fa8-d4808ae6a0d6/AR-es-20230417-popsignuptwoweeks-perspective_alpha_website_large.jpg)`,
-        boxShadow: 'inset 0 0 0 2000px rgba(0,0,0,0.5)'
+        boxShadow: 'inset 0 0 0 2000px rgba(0,0,0,0.5)',
         }}>
         {!paths.includes(path) && <>
-            <LoginNavbar/>
+            
         </>}
         <Outlet />
     </div>

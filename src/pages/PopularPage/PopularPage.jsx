@@ -20,7 +20,7 @@ const PopularPage = () => {
             entity={"movies"}
             state={"topRated"}
             language={"spanish"}
-            title={"Pëliculas Rankeadas"}
+            title={"Peliculas Rankeadas"}
         />
         </>
     )

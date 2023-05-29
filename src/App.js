@@ -18,14 +18,14 @@ function App() {
     <>
     <Routes>
       <Route path='/' element={<PublicLayout/>}>
-      <Route path='/SingInPage' element={<SingInPage/>}/>
-      <Route path='/SingUpPage' element={<SingUpPage/>}/>
+      <Route path='/SingIn' element={<SingInPage/>}/>
+      <Route path='/SingUp' element={<SingUpPage/>}/>
       </Route>
       <Route element={<ProtectedLayout/>}>
       <Route path='/home' element={<HomePage/>}/>
-      <Route path='/PopularPage' element={<PopularPage/>}/>
-      <Route path='/MoviesPage' element={<MoviesPage/>}/>
-      <Route path='/SeriesPage' element={<SeriesPage/>}/>
+      <Route path='/Popular' element={<PopularPage/>}/>
+      <Route path='/Movies' element={<MoviesPage/>}/>
+      <Route path='/Series' element={<SeriesPage/>}/>
       <Route path='/Trailer/:id'  element={<TrailerPage />}/>
       <Route path='Detail/:id' element={<DetailPage/>}/>
       </Route>
