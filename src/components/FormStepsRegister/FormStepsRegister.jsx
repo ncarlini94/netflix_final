@@ -48,6 +48,7 @@ const FormStepsRegister = () => {
         }
     }
 
+    console.log(formData)
 
     const PageDispley = () => {
         switch (page) {

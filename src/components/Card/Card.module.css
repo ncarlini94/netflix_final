@@ -1,24 +1,25 @@
 .card {
     background-color: rgb(54, 54, 54);
-    margin: 0.1em;
-    height: 150px;
+    margin: 0.4vh;
+    height: 160px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-radius: 1.1vh;
 }
 
 .card:hover {
     transform: scale(1.5);
     width: 200px;
-    height: 180px;;
+    height: 180px;
 }
 
 .card_title {
     transition: 0.3s;
     opacity: 0;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     font-weight: bold;
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 1rem;
     height: 100%;
     background: linear-gradient(
@@ -31,5 +32,5 @@
 .card_title:hover {
     opacity: 1;
     padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 32px;
 }

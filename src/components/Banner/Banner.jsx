@@ -48,10 +48,9 @@ return (
     }
     >
 
-    <div className={`${styles.banner_header_content}`}>
-
     <div className={`container-fluid ${styles.banner_gradient}`}>
 
+    <div className={styles.banner_info}>
         <div className={styles.banner_title}>
         <h1>{loading ? "Loading..." : randomValue?.title || randomValue.name}</h1>
         </div>
@@ -65,7 +64,7 @@ return (
             <Link to={`/Detail/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button}>MAS INFORMACION</button></Link>
         </div>
         </div>
-    </div>
+        </div>
     </div>
     </>
 );

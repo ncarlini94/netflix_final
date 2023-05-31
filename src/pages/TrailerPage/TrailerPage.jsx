@@ -8,6 +8,8 @@ const TrailerPage = () => {
 
     const location = useLocation()
 
+    console.log(location)
+
     return(
         <>
             <div

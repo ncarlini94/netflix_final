@@ -5,12 +5,17 @@ import {
   formatCVC,
   formatExpirationDate
 } from '../../utils/cardValidation'
-
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 
 const CreditCard = ({formData, setFormData}) => {
 
-  const { number, expiry, cvc, name, focused } = formData
+  const { number, expiry, cvc, name, focused, issuer } = formData
+
+  const handleCallback = ({issuer}, isValid) => {
+    if(isValid) {
+      setFormData({...formData, issuer})
+    }
+  }
 
   const handleInputChange = ({ target }) => {
     if (target.name === 'number') {
@@ -40,6 +45,7 @@ const CreditCard = ({formData, setFormData}) => {
             cvc={cvc}
             name={name}
             focused={focused}
+            callback={handleCallback}
           />
           <form>
           <input
@@ -83,7 +89,7 @@ const CreditCard = ({formData, setFormData}) => {
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
               />
-            <input type='hidden'/>
+            <input type='hidden' name='issuer' value={issuer}/>
           </form>
           </div>
           </div>

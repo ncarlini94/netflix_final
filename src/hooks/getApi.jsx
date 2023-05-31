@@ -27,7 +27,6 @@ const apiBuilder = {
         const url = `${apiNetflix.access.url}${apiNetflix.entity[entity]}/${id}${apiNetflix.state.similar}${apiNetflix.access.apiKey}${apiNetflix.language[language]}${apiNetflix.access.pagination}${page}`
         try {
             const res = await axios(url);
-            console.log(res)
             return res.data.results;
         } catch (error) {
             return [];

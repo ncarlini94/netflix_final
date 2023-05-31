@@ -8,6 +8,7 @@ const Card = ({entity, title, imgPath, quality, id, value, language}) => {
     const [img, setImg] = useState(null);
 
 
+
     useEffect(() => {
         const url = apiBuilder.tryGetImg(imgPath, quality = "backdropw1280")
         setImg(url)
@@ -15,16 +16,16 @@ const Card = ({entity, title, imgPath, quality, id, value, language}) => {
 
     return(
         <>
-        <Link to={{pathname:`/Detail/${id}`}} state={{entity: entity, language:language, value:value, img: img}}>
         <div
         style={{
             backgroundImage: `url(${img})`
         }}
         className={styles.card}
         >
+        <Link to={{pathname:`/Detail/${id}`}} state={{entity: entity, language:language, value:value, img: img}}>
             <h1 className={styles.card_title}>{title}</h1>
-        </div>
         </Link>
+        </div>
         </>
     )
 }

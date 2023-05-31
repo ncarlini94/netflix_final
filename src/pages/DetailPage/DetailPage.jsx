@@ -16,9 +16,10 @@ const DetailPage = () => {
     const location = useLocation()
     const [similar, setSimilar] = useState([])
 
+
     useEffect(() => {
         getSimilar()
-        },[])
+        },[id])
 
     const getSimilar = async () => {
         const res = await apiBuilder.tryGetSimilar(location.state.entity, id, location.state.language)
@@ -28,8 +29,6 @@ const DetailPage = () => {
             setSimilar(res)
         }
     }
-
-    console.log(location)
 
     return(
         <>

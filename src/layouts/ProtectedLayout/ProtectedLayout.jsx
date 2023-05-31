@@ -9,8 +9,6 @@ const PublicLayout = () => {
 
     const navigate = useNavigate()
 
-    console.log(auth)
-
     useEffect(() => {
     }, [auth])
 
