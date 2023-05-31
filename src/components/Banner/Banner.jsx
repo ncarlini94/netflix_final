@@ -14,8 +14,6 @@ const Banner = ({entity, state, language, quality}) => {
     const [randomImg, setRandomImg] = useState([]);
 
 
-
-    useEffect(() => {
     const getRandomValue = async () => {
         if (values.length === 0) {
             }else{
@@ -28,6 +26,8 @@ const Banner = ({entity, state, language, quality}) => {
         setRandomImg(backgroundImage);
         };
     };
+
+    useEffect(() => {
     getRandomValue();
 }, [values]);
 

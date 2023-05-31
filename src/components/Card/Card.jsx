@@ -7,12 +7,14 @@ const Card = ({entity, title, imgPath, quality, id, value, language}) => {
 
     const [img, setImg] = useState(null);
 
-
+ const getImg = () => {
+    const url = apiBuilder.tryGetImg(imgPath, quality = "backdropw1280")
+    setImg(url)
+ }
 
     useEffect(() => {
-        const url = apiBuilder.tryGetImg(imgPath, quality = "backdropw1280")
-        setImg(url)
-    }, [imgPath, entity])
+        getImg()
+    }, [])
 
     return(
         <>
