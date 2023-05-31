@@ -15,22 +15,19 @@ const Banner = ({entity, state, language, quality}) => {
 
 
 
-
-const getRandomValue = async () => {
-    if (values.length === 0) {
-        }else{
-            const selectedValue = values[randomIndex(0, values.length -1)];
-            setRandomValue(selectedValue)
-    const backgroundImage = apiBuilder.tryGetImg(
-        selectedValue.backdrop_path,
-        quality= "backdropw1280"
-    );
-    setRandomImg(backgroundImage);
+    useEffect(() => {
+    const getRandomValue = async () => {
+        if (values.length === 0) {
+            }else{
+                const selectedValue = values[randomIndex(0, values.length -1)];
+                setRandomValue(selectedValue)
+        const backgroundImage = apiBuilder.tryGetImg(
+            selectedValue.backdrop_path,
+            quality= "backdropw1280"
+        );
+        setRandomImg(backgroundImage);
+        };
     };
-};
-
-
-useEffect(() => {
     getRandomValue();
 }, [values]);
 
