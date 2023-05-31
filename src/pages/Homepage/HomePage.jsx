@@ -13,6 +13,7 @@ const Home = () => {
             entity={"movies"}
             state={"popular"}
             language={"spanish"}
+            quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
         <Carousel
