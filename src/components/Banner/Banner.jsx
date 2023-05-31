@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Banner.module.css";
 import apiBuilder from "../../hooks/getApi";
 import { randomIndex } from '../../utils/Utils';
@@ -12,22 +12,23 @@ const Banner = ({entity, state, language, quality}) => {
 
     const [randomValue, setRandomValue] = useState([])
     const [randomImg, setRandomImg] = useState([]);
+    const qualityRef = useRef(quality)
 
 
-    const getRandomValue = async () => {
-        if (values.length === 0) {
-            }else{
-                const selectedValue = values[randomIndex(0, values.length -1)];
-                setRandomValue(selectedValue)
-        const backgroundImage = apiBuilder.tryGetImg(
-            selectedValue.backdrop_path,
-            quality= "backdropw1280"
-        );
-        setRandomImg(backgroundImage);
-        };
-    };
 
     useEffect(() => {
+        const getRandomValue = async () => {
+            if (values.length === 0) {
+                }else{
+                    const selectedValue = values[randomIndex(0, values.length -1)];
+                    setRandomValue(selectedValue)
+            const backgroundImage = apiBuilder.tryGetImg(
+                selectedValue.backdrop_path,
+                qualityRef.current
+            );
+            setRandomImg(backgroundImage);
+            };
+        };
     getRandomValue();
 }, [values]);
 
