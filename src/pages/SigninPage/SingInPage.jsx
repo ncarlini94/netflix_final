@@ -22,32 +22,35 @@ const SingInPage = () => {
 
   return (
     <>
-    <div className='container pt-5 pb-5'>
+    <div className={`${styles.loginBox} container`}>
+    <h4 style={{fontSize:'5.4vh'}}>Inicia sesión</h4>
         <form onSubmit={handleSubmit}>
-            <div className="form-group col-md-4 offset-md-4 text-center pb-3">
-            <label className={`${styles.label} pb-2`}>Mail</label>
+            <div className="form-group text-center">
+            <label className={`${styles.label} pb-1`}>Mail</label>
             <input
                 type='text'
                 name='Email'
                 className='form-control'
                 id='email'
                 value={email}
+                style={{borderRadius:'0.6vh', backgroundColor:'rgba(50, 50, 50, 0.941)'}}
                 onChange={(e) => { setEmail(e.target.value)}}
             />
           </div>
-          <div className='form-group col-md-4 offset-md-4 text-center'>
-            <label className={`${styles.label} pb-2`}>Contraseña</label>
+          <div className='form-group text-center'>
+            <label className={`${styles.label} pb-1`}>Contraseña</label>
             <input
                 type='password'
                 name='password'
                 className='form-control'
                 id="password"
                 value={password}
+                style={{borderRadius:'0.6vh', backgroundColor:'rgba(50, 50, 50, 0.941)'}}
                 onChange={(e) => { setPassword(e.target.value)}}
             />
             </div>
-            <div className="form-group col-sm-2 offset-md-5 pt-5">
-            <button type="submit" className="form-control btn-primary">Enviar</button>
+            <div className={`${styles.sendbtn} form-group pt-4`}>
+            <button type="submit" className={`${styles.sendLogin} btn`}>Ingresar</button>
             </div>
         </form>
     </div>

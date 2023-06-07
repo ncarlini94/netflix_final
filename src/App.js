@@ -18,8 +18,8 @@ function App() {
     <>
     <Routes>
       <Route path='/' element={<PublicLayout/>}>
-      <Route path='/SingIn' element={<SingInPage/>}/>
-      <Route path='/SingUp' element={<SingUpPage/>}/>
+      <Route path='/SignIn' element={<SingInPage/>}/>
+      <Route path='/SignUp' element={<SingUpPage/>}/>
       </Route>
       <Route element={<ProtectedLayout/>}>
       <Route path='/home' element={<HomePage/>}/>

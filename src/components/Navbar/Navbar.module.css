@@ -1,3 +1,21 @@
+.navbar_dark {
+  background-color: #000000; /* Color de fondo oscuro */
+  transition: background-color 1.0s; /* Transición suave */
+}
+
+.navbar{
+  background: linear-gradient(
+    to top,
+    rgba(27, 27, 27, 0) 0%,
+    rgba(0, 0, 0, 0.440) 40%,
+    rgba(0, 0, 0, 0.482) 100%
+  );
+}
+
+.navbar_center{
+  border: none;
+}
+
 .explorer{
   color: #ffffff;
 }
@@ -5,12 +23,12 @@
 
 .dropmenu{
   background: transparent;
+  border: none;
 }
-
-
 
 .nav_link {
     color: #ffffff;
+    font-size: 2vh;
 }
 
 .nav_link:hover{
@@ -18,10 +36,17 @@
 }
 
 .logo{
-        width: 16vh;
+        width: 14vh;
         height: 10vh;
 }
 
 .dropuser{
   color: #ffffff;
+  font-size: 2vh;
+}
+
+.avatar{
+  width: 4vh;
+  height: 4vh;
+
 }

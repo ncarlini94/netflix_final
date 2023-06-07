@@ -8,15 +8,16 @@ import { useEffect } from 'react'
 const PublicLayout = () => {
 
     const navigate = useNavigate()
+    
 
     useEffect(() => {
-    }, [auth])
+      onAuthStateChanged(auth, (user) => {
+          if(!user) {
+              navigate('/')
+          }
+      })
+    }, [navigate])
 
-    onAuthStateChanged(auth, (user) => {
-        if(!user) {
-            navigate('/')
-        }
-    })
 
 
   return (

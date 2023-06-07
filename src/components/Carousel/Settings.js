@@ -1,31 +1,31 @@
 export const settingsSlider = {
     dots: false,
-    infinite: false,
-    speed: 300,
+    infinite: true,
+    speed: 240,
     slidesToShow: 5.17,
     slidesToScroll: 2,
     arrows: true,
-    initialSlide: 0,
+    initialSlide: 2,
     responsive: [
     {
-        breakpoint: 1024,
+        breakpoint: 1400,
         settings: {
-        slidesToShow: 2,
+        slidesToShow: 4.17,
         slidesToScroll: 2,
         },
     },
     {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
-        slidesToShow: 2,
+        slidesToShow: 3.17,
         slidesToScroll: 1,
         },
     },
     {
-        breakpoint: 420,
+        breakpoint: 520,
         settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2.17,
+        slidesToScroll: 1,
         },
     },
     ],

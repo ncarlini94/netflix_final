@@ -11,7 +11,7 @@ const apiBuilder = {
             return [];
         }
     },
-    tryGetImg: (path, quality) => {
+    tryGetImg: (quality, path) => {
         return `${apiNetflix.access.imageUrl}${apiNetflix.quality[quality]}${path}`
     },
     tryGetVideo: async (entity, id, language) => {

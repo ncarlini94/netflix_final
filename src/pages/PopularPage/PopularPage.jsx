@@ -14,6 +14,7 @@ const PopularPage = () => {
             state={"upComing"}
             language={"spanish"}
             title={"Proximas Peliculas"}
+            quality={"backdropw500"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -21,6 +22,15 @@ const PopularPage = () => {
             state={"topRated"}
             language={"spanish"}
             title={"Peliculas Rankeadas"}
+            quality={"backdropw500"}
+        />
+        <Separator height={"40px"}/>
+        <Carousel
+            entity={"series"}
+            state={"topRated"}
+            language={"spanish"}
+            title={"Series Rankeadas"}
+            quality={"backdropw500"}
         />
         </>
     )

@@ -11,39 +11,47 @@ const Footer = () => {
         <ul className={`${styles.list} row ms-5 mb-5`}>
 
             <div className='col-sm'>
-            <li><Link className={`${styles.Link}`}>
+            <li className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Preguntas frecuentes
             </Link></li>
-            <li><Link className={`${styles.Link}`}>
+            <li className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Privacidad
             </Link></li>
-            <li><Link className={`${styles.Link}`}>
+            <li className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Centro de ayuda
             </Link></li>
             </div>
 
             <div className='col-sm'>
-            <li><Link className={`${styles.Link}`}>
+            <li className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Cuenta
             </Link></li>
-            <li><Link className={`${styles.Link}`}>
+            <li className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Formas de ver
             </Link></li>
-            <li><Link className={`${styles.Link}`}>
+            <li  className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Solo en Netflix
             </Link></li>
             </div>
 
             <div className='col-sm'>
-            <li><Link className={`${styles.Link}`}>
+            <li className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Términos de uso
             </Link></li>
-            <li><Link className={`${styles.Link}`}>
+            <li className={`${styles.item}`}>
+            <Link className={`${styles.link}`}>
             Contáctanos
             </Link></li>
             </div>
-            <div className='col-12'>
-              <h4>Copyright</h4>
+            <div className={`${styles.copyright} col-12`}>
+              <h4>Nicolás</h4>
             </div>
         </ul>
         </div>

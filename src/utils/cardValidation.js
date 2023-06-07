@@ -42,7 +42,8 @@ export function formatCVC (value, prevValue, allValues = {}) {
   let maxLength = 3
 
   if (allValues.number) {
-    const issuer = Payment.fns.cardType(allValues.number)
+    Payment.fns.cardType(allValues.number)
+    
   }
 
   return clearValue.slice(0, maxLength)

@@ -1,0 +1,17 @@
+.btnPlan{
+    display: flex;
+    justify-content: center;
+    padding: 8vh;
+    width: 24vh;
+    background-color: rgb(255, 0, 0);
+    margin: 1vh;
+    align-self: flex-end;
+}
+
+.btnPlan h4 {
+    text-shadow: none;
+}
+
+.btnPlan:active {
+    background-color: rgba(255, 0, 0, 0.514);
+}

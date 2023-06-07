@@ -4,20 +4,25 @@
         margin-left: 10vh;
 }
 
-.navbar{
-        background: linear-gradient(
-        to bottom,
-        rgb(27, 27, 27) 0%,
-        rgba(0, 0, 0, 0.726) 75%,
-        rgba(0, 0, 0, 0) 100%
-        );
-      }
+.buttom{
+        background: rgba(255, 0, 0, 0.897);
+        color: rgb(255, 255, 255);
+        width: 76vh;
+        height: 7.3vh;
+
+}
+
+.buttom:hover{
+        transition: 0.1.5s;
+        color: rgb(255, 255, 255);
+        background: rgba(255, 0, 0, 0.774)
+}
 
 .sesionBtn {
         width: 23vh;
         height: 6.5vh;
         margin-right: 15vh;
-        background: rgb(255, 0, 0);
+        background: rgba(255, 0, 0, 0.897);
         color: rgb(255, 255, 255);
         font-size: 2.8vh;
         font-weight: bold;

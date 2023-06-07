@@ -12,6 +12,7 @@
     transform: scale(1.5);
     width: 200px;
     height: 180px;
+    border-radius: 4.5vh;
 }
 
 .card_title {

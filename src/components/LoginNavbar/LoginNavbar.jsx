@@ -7,11 +7,16 @@ const navBar = () => {
 
     return(
         <>
-        <nav className="navbar navbar-expand-lg ps-5 px-5">
+        <nav className={`${styles.navbar} navbar navbar-expand-lg`}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
                 <NetflixLogo className={`${styles.logo}`}/>
                 </Link>
+                <div>
+                    <button className={`${styles.sesionBtn} btn`}>
+                    <Link style={{color:'rgb(255,255,255)', fontSize:'2.8vh', textDecoration:'none'}} to="/SignIn">Iniciar Sesion</Link>
+                    </button>
+                </div>
             </div>
         </nav>
     </>

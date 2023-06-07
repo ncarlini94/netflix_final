@@ -13,6 +13,7 @@ const Series = () => {
             entity={"series"}
             state={"popular"}
             language={"english"}
+            quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -20,6 +21,7 @@ const Series = () => {
             state={"popular"}
             language={"spanish"}
             title={"Series Populares"}
+            quality={"backdropw500"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -27,6 +29,7 @@ const Series = () => {
             state={"topRated"}
             language={"spanish"}
             title={"Series Rankeadas"}
+            quality={"backdropw500"}
         />
         </>
     )

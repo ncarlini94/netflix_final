@@ -10,9 +10,19 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [avatar, setAvatar] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
 
   useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
     auth.onAuthStateChanged((user) => {
       if (user) {
         const getUser = async () => {
@@ -34,6 +44,9 @@ const Navbar = () => {
       } else {
         setUser(null);
       }
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     });
   }, [avatar])
 
@@ -45,12 +58,12 @@ const Navbar = () => {
 
     return(
         <>
-        <div className={`nav row fixed-top`}>
+        <div className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
             <Link className="navbar-brand col-auto mx-5" to="/home">
               <NetflixLogo className={`${styles.logo}`}/>
             </Link>
 
-        <nav className={`${styles.navbar} col navbar navbar-expand-lg`}>
+        <nav className={`${styles.navbar_center} col navbar navbar-expand-lg`}>
             <button className="navbar-toggler dropdown-toggle bg-dark" data-bs-toggle="dropdown" type="button" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className={`${styles.explorer}`}>Explorar</span>
           </button>
@@ -82,10 +95,10 @@ const Navbar = () => {
       {avatar && (
           <div className="col-auto end-0 btn-group pe-4">
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src={`${user.avatar}`} className="navbar-toggler-icon" width="40" height="40" ></img>
+              <img src={`${user.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
             </button>
             <ul className="dropdown-menu dropdown-menu-end bg-dark">
-              <li><h5 style={{color: '#d3d3d380', fontSize: "20px", paddingLeft:"0.6em", paddingBottom: "0.2em"}}>{user.name}</h5></li>
+              <li><h5 style={{color: '#d3d3d380', fontSize: "4vh", paddingLeft:"2vh", paddingBottom: "0.6vh"}}>{user.name}</h5></li>
               <li><Link className={`${styles.dropuser} dropdown-item`}>Cuenta</Link></li>
               <li><Link className={`${styles.dropuser} dropdown-item`}>Centro de Ayuda</Link></li>
               <li><hr className="dropdown-divider"></hr></li>

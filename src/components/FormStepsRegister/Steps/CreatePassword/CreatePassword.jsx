@@ -3,13 +3,14 @@ import React, { useEffect } from 'react'
 const CreatePassword = ({formData, setFormData}) => {
 
   useEffect(() => {
-    setFormData({ ...formData, email: localStorage.getItem('email') || '' });
-  },[])
+    setFormData((prevFormData) => ({ ...prevFormData, email: localStorage.getItem('email') || '' }));
+  },[setFormData])
 
   return (
     <>
-    <div className='container pt-5 pb-5'>
-        <div className="form-group col-md-4 offset-md-4 text-center pb-3">
+    <div className='container pb-5' style={{width:'80vh'}}>
+        <div className="form-group pb-3">
+        <label style={{color:'rgb(255,255,255)'}}>Email</label>
         <input
             type='text'
             value={formData.email}
@@ -18,7 +19,7 @@ const CreatePassword = ({formData, setFormData}) => {
             onChange={(e) => {setFormData({...formData, email: e.target.value})}}
         />
       </div>
-      <div className='form-group col-md-4 offset-md-4 text-center'>
+      <div className='form-group text-center'>
         <input
             type='password'
             value={formData.password}

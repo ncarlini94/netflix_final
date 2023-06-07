@@ -12,6 +12,7 @@ const MoviePage = () => {
             entity={"movies"}
             state={"popular"}
             language={"english"}
+            quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -19,6 +20,7 @@ const MoviePage = () => {
             state={"popular"}
             language={"spanish"}
             title={"Peliculas Populares"}
+            quality={"backdropw500"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -26,6 +28,7 @@ const MoviePage = () => {
             state={"topRated"}
             language={"spanish"}
             title={"Pëliculas Rankeadas"}
+            quality={"backdropw500"}
         />
         </>
     )

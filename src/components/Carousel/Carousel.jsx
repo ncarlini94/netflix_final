@@ -3,20 +3,18 @@ import Card from "../Card/Card"
 import Slider from "react-slick";
 import useApi from "../../hooks/useApi";
 import { settingsSlider } from "./Settings";
-import apiNetflix from "../../utils/endPointApi";
 
 
-const Carousel = ({entity, state, language, title}) => {
+const Carousel = ({entity, state, language, title, quality}) => {
 
     const [values] = useApi(entity, state, language)
-
 
 
     return(
         <>
         <div className="container-fluid">
             <div className="">
-                <h1 style={{color:"rgba(188, 188, 188, 0.8)"}}>
+                <h1 style={{color:"rgba(200, 200, 220, 0.6)", height:"6vh", fontSize:"5vh", paddingLeft:"2.5vh"}}>
                     {title}
                 </h1>
             </div>
@@ -30,7 +28,7 @@ const Carousel = ({entity, state, language, title}) => {
                         language= {language}
                         title= {value.title || value.name}
                         imgPath= {value.backdrop_path || value.poster_path}
-                        quality= {apiNetflix.quality.backdropw500}
+                        quality= {quality}
                         value= {value}
                         />
                     ))

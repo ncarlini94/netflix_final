@@ -6,7 +6,6 @@ import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 import apiBuilder from "../../hooks/getApi";
 import Card from "../../components/Card/Card";
-import apiNetflix from "../../utils/endPointApi";
 import Slider from "react-slick";
 import { settingsSlider } from "../../components/Carousel/Settings";
 
@@ -18,17 +17,17 @@ const DetailPage = () => {
 
 
     useEffect(() => {
-        getSimilar()
-        },[id])
-
-    const getSimilar = async () => {
-        const res = await apiBuilder.tryGetSimilar(location.state.entity, id, location.state.language)
-        if(res instanceof Error) {
-            console.log(res.messange)
-        } else {
-            setSimilar(res)
+        const getSimilar = async () => {
+            const res = await apiBuilder.tryGetSimilar(location.state.entity, id, location.state.language)
+            if(res instanceof Error) {
+                console.log(res.messange)
+            } else {
+                setSimilar(res)
+            }
         }
-    }
+        getSimilar()
+        },[id, location.state.entity, location.state.language])
+
 
     return(
         <>
@@ -41,6 +40,9 @@ const DetailPage = () => {
                         <FiPlayCircle/>
                         </IconContext.Provider>
                         </Link>
+                        <div  className={`${styles.title}`}>
+                        <h1>{location.state.value.title}</h1>
+                    </div>
                     <div  className={`${styles.Overview}`}>
                         <h4>{location.state.value.overview}</h4>
                     </div>
@@ -52,12 +54,13 @@ const DetailPage = () => {
                         similar.map((value) => (
                             <Card
                             entity={location.state.entity}
-                            id= {value.id}
-                            key= {value.id}
                             title= {value.title || value.name}
                             imgPath= {value.backdrop_path || value.poster_path}
-                            quality= {apiNetflix.quality.backdropw500}
+                            quality= {"backdropw500"}
+                            id= {value.id}
                             value= {value}
+                            key= {value.id}
+                            language = {location.state.language}
                             />
                         ))
                         }

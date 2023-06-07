@@ -6,6 +6,9 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth, firestore } from '../../firebase/config'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
 import Avatar from '../../assets/imagen/avatar.png'
+import styles from "./FormStepsRegister.module.css"
+import { Link } from 'react-router-dom'
+import { ReactComponent as NetflixLogo } from '../../assets/imagen/logo.svg'
 
 const FormStepsRegister = () => {
 
@@ -31,7 +34,7 @@ const FormStepsRegister = () => {
             const docRef = doc(firestore, `NetflixUsers/${userRegister.user.email}`);
             const userQuery = await getDoc(docRef);
             if (!userQuery.exists()) {
-              await setDoc(docRef, {
+                await setDoc(docRef, {
                     avatar: await Avatar,
                     id: userRegister.user.uid,
                     email: formData.email,
@@ -47,8 +50,6 @@ const FormStepsRegister = () => {
             console.error("Error adding document: ", e);
         }
     }
-
-    console.log(formData)
 
     const PageDispley = () => {
         switch (page) {
@@ -66,22 +67,37 @@ const FormStepsRegister = () => {
 
 
 
-  return (
+return (
     <>
-        <div className='container bg-dark'>
-            <div>
+    <nav className={`${styles.navbar} navbar navbar-expand-lg`}>
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/">
+                <NetflixLogo className={`${styles.logo}`}/>
+                </Link>
+                <div>
+                    <button className={`${styles.sesionBtn} btn`}>
+                    <Link style={{color:'rgb(255,255,255)', fontSize:'2.8vh', textDecoration:'none'}} to="/SingIn">Iniciar Sesion</Link>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div className={`container d-flex justify-content-center`}>
+        <div className='row'>
+        <h4 className='col-sm-12 d-flex justify-content-center'> PASO {page+1} DE 3</h4>
+            <div className='col-sm-12'>
                 {PageDispley()}
             </div>
-            <div>
-                <button className='btn btn-primary' style={{marginLeft: "20em"}}
+            <div className='col-sm-12 d-flex justify-content-center'>
+                <button className={`${styles.buttom} btn`}
                 onClick={() =>{page === FormTitles.length -1 ? handleSubmit() : setPage((currPage) => currPage +1)}}
                 >
-                    Next
+                    Siguiente
                 </button>
+            </div>
             </div>
         </div>
     </>
-  )
+)
 }
 
 export default FormStepsRegister

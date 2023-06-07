@@ -10,11 +10,11 @@
 
 .background_gradient{
     width: auto;
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.103) 0%,
-        rgba(0, 0, 0, 0.685) 70%,
+        rgba(0, 0, 0, 0.507) 80%,
         rgb(27, 27, 27) 100%
     );
 }
@@ -22,11 +22,11 @@
 .iconplay{
     width: 15vh;
     height: 15vh;
-    color: rgba(95, 95, 95, 0.863);
+    color: rgba(255, 255, 255, 0.863);
     position:absolute;
-    z-index:3;
-    top: 22em;
-    left: 5em;
+    z-index:2;
+    top: 21.5em;
+    left: 4em;
 }
 
 .Overview{
@@ -34,10 +34,27 @@
     z-index:2;
     opacity:0.9;
     top: 20em;
-    right: 2em;
-    margin-left: 15em;
-    color: rgb(240, 240, 240);
+    right: 4vh;
+    margin-left: 38vh;
 }
 
-.similar{
+h4{
+    font-size: 4vh;
+    color: rgb(255, 255, 255);
+    text-shadow: 2vh 2vh 3.5vh #000000e8
+}
+
+.title{
+        position:absolute;
+        z-index:2;
+        opacity:0.9;
+        top: 17em;
+        margin-left: 38vh;
+}
+
+h1{
+    font-size: 5vh;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    text-shadow: 2vh 2vh 3.5vh #000000e8
 }

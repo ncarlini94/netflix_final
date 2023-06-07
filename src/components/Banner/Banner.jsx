@@ -23,8 +23,8 @@ const Banner = ({entity, state, language, quality}) => {
                     const selectedValue = values[randomIndex(0, values.length -1)];
                     setRandomValue(selectedValue)
             const backgroundImage = apiBuilder.tryGetImg(
-                selectedValue.backdrop_path,
-                qualityRef.current
+                qualityRef.current,
+                selectedValue.backdrop_path
             );
             setRandomImg(backgroundImage);
             };
@@ -48,19 +48,19 @@ return (
 
     <div className={`container-fluid ${styles.banner_gradient}`}>
 
-    <div className={styles.banner_info}>
-        <div className={styles.banner_title}>
+    <div className={`${styles.banner_info}`}>
+        <div className={`${styles.banner_title}`}>
         <h1>{loading ? "Loading..." : randomValue?.title || randomValue.name}</h1>
         </div>
 
-        <div className={styles.banner_description}>
+        <div className={`${styles.banner_description}`}>
         <h2>{loading ? "Loading..." : randomValue?.overview}</h2>
         </div>
 
             <div className={`${styles.banner_buttons}`}>
             <Link to={`/Trailer/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button}>REPRODUCIR</button></Link>
             <Link to={`/Detail/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button}>MAS INFORMACION</button></Link>
-        </div>
+            </div>
         </div>
         </div>
     </div>

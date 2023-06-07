@@ -1,4 +1,5 @@
-import React,  { useState }  from 'react'
+import React,  { useEffect, useState }  from 'react'
+import styles from "./ChoosePlan.module.css"
 
 const ChoosePlan = ({formData, setFormData}) => {
 
@@ -9,30 +10,33 @@ const ChoosePlan = ({formData, setFormData}) => {
     setSelectedPlan(plan)
   }
 
+  useEffect(() => {
+  }, [selectedPlan]);
+
 
   return (
     <>
     <div className='container' style={{color:"white"}}>
     <div className='row'>
       <div
-      className='col-4 p-5 bg-dark'
+      className={`${styles.btnPlan} col-sm-4`}
       onClick={()=>{handlePlanChange('basic')}}
       >
-        Basic
+      <h4>Basic</h4>
       </div>
 
       <div
-      className='col-4 p-5 bg-dark'
-      onClick={()=>{handlePlanChange('standard')}}
+      className={`${styles.btnPlan} col-sm-4`}
+      onClick={()=>{handlePlanChange('standar')}}
       >
-      Standard
+      <h4>standar</h4>
       </div>
 
       <div
-      className='col-4 p-5 bg-dark'
+      className={`${styles.btnPlan} col-sm-4`}
       onClick={()=>{handlePlanChange('premium')}}
       >
-      Premium
+      <h4>Premium</h4>
       </div>
       </div>
     </div>
