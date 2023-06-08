@@ -18,6 +18,8 @@
     width: 100vh;
     bottom: 20vh;
     left: 55vh;
+    display: flex; /* Agregado para colocar los elementos en línea */
+  align-items: center;
 }
 
 .form button{
@@ -43,4 +45,37 @@
     color: rgb(255, 255, 255);
     padding-left: 1.2vh;
     font-size: 3.5vh;
+}
+
+@media screen and (max-width:380px) {
+    .text{
+        left: 1vh;
+        right: 1vh;
+        bottom: 28vh;
+    }
+
+    .textTitle {
+        font-size: 4vh;
+    }
+
+    .textBody{
+        font-size: 2vh;
+    }
+
+    .textFooter{
+        font-size: 2vh;
+    }
+
+    .form{
+        width: 35vh;
+        left: 8vh;
+        bottom: 8vh;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form button{
+        width: 100%;
+    margin-top: 1vh;
+    }
 }

@@ -5,6 +5,7 @@ import LoginNavbar from './../../components/LoginNavbar/LoginNavbar'
 import {auth} from '../../firebase/config';
 import Footer from '../../components/Footer/Footer'
 import EmailForm from '../../components/EmailForm/EmailForm';
+import styles from './PublicLayout.module.css'
 
 const PublicLayout = () => {
 
@@ -29,12 +30,12 @@ const PublicLayout = () => {
 
   return (
     <>
-    <div style={{
+    <div
+        className={`${styles.background}`}
+        style={{
         backgroundSize: 'cover',
         backgroundColor: '#000',
-        width: "auto",
         height:"100vh",
-        paddingBottom:"152px",
         backgroundPosition: 'center',
         backgroundImage: path !== '/signup' ?
         `url(https://assets.nflxext.com/ffe/siteui/vlv3/76c10fc9-7ccd-4fbf-bc59-f16a468921ca/436c7de4-6306-437e-8fd3-f2c37fd1b069/AR-es-20230529-popsignuptwoweeks-perspective_alpha_website_large.jpg)`

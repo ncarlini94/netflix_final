@@ -29,3 +29,15 @@
         color: rgb(255, 255, 255);
         background: rgba(255, 0, 0, 0.774)
 }
+
+@media (max-width: 380px){
+        .logo {
+                width: 15vh;
+                margin-left: 2vh;
+        }
+
+        .sesionBtn {
+                width: 20vh;
+                margin-right: 2vh;
+        }
+}

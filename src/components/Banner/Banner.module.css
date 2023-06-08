@@ -11,6 +11,7 @@
 .banner_gradient {
   width: auto;
   height: 100vh;
+  transition: 5ms;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
@@ -47,7 +48,7 @@
   margin-right: 10vh;
 }
 
-h1,h2 {
+h1, h2 {
   text-shadow: 2vh 2vh 3.5vh #000000e8
 }
 
@@ -81,31 +82,48 @@ h1,h2 {
   color: rgb(255, 255, 255);
 }
 
-@media (max-width: 90vh) {
+@media screen and (max-width: 900px) {
+
   .banner_gradient{
-    transition: 5ms;
-    height: 65vh;
-    width: auto;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.397) 40%,
+      rgba(27, 27, 27, 0.884) 100%
+    );
   }
-  .banner_container{
-    transition: 2ms;
-    height: 65vh;
-    width: auto;
+
+  .banner_info{
+    padding-left: 1.8vh;
   }
+
   .banner_title h1{
-    font-size: 3.5vh;
-    top:20vh
+    top: 40vh
   }
-  .banner_description h2{
-    font-size: 2vh;
-    top:28vh
+
+  .banner_description h2 {
+    top: 50vh;
+    font-size: 2.8vh;
   }
-  .banner_buttons{
-    top:55vh;
+
+  .banner_buttons {
+    top: 80vh;
   }
+
   .banner_button{
     width: 20vh;
-    height: 4vh;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
+  }
+
+}
+
+@media screen and (max-width: 380px) and (max-width: 580px) {
+
+  .banner_title h1{
+    top: 30vh;
+  }
+
+  .banner_description h2{
+    top: 40vh;
   }
 }

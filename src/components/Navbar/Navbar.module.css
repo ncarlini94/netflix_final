@@ -48,5 +48,14 @@
 .avatar{
   width: 4vh;
   height: 4vh;
+}
 
+@media screen and (max-width:380px) {
+  .logo{
+    width: 12vh;
+  }
+
+  .dropmenu{
+    background-color: black;
+  }
 }
