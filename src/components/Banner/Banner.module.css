@@ -129,12 +129,12 @@ h1, h2 {
   }
 
   .banner_title h1{
-    top: 15vh;
+    top: 13vh;
     font-size: 2.2vh;
   }
 
   .banner_description h2{
-    top: 18.8vh;
+    top: 16vh;
     font-size: 1.3vh;
     padding-left: 1vh;
     margin-right: 2.8vh;
@@ -145,8 +145,8 @@ h1, h2 {
   }
 
   .banner_button{
-    width: 14vh;
+    width: 12vh;
     height: 4vh;
-    font-size: 1.2vh;
+    font-size: 1vh;
   }
 }
