@@ -32,7 +32,9 @@ return (
             >
                 <input
                     className='form-control col-sm'
-                    style={{backgroundColor:'rgba(0, 0, 0, 0.5)'}}
+                    style={{
+                    backgroundColor:'rgba(0, 0, 0, 0.5)',
+                    color:'white'}}
                     placeholder='Email'
                     type="email"
                     name="emailregister"

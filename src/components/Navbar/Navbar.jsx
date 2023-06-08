@@ -59,7 +59,7 @@ const Navbar = () => {
     return(
         <>
         <div className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
-            <Link className="navbar-brand col-auto mx-5" to="/home">
+            <Link className="navbar-brand col-auto sm-5" to="/home">
               <NetflixLogo className={`${styles.logo}`}/>
             </Link>
 
@@ -93,7 +93,7 @@ const Navbar = () => {
       </nav>
 
       {avatar && (
-          <div className="col-auto end-0 btn-group pe-4">
+          <div className="col-auto btn-group">
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src={`${user.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
             </button>

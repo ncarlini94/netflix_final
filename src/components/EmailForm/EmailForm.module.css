@@ -10,6 +10,19 @@
     left: 20vh;
     text-align: center;
     color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.textTitle{
+    font-size: 7.6vh;
+}
+
+.textBody{
+    font-size: 4vh;
+}
+
+.textFooter{
+    padding-top: 2vh;
 }
 
 .form{
@@ -18,8 +31,6 @@
     width: 100vh;
     bottom: 20vh;
     left: 55vh;
-    display: flex; /* Agregado para colocar los elementos en línea */
-  align-items: center;
 }
 
 .form button{
@@ -49,13 +60,14 @@
 
 @media screen and (max-width:380px) {
     .text{
-        left: 1vh;
-        right: 1vh;
-        bottom: 28vh;
+        left: 0.8vh;
+        right: 0.8vh;
+        top: 44vh;
     }
 
     .textTitle {
-        font-size: 4vh;
+        font-size: 3vh;
+        padding-bottom: 6vh;
     }
 
     .textBody{
@@ -67,15 +79,21 @@
     }
 
     .form{
-        width: 35vh;
-        left: 8vh;
-        bottom: 8vh;
-        flex-direction: column;
-        align-items: flex-start;
+        width: 42vh;
+        left: 6vh;
+        bottom: 16vh;
+    }
+
+    .form input {
+        width: 26vh;
     }
 
     .form button{
-        width: 100%;
-    margin-top: 1vh;
+        width: 12vh;
+    }
+
+    .form input::placeholder{
+        padding-left: 0.8vh;
+        font-size: 2.4vh;
     }
 }

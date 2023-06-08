@@ -68,14 +68,14 @@ const FormStepsRegister = () => {
 
 return (
     <>
-    <nav className={`${styles.navbar} navbar navbar-expand-lg`}>
+    <nav className={`${styles.navbar} navbar navbar-expand-sm`}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
                 <NetflixLogo className={`${styles.logo}`}/>
                 </Link>
                 <div>
                     <button className={`${styles.sesionBtn} btn`}>
-                    <Link style={{color:'rgb(255,255,255)', fontSize:'2.8vh', textDecoration:'none'}} to="/SingIn">Iniciar Sesion</Link>
+                    <Link style={{color:'rgb(255,255,255)', textDecoration:'none'}} to="/SingIn">Iniciar Sesion</Link>
                     </button>
                 </div>
             </div>

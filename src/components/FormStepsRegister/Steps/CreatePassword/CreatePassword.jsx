@@ -9,7 +9,8 @@ const CreatePassword = ({formData, setFormData}) => {
 
   return (
     <>
-    <div className='container pb-5' style={{width:'80vh'}}>
+    <div className='container-fluid pb-5'
+    style={{width:'80vh'}}>
         <div className="form-group pb-3">
         {formData.email !== '' ?
         <h4 style={{

@@ -40,7 +40,7 @@ const PublicLayout = () => {
         backgroundImage: path !== '/signup' ?
         `url(https://assets.nflxext.com/ffe/siteui/vlv3/76c10fc9-7ccd-4fbf-bc59-f16a468921ca/436c7de4-6306-437e-8fd3-f2c37fd1b069/AR-es-20230529-popsignuptwoweeks-perspective_alpha_website_large.jpg)`
         : 'none',
-        boxShadow: path !== '/signup' ? 'inset 0 0 0 2000px rgba(0,0,0,0.25)': 'none'
+        boxShadow: path !== '/signup' ? 'inset 0 0 0 2000px rgba(0,0,0,0.36)': 'none'
         }}>
         {!isSignUpPage && <LoginNavbar />}
         {!isSignUpPage && !isSignInPage && <EmailForm />}

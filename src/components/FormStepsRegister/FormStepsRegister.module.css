@@ -4,6 +4,20 @@
         margin-left: 10vh;
 }
 
+.sesionBtn {
+        width: 23vh;
+        height: 6.5vh;
+        margin-right: 15vh;
+        background: rgba(255, 0, 0, 0.897);
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sesionBtn a {
+        font-size: 2.8vh;
+}
+
 .buttom{
         background: rgba(231, 0, 0, 0.897);
         color: rgba(255, 255, 255, 0.863);
@@ -17,19 +31,31 @@
         background: rgba(228, 0, 0, 0.774)
 }
 
-.sesionBtn {
-        width: 23vh;
-        height: 6.5vh;
-        margin-right: 15vh;
-        background: rgba(255, 0, 0, 0.897);
-        color: rgb(255, 255, 255);
-        font-size: 2.8vh;
-        font-weight: bold;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 .sesionBtn:hover{
         transition: 0.1.5s;
         color: rgb(255, 255, 255);
         background: rgba(255, 0, 0, 0.774)
+}
+
+@media screen and (max-width: 380px) {
+        
+        .logo{
+                width: 10vh;
+                margin-left: 4vh;
+        }
+
+        .sesionBtn{
+                width: 20vh;
+                height: 6.2vh;
+                margin-right: 0.2vh;
+        }
+
+        .sesionBtn a {
+                font-size: 2.2vh;
+        }
+
+        .buttom{
+                width: 35vh;
+        }
 }

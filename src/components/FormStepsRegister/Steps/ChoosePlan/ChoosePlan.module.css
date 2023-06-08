@@ -15,3 +15,7 @@
 .btnPlan:active {
     background-color: rgba(255, 0, 0, 0.514);
 }
+
+@media screen and (max-width: 380px) {
+
+}

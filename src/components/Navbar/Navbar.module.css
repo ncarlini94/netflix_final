@@ -3,6 +3,12 @@
   transition: background-color 1.0s; /* Transición suave */
 }
 
+.logo{
+        width: 14vh;
+        height: 10vh;
+        padding-left: 2vh;
+}
+
 .navbar{
   background: linear-gradient(
     to top,
@@ -12,12 +18,14 @@
   );
 }
 
+
 .navbar_center{
   border: none;
 }
 
 .explorer{
   color: #ffffff;
+  font-size: 2.4vh;
 }
 
 
@@ -35,10 +43,6 @@
     color: #ffffff52;
 }
 
-.logo{
-        width: 14vh;
-        height: 10vh;
-}
 
 .dropuser{
   color: #ffffff;
@@ -50,9 +54,28 @@
   height: 4vh;
 }
 
+
 @media screen and (max-width:380px) {
+  .navbar{
+    height: 7vh;
+  }
+
+  .navbar_dark{
+    height: 7.6vh;
+  }
+
   .logo{
-    width: 12vh;
+    width: 10vh;
+    height: 8vh;
+  }
+
+  .explorer{
+    font-size: 2vh;
+  }
+
+  .avatar{
+    width: 3.4vh;
+    height: 3.4vh;
   }
 
   .dropmenu{
