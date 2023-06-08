@@ -14,7 +14,7 @@ const navBar = () => {
                 </Link>
                 <div>
                     <button className={`${styles.sesionBtn} btn`}>
-                    <Link style={{color:'rgb(255,255,255)', fontSize:'2.8vh', textDecoration:'none'}} to="/SignIn">Iniciar Sesion</Link>
+                    <Link style={{color:'rgb(255,255,255,0.9)', fontSize:'2.4vh', textDecoration:'none'}} to="/SignIn">Iniciar Sesion</Link>
                     </button>
                 </div>
             </div>

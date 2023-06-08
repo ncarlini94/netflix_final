@@ -4,6 +4,8 @@ import FormStepsRegister from '../../components/FormStepsRegister/FormStepsRegis
 
 const SingUpPage = () => {
 
+
+
 return(
     <>
         <FormStepsRegister/>

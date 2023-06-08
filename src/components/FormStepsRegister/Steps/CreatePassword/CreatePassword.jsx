@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import styles from './CreatePassword.module.css'
 
 const CreatePassword = ({formData, setFormData}) => {
 
@@ -10,20 +11,37 @@ const CreatePassword = ({formData, setFormData}) => {
     <>
     <div className='container pb-5' style={{width:'80vh'}}>
         <div className="form-group pb-3">
-        <label style={{color:'rgb(255,255,255)'}}>Email</label>
+        {formData.email !== '' ?
+        <h4 style={{
+            backgroundColor:'rgb(35,35,35)',
+            padding:'2vh',
+            borderRadius:'0.3vh',
+            borderColor:'rgba(94, 94, 94, 0.863)'
+          }}>{formData.email}</h4>
+        :
         <input
+            className={`${styles.input} form-control`}
+            style={{
+              backgroundColor:'rgb(60,60,60)',
+              padding:'2vh',
+              borderRadius:'0.3vh'
+              }}
             type='text'
             value={formData.email}
-            className='form-control'
             placeholder='Email'
             onChange={(e) => {setFormData({...formData, email: e.target.value})}}
-        />
+        /> }
       </div>
       <div className='form-group text-center'>
         <input
+            className={`${styles.input} form-control`}
+            style={{
+              backgroundColor:'rgb(60,60,60)',
+              padding:'2vh',
+              borderRadius:'0.3vh',
+              }}
             type='password'
             value={formData.password}
-            className='form-control'
             placeholder='Password'
             onChange={(e) => {setFormData({...formData, password: e.target.value})}}
         />

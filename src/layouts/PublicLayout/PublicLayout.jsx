@@ -4,15 +4,16 @@ import { Outlet, useLocation, useNavigate } from 'react-router'
 import LoginNavbar from './../../components/LoginNavbar/LoginNavbar'
 import {auth} from '../../firebase/config';
 import Footer from '../../components/Footer/Footer'
+import EmailForm from '../../components/EmailForm/EmailForm';
 
 const PublicLayout = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const paths = ['/signup'];
     const path = location.pathname;
 
-
+    const isSignUpPage = path === '/signup';
+    const isSignInPage = path === '/SignIn';
 
 
     useEffect(() => {
@@ -23,9 +24,7 @@ const PublicLayout = () => {
         });
     }, [navigate])
 
-    const signUpState = path !== 'signup';
 
-    console.log(signUpState)
 
 
   return (
@@ -42,7 +41,8 @@ const PublicLayout = () => {
         : 'none',
         boxShadow: path !== '/signup' ? 'inset 0 0 0 2000px rgba(0,0,0,0.25)': 'none'
         }}>
-        {!paths.includes(path) && <LoginNavbar/>}
+        {!isSignUpPage && <LoginNavbar />}
+        {!isSignUpPage && !isSignInPage && <EmailForm />}
         <Outlet />
     </div>
     <Footer/>

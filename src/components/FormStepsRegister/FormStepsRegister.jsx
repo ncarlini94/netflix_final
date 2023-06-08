@@ -27,6 +27,7 @@ const FormStepsRegister = () => {
     });
     const FormTitles = [ "createPassword" , "selectPlan" , "paymentMethod"];
 
+
     const handleSubmit = async () => {
         try {
             const userRegister = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
@@ -63,8 +64,6 @@ const FormStepsRegister = () => {
 
         }
     }
-
-
 
 
 return (

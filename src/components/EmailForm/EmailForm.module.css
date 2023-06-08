@@ -1,0 +1,46 @@
+.formBox{
+    display: flex;
+    z-index: 1;
+}
+
+.text{
+    position: absolute;
+    z-index: 2;
+    bottom: 35vh;
+    left: 20vh;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.form{
+    position: absolute;
+    z-index: 2;
+    width: 100vh;
+    bottom: 20vh;
+    left: 55vh;
+}
+
+.form button{
+    width: 28vh;
+    margin-left: 0.8vh;
+    border-radius: 0.6vh;
+    background-color: rgba(238, 0, 0, 0.932);
+    color: rgb(255, 255, 255);
+}
+
+.form button:hover{
+    transition: 0.3s;
+    background-color: rgba(221, 0, 0, 0.932);
+    color: rgb(255, 255, 255);
+}
+
+.form input{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.6vh;
+}
+
+.form input::placeholder{
+    color: rgb(255, 255, 255);
+    padding-left: 1.2vh;
+    font-size: 3.5vh;
+}
