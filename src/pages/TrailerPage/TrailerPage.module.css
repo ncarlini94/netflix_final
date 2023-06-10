@@ -1,9 +1,7 @@
 .MovieBackground{
-    width: auto;
-    height: 80vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top:20vh;
-    margin-bottom: 25vh;
+    margin-top: 8vh;
+    margin-left: 1.5vh;
 }

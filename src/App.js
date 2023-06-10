@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from 'react-router';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { HomePage,
         SingInPage,
         SingUpPage,
@@ -21,15 +21,17 @@ function App() {
       <Route path='/SignIn' element={<SingInPage/>}/>
       <Route path='/SignUp' element={<SingUpPage/>}/>
       </Route>
+
       <Route element={<ProtectedLayout/>}>
       <Route path='/home' element={<HomePage/>}/>
       <Route path='/Popular' element={<PopularPage/>}/>
       <Route path='/Movies' element={<MoviesPage/>}/>
       <Route path='/Series' element={<SeriesPage/>}/>
       <Route path='/Trailer/:id'  element={<TrailerPage />}/>
-      <Route path='Detail/:id' element={<DetailPage/>}/>
+      <Route path='/Detail/:id' element={<DetailPage/>}/>
       </Route>
-      <Route path="*" element={<ErrorPage/>} />
+
+      <Route path='*' element={<ErrorPage/>} />
     </Routes>
 
     </>
