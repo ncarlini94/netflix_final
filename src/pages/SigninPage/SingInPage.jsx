@@ -18,8 +18,6 @@ const SingInPage = () => {
     navigate('/')
   }
 
-
-
   return (
     <>
     <div className={`${styles.loginBox} container`}>

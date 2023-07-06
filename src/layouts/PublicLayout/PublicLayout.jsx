@@ -20,7 +20,7 @@ const PublicLayout = () => {
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
           if (user) {
-            navigate('/home');
+            navigate('/Profiles');
           }
         });
     }, [navigate])

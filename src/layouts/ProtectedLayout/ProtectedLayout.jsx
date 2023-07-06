@@ -1,14 +1,17 @@
 import { onAuthStateChanged } from 'firebase/auth'
-import { Outlet, useNavigate } from 'react-router'
+import { Outlet, useLocation, useNavigate } from 'react-router'
 import {auth} from '../../firebase/config'
 import Navbar from './../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { useEffect } from 'react'
+import { ProfileProvider } from '../../contexts/ProfileContext'
 
-const PublicLayout = () => {
+const ProtectedLayout = () => {
 
     const navigate = useNavigate()
-    
+    const location = useLocation();
+    const path = location.pathname;
+    const isProfilePage = path === '/Profiles';
 
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
@@ -18,15 +21,15 @@ const PublicLayout = () => {
       })
     }, [navigate])
 
-
-
   return (
     <>
-        <Navbar/>
+      <ProfileProvider>
+        { !isProfilePage && <Navbar/> }
         <Outlet/>
-        <Footer/>
+        { !isProfilePage && <Footer/> }
+      </ProfileProvider>
     </>
   )
 }
 
-export default PublicLayout
+export default ProtectedLayout

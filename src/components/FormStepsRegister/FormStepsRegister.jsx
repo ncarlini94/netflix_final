@@ -7,11 +7,12 @@ import { auth, firestore } from '../../firebase/config'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
 import Avatar from '../../assets/imagen/avatar.png'
 import styles from "./FormStepsRegister.module.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as NetflixLogo } from '../../assets/imagen/logo.svg'
 
 const FormStepsRegister = () => {
 
+    const navigate = useNavigate()
     const [page, setPage] = useState(0)
     const [formData, setFormData] = useState({
         id: '',
@@ -31,12 +32,10 @@ const FormStepsRegister = () => {
     const handleSubmit = async () => {
         try {
             const userRegister = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
-            console.log(userRegister)
             const docRef = doc(firestore, `NetflixUsers/${userRegister.user.email}`);
             const userQuery = await getDoc(docRef);
             if (!userQuery.exists()) {
                 await setDoc(docRef, {
-                    avatar: await Avatar,
                     id: userRegister.user.uid,
                     email: formData.email,
                     name: formData.name,
@@ -45,7 +44,19 @@ const FormStepsRegister = () => {
                     expiry: formData.expiry,
                     cvc: formData.cvc,
                     issuer: formData.issuer,
-                })}
+                    profiles: [
+                        {
+                        name: 'Perfil 1',
+                        avatar: await Avatar,
+                        id: Math.random().toString(36).substr(2, 9),
+                        favorites: []
+                        }
+                    ],
+                });
+                const savedDoc = await getDoc(docRef);
+                const savedProfile = savedDoc.data().profiles[0];
+                navigate('/Profiles', { state: savedProfile })
+            }
             }
             catch (e) {
             console.error("Error adding document: ", e);
@@ -61,7 +72,6 @@ const FormStepsRegister = () => {
             case 2:
                 return <PaymentMethod formData={formData} setFormData={setFormData}/>
             default:
-
         }
     }
 

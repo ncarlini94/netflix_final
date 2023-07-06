@@ -7,3 +7,5 @@ export {default as DetailPage} from './DetailPage/DetailPage';
 export {default as SingInPage} from './SigninPage/SingInPage';
 export {default as SingUpPage} from './SignUpPage/SingUpPage';
 export {default as ErrorPage} from './ErrorPage/ErrorPage';
+export {default as ProfilesPage} from './ProfilesPage/ProfilesPage';
+export {default as ManageAccountPage} from './ManageAcountPage/ManageAccount';
