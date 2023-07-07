@@ -10,7 +10,6 @@ const ProfilesPage = () => {
   const { setSelectedProfile } = useContext(ProfileContext);
 
   useEffect(() => {
-    console.log(location)
     const getUserProfiles = async () => {
       try {
         const q = query(collection(firestore, 'NetflixUsers'), where('id', '==', auth.currentUser.uid));
