@@ -93,7 +93,7 @@ const Navbar = () => {
           </div>
       </nav>
 
-      {selectedProfile && (
+      {selectedProfile && user && (
           <div className="col-auto btn-group">
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src={`${selectedProfile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
