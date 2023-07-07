@@ -41,7 +41,7 @@ const ProfilesPage = () => {
     return <div>Cargando perfiles...</div>;
   }
 
-  if ( location.state.profile ) {
+  if (location.state && location.state.profile ) {
     const { avatar, name } = location.state.profile;
     return (
       <div key={location.state.key} className="container-fluid" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>

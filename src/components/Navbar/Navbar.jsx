@@ -2,19 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { ReactComponent as NetflixLogo } from "../../assets/imagen/logo.svg";
 import styles from "./Navbar.module.css"
 import { Link, useNavigate } from "react-router-dom";
-import {auth, firestore} from '../../firebase/config';
-import { collection, getDocs, query, where } from "firebase/firestore";
+import {auth} from '../../firebase/config';
 import { ProfileContext } from "../../contexts/ProfileContext";
 
 const Navbar = () => {
 
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const { selectedProfile } = useContext(ProfileContext);
-
-
-
+  
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsScrolled(true);
@@ -25,30 +21,6 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        const getUser = async () => {
-          try {
-            const q = query(
-              collection(firestore, "NetflixUsers"),
-              where("id", "==", auth.currentUser.uid) // Filtrar por el uid del usuario actual
-            );
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-              setUser(doc.data())
-                });
-          } catch (error) {
-            console.error("Error retrieving users: ", error);
-          }
-        };
-        getUser()
-      } else {
-        setUser(null);
-      }
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    });
   }, [])
 
 
@@ -93,7 +65,7 @@ const Navbar = () => {
           </div>
       </nav>
 
-      {selectedProfile && user && (
+      {selectedProfile && (
           <div className="col-auto btn-group">
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src={`${selectedProfile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>

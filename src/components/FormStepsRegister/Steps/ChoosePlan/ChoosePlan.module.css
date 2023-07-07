@@ -1,3 +1,7 @@
+.boxPlan{
+    padding-right: 6vh;
+}
+
 .btnPlan{
     display: flex;
     justify-content: center;
