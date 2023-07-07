@@ -9,6 +9,7 @@ import { ProfileContext } from "../../contexts/ProfileContext";
 const Navbar = () => {
 
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const { selectedProfile } = useContext(ProfileContext);
 
@@ -34,6 +35,7 @@ const Navbar = () => {
             );
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
+              setUser(doc.data())
                 });
           } catch (error) {
             console.error("Error retrieving users: ", error);
@@ -41,6 +43,7 @@ const Navbar = () => {
         };
         getUser()
       } else {
+        setUser(null);
       }
       return () => {
         window.removeEventListener("scroll", handleScroll);

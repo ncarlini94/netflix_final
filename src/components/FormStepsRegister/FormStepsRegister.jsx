@@ -55,7 +55,7 @@ const FormStepsRegister = () => {
                 });
                 const savedDoc = await getDoc(docRef);
                 const savedProfile = savedDoc.data().profiles[0];
-                navigate('/Profiles', { state: savedProfile })
+                navigate('/Profiles', { state: {profile:savedProfile} })
             }
             }
             catch (e) {
