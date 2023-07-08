@@ -4,7 +4,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Link, useLocation } from 'react-router-dom';
 import { ProfileContext } from '../../contexts/ProfileContext';
 
-const ProfilesPage = () => {
+const ManageProfilePage = () => {
   const location = useLocation();
   const [user, setUser] = useState(null);
   const { setSelectedProfile } = useContext(ProfileContext);
@@ -44,7 +44,7 @@ const ProfilesPage = () => {
     const { avatar, name } = location.state.profile;
     return (
       <div key={location.state.key} className="container-fluid" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
-        <Link to={'/Home'} onClick={() => handleProfileSelect(location.state.profile)}>
+        <Link to={'/ProfileSetting'}>
           <img src={`${avatar}`} className="navbar-toggler-icon" alt="Avatar" style={{ width: '20vh', height: '20vh' }} />
         </Link>
         <h3 className="pt-4">{name}</h3>
@@ -52,11 +52,12 @@ const ProfilesPage = () => {
     );
   }
 
+
   return (
     <>
       {user.profiles.map((profile) => (
         <div key={profile.id} className="container-fluid" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
-          <Link to={'/Home'} onClick={() => handleProfileSelect(profile)}>
+          <Link to={'/ProfileSetting'} onClick={() => handleProfileSelect(profile)}>
             <img src={`${profile.avatar}`} className={`navbar-toggler-icon`} alt="Avatar" style={{ width: '20vh', height: '20vh' }} />
           </Link>
           <h3 className="pt-4">{profile.name}</h3>
@@ -66,4 +67,4 @@ const ProfilesPage = () => {
   );
 };
 
-export default ProfilesPage;
+export default ManageProfilePage

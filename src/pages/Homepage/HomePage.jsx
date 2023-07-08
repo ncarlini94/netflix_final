@@ -21,7 +21,7 @@ const Home = () => {
             state={"popular"}
             language={"spanish"}
             title={"Peliculas Populares"}
-            quality={"backdropw500"}
+            quality={"backdropw1280"}
         />
         <Separator height={"30px"}/>
         <Carousel
@@ -29,7 +29,7 @@ const Home = () => {
             state={"popular"}
             language={"spanish"}
             title={"Series Populares"}
-            quality={"backdropw500"}
+            quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -37,7 +37,7 @@ const Home = () => {
             state={"upComing"}
             language={"spanish"}
             title={"Proximas Peliculas"}
-            quality={"backdropw500"}
+            quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -45,7 +45,7 @@ const Home = () => {
             state={"topRated"}
             language={"spanish"}
             title={"Peliculas mas votadas"}
-            quality={"backdropw500"}
+            quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
         <Carousel
@@ -53,7 +53,7 @@ const Home = () => {
             state={"topRated"}
             language={"spanish"}
             title={"Series mas votadas"}
-            quality={"backdropw500"}
+            quality={"backdropw1280"}
         />
         </>
     )

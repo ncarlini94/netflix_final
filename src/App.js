@@ -10,7 +10,9 @@ import { HomePage,
         DetailPage,
         ErrorPage,
         ProfilesPage,
-        ManageAccountPage
+        ManageAccountPage,
+        ProfileSettingPage,
+        ManageProfilesPage
         } from './pages';
 import PublicLayout from './layouts/PublicLayout/PublicLayout';
 import ProtectedLayout from './layouts/ProtectedLayout/ProtectedLayout';
@@ -31,8 +33,10 @@ function App() {
       <Route path='/Series' element={<SeriesPage/>}/>
       <Route path='/Trailer/:id'  element={<TrailerPage />}/>
       <Route path='/Detail/:id' element={<DetailPage/>}/>
-      <Route path='/Profiles' element={<ProfilesPage/>}/>
       <Route path='/Account' element={<ManageAccountPage/>}/>
+      <Route path='/Profiles' element={<ProfilesPage/>}/>
+      <Route path='/ManageProfiles' element={<ManageProfilesPage/>}/>
+      <Route path='/ProfileSetting' element={<ProfileSettingPage/>}/>
       </Route>
 
       <Route path='*' element={<ErrorPage/>} />

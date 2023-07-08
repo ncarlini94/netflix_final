@@ -9,3 +9,5 @@ export {default as SingUpPage} from './SignUpPage/SingUpPage';
 export {default as ErrorPage} from './ErrorPage/ErrorPage';
 export {default as ProfilesPage} from './ProfilesPage/ProfilesPage';
 export {default as ManageAccountPage} from './ManageAcountPage/ManageAccount';
+export {default as ManageProfilesPage} from './ManageProfilePage/ManageProfilesPage'
+export {default as ProfileSettingPage} from './ManageProfilePage/ProfileSettingPage/ProfileSettingPage'

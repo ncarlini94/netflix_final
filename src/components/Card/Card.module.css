@@ -9,10 +9,11 @@
 }
 
 .card:hover {
-    transform: scale(1.5);
-    width: 200px;
+    transform: scale(1.6);
+    width: 220px;
     height: 180px;
     border-radius: 4.5vh;
+    margin-left: 10vh;
 }
 
 .card_title {
@@ -32,6 +33,6 @@
 
 .card_title:hover {
     opacity: 1;
-    padding-top: 30px;
-    padding-left: 32px;
+    padding-top: 6vh;
+    padding-left: 2vh;
 }
