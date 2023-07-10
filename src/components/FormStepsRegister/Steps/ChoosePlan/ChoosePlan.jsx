@@ -26,23 +26,23 @@ const ChoosePlan = ({formData, setFormData}) => {
     <div className={`${styles.boxPlan} d-flex flex-row-reverse`}>
       <div
       className={`${styles.btnPlan} col-sm-4`}
-      onClick={()=>{handlePlanChange('basic')}}
+      onClick={()=>{handlePlanChange('premium')}}
       >
-      <h4>Basic</h4>
+      <h4>Premium</h4>
       </div>
 
       <div
       className={`${styles.btnPlan} col-sm-4`}
       onClick={()=>{handlePlanChange('standar')}}
       >
-      <h4>standar</h4>
+      <h4>Standar</h4>
       </div>
 
       <div
       className={`${styles.btnPlan} col-sm-4`}
-      onClick={()=>{handlePlanChange('premium')}}
+      onClick={()=>{handlePlanChange('basic')}}
       >
-      <h4>Premium</h4>
+      <h4>Basico</h4>
       </div>
       </div>
 

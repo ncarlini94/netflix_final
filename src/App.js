@@ -12,7 +12,9 @@ import { HomePage,
         ProfilesPage,
         ManageAccountPage,
         ProfileSettingPage,
-        ManageProfilesPage
+        ManageProfilesPage,
+        ChangePasswordPage,
+        ChangePlanPage
         } from './pages';
 import PublicLayout from './layouts/PublicLayout/PublicLayout';
 import ProtectedLayout from './layouts/ProtectedLayout/ProtectedLayout';
@@ -37,6 +39,9 @@ function App() {
       <Route path='/Profiles' element={<ProfilesPage/>}/>
       <Route path='/ManageProfiles' element={<ManageProfilesPage/>}/>
       <Route path='/ProfileSetting' element={<ProfileSettingPage/>}/>
+      <Route path='/ChangePassword' element={<ChangePasswordPage/>}/>
+      <Route path='/ChangePlan' element={<ChangePlanPage/>}/>
+
       </Route>
 
       <Route path='*' element={<ErrorPage/>} />

@@ -39,16 +39,18 @@ const ManageAccount = () => {
         {user &&
         [
           <>
+          <div key={user.id}>
             <h1>Cuenta</h1>
           <div className='account'>
             <h3>Mail: {user.email}</h3>
             <Link>Cambiar email</Link>
             <h3>Contraseña: ********</h3>
-            <Link>Cambiar contraseña</Link>
+            <Link to={'/ChangePassword'}>Cambiar contraseña</Link>
           </div>
           <div className='plan'>
             <h3>{user.plan}</h3>
-            <Link>Cambiar de plan</Link>
+            <Link to={'/ChangePlan'}>Cambiar de plan</Link>
+          </div>
           </div>
           </>
         ]

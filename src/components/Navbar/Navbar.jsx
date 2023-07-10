@@ -48,7 +48,7 @@ const Navbar = () => {
             <div className={`${styles.dropmenu} dropdown-menu collapse navbar-collapse`} id="navbarToggleExternalContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ps-3 pe-3">
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`} to="/">Inicio</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="/home">Inicio</Link>
             </li>
             <li className="nav-item">
               <Link className={`${styles.nav_link} nav-link`} to="series">Series</Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
             <ul className="dropdown-menu dropdown-menu-end bg-dark">
               <li><h5 style={{color: '#d3d3d380', fontSize: "4vh", paddingLeft:"2vh", paddingBottom: "0.6vh"}}>{selectedProfile.name}</h5></li>
               <li><Link className={`${styles.dropuser} dropdown-item`} to={'/Account'}>Cuenta</Link></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`} to={'/ManageProfiles'}>Cambiar perfil</Link></li>
+              <li><Link className={`${styles.dropuser} dropdown-item`} to={'/ManageProfiles'}>Editar Perfiles</Link></li>
               <li><Link className={`${styles.dropuser} dropdown-item`}>Centro de Ayuda</Link></li>
               <li><hr className="dropdown-divider"></hr></li>
               <li><Link className={`${styles.dropuser} dropdown-item`} onClick={closeSession}>Cerrar Session</Link></li>
