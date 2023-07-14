@@ -9,7 +9,6 @@ const Carousel = ({entity, state, language, title, quality}) => {
 
     const [values] = useApi(entity, state, language)
 
-
     return(
         <>
         <div className="container-fluid">

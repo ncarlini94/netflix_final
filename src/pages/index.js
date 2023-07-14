@@ -13,3 +13,5 @@ export {default as ManageProfilesPage} from './ManageProfilePage/ManageProfilesP
 export {default as ProfileSettingPage} from './ManageProfilePage/ProfileSettingPage/ProfileSettingPage';
 export {default as ChangePasswordPage} from './ManageAcountPage/ChangePasswordPage/ChangePasswordPage';
 export {default as ChangePlanPage} from './ManageAcountPage/ChangePlanPage/ChangePlanPage'
+export {default as ChangeEmailPage} from './ManageAcountPage/ChangeEmailPage/ChangeEmailPage'
+export {default as ChangeAvatarPage} from './ManageProfilePage/ProfileSettingPage/ChangeAvatarPage/ChangeAvatarPage'

@@ -39,7 +39,7 @@ const ChangePasswordPage = () => {
   return (
     <>
       <div className="container-fluid ps-5 pt-5">
-            <h1>Cuenta</h1>
+            <h1>Cambio de contraseña</h1>
             <div className="">
               <form
               className='row'

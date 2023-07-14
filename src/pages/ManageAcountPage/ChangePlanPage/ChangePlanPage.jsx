@@ -34,7 +34,6 @@ useEffect(() => {
       });
 }, [selectedPlan]);
 
-console.log(user)
 
 const handlePlanChange = (plan) => {
     setSelectedPlan(plan)
@@ -65,21 +64,21 @@ return (
     <div className={`${styles.boxPlan} d-flex flex-row-reverse`}>
         <div
         className={`${styles.btnPlan} col-sm-4`}
-        onClick={()=>{handlePlanChange('premium')}}
+        onClick={()=>{handlePlanChange('Premium')}}
         >
         <h4>Premium</h4>
         </div>
 
         <div
         className={`${styles.btnPlan} col-sm-4`}
-        onClick={()=>{handlePlanChange('standar')}}
+        onClick={()=>{handlePlanChange('Standar')}}
         >
         <h4>Standar</h4>
         </div>
 
         <div
         className={`${styles.btnPlan} col-sm-4`}
-        onClick={()=>{handlePlanChange('basic')}}
+        onClick={()=>{handlePlanChange('Basic')}}
         >
         <h4>Basico</h4>
         </div>

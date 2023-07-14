@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {auth, firestore} from '../../firebase/config';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
+import styles from './ManageAccount.module.css';
 
 const ManageAccount = () => {
 
@@ -35,21 +36,23 @@ const ManageAccount = () => {
 
   return (
     <>
-      <div className='container-fluid ps-5 pt-5'>
+      <div className='container ps-5 pt-5'>
         {user &&
         [
           <>
-          <div key={user.id}>
-            <h1>Cuenta</h1>
-          <div className='account'>
-            <h3>Mail: {user.email}</h3>
-            <Link>Cambiar email</Link>
-            <h3>Contraseña: ********</h3>
-            <Link to={'/ChangePassword'}>Cambiar contraseña</Link>
+            <h1 className={`${styles.title}`}>Cuenta</h1>
+          <div key={user.id} className={`${styles.box}`}>
+          <div className={`${styles.boxChild} row`}>
+            <h3 className={`${styles.boxChildTitle} col-8`}>Mail: {user.email}</h3>
+            <Link className={`${styles.link} col`}  to={'/ChangeEmail'}>Cambiar email</Link>
           </div>
-          <div className='plan'>
-            <h3>{user.plan}</h3>
-            <Link to={'/ChangePlan'}>Cambiar de plan</Link>
+          <div className={`${styles.boxChild} row`}>
+            <h3 className={`${styles.boxChildTitle} col-8`}>Contraseña: ********</h3>
+            <Link className={`${styles.link} col`}  to={'/ChangePassword'}>Cambiar contraseña</Link>
+          </div>
+          <div className={`${styles.boxChild} row`}>
+            <h3 className={`${styles.boxChildTitle} col-8`}>Plan: {user.plan}</h3>
+            <Link className={`${styles.link} col`} to={'/ChangePlan'}>Cambiar de plan</Link>
           </div>
           </div>
           </>

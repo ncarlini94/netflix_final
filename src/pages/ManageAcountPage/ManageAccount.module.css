@@ -1,0 +1,24 @@
+.box{
+    padding-top: 4vh;
+    padding-left: 12vh;
+}
+
+.title{
+    font-size: 6.2vh;
+    padding-top: 9vh;
+    padding-left: 9vh;
+}
+
+.boxChild{
+    padding: 1vh;
+}
+
+.boxChildTitle{
+    color: rgb(255, 255, 255);
+    font-size: 4.5vh;
+}
+
+.link{
+    color: rgb(255, 0, 0);
+    font-size: 3vh;
+}

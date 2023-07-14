@@ -2,18 +2,22 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ProfileContext } from '../../../contexts/ProfileContext';
 import { auth, firestore } from '../../../firebase/config';
 import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 
 const ProfileSetting = () => {
 
     const navigate = useNavigate()
+    const location = useLocation();
     const {selectedProfile} = useContext(ProfileContext);
-      const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);
     const [name, setName] = useState(selectedProfile?.name || '');
     const [avatar, setAvatar] = useState(selectedProfile?.avatar || '');
 
 
     useEffect(() => {
+      if (location.state && location.state.avatar) {
+        setAvatar(location.state.avatar);
+      }
         const getUserProfiles = async () => {
           try {
             const q = query(collection(firestore, 'NetflixUsers'), where('id', '==', auth.currentUser.uid));
@@ -26,8 +30,7 @@ const ProfileSetting = () => {
           }
         };
             getUserProfiles();
-
-    }, []);
+    }, [location.state]);
 
 
     const saveChanges = async () => {
@@ -49,22 +52,26 @@ const ProfileSetting = () => {
         }
       };
 
-
+const handleAvatarChange = () => {
+  navigate('/Avatar');
+};
 
 
   return (
     <>
-        <div className='ps-5 pt-5'>
-        <h2>Configuración del perfil</h2>
+        <div className='container'>
+        <h2 style={{marginTop:'10vh', color:'rgb(255,255,255)'}}>Configuración del perfil</h2>
         <div>
-          <label>Avatar:</label>
-          <input type="text" value={avatar} onChange={(e) => setAvatar(e.target.value)} />
+          <img
+            style={{maxWidth:'15vh', marginBottom:'2vh'}}
+            src={`${avatar}`}
+            alt='avatar'
+            onClick={handleAvatarChange}></img>
         </div>
         <div>
-          <label>Nombre:</label>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         </div>
-        <button className='btn btn-primary' onClick={saveChanges}>Guardar</button>
+        <button className='btn btn-danger mt-2' onClick={saveChanges}>Guardar</button>
       </div>
     </>
   )

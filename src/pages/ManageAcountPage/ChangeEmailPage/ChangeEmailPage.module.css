@@ -1,0 +1,31 @@
+.container {
+    padding-top: 15vh;
+    padding-left: 15vh;
+    display: flex;
+    justify-self: center;
+  }
+
+.title{
+  padding-left: 4vh;
+  margin-right: 12vh;
+}
+
+  .input {
+    width: 100%;
+    max-width: 55vh;
+    margin-bottom: 1vh;
+  }
+
+.buttom{
+  background-color: rgba(255, 0, 0, 0.932);
+  color: white;
+  max-width: 55vh;
+}
+
+.error{
+  color: rgba(255, 0, 0, 0.952);
+  background-color: rgba(58, 58, 58, 0.247);
+  border-radius: 1vh;
+  padding: 0.4vh;
+  margin-top: 4vh;
+}

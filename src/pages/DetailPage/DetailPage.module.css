@@ -14,7 +14,7 @@
     background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.103) 0%,
-        rgba(0, 0, 0, 0.507) 80%,
+        rgba(0, 0, 0, 0.507) 60%,
         rgb(27, 27, 27) 100%
     );
 }
@@ -33,13 +33,15 @@
     position:absolute;
     z-index:2;
     opacity:0.9;
-    top: 20em;
+    top: 65vh;
     right: 4vh;
     margin-left: 38vh;
+    max-height: 48vh;
+    padding-left: 2.4vh;
 }
 
 h4{
-    font-size: 4vh;
+    font-size: 3.6vh;
     color: rgb(255, 255, 255);
     text-shadow: 2vh 2vh 3.5vh #000000e8
 }
@@ -48,12 +50,12 @@ h4{
         position:absolute;
         z-index:2;
         opacity:0.9;
-        top: 17em;
+        top: 55vh;
         margin-left: 38vh;
 }
 
 h1{
-    font-size: 5vh;
+    font-size: 5.2vh;
     font-style: italic;
     color: rgb(255, 255, 255);
     text-shadow: 2vh 2vh 3.5vh #000000e8

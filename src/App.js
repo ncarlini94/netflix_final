@@ -14,7 +14,9 @@ import { HomePage,
         ProfileSettingPage,
         ManageProfilesPage,
         ChangePasswordPage,
-        ChangePlanPage
+        ChangePlanPage,
+        ChangeEmailPage,
+        ChangeAvatarPage
         } from './pages';
 import PublicLayout from './layouts/PublicLayout/PublicLayout';
 import ProtectedLayout from './layouts/ProtectedLayout/ProtectedLayout';
@@ -41,6 +43,8 @@ function App() {
       <Route path='/ProfileSetting' element={<ProfileSettingPage/>}/>
       <Route path='/ChangePassword' element={<ChangePasswordPage/>}/>
       <Route path='/ChangePlan' element={<ChangePlanPage/>}/>
+      <Route path='/ChangeEmail' element={<ChangeEmailPage/>}/>
+      <Route path='/Avatar' element={<ChangeAvatarPage/>}/>
 
       </Route>
 

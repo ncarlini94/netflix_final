@@ -5,7 +5,7 @@ import PaymentMethod from './Steps/PaymentMethod/PaymentMethod'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth, firestore } from '../../firebase/config'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
-import Avatar from '../../assets/imagen/avatar.png'
+import Avatar from '../../assets/imagen/avatares/avatar.jpg'
 import styles from "./FormStepsRegister.module.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as NetflixLogo } from '../../assets/imagen/logo.svg'
