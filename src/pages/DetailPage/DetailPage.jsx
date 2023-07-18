@@ -11,7 +11,7 @@ import { settingsSlider } from "../../components/Carousel/Settings";
 import { collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { ProfileContext } from "../../contexts/ProfileContext";
 import { firestore, auth } from '../../firebase/config';
-import { BsHeartFill } from 'react-icons/bs';
+import { BsHeartFill, BsHeart } from 'react-icons/bs';
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -19,6 +19,8 @@ const DetailPage = () => {
   const [similar, setSimilar] = useState([]);
   const { selectedProfile, setSelectedProfile } = useContext(ProfileContext);
   const [user, setUser] = useState(null);
+
+  console.log(location.state.value)
 
 
   useEffect(() => {
@@ -36,20 +38,26 @@ const DetailPage = () => {
     getUserProfiles()
   }, []);
 
+  const isMovieInFavorites = () => {
+    if (!selectedProfile || !selectedProfile.favorites) {
+      return false;
+    }
+    const movieId = location.state.value.id;
+    return selectedProfile.favorites.some((movie) => movie.id === movieId);
+  };
+
+
   const addToFavorites = async () => {
     try {
-      const movieData = location.state.value;
+      const movieData = { ...location.state.value, entity: location.state.entity };
       const movieId = movieData.id;
       const updatedProfile = { ...selectedProfile };
       const movieIndex = updatedProfile.favorites.findIndex(
         (movie) => movie.id === movieId
       );
       if (movieIndex !== -1) {
-        // La película ya está en favoritos, eliminarla
         updatedProfile.favorites.splice(movieIndex, 1);
-        // Actualiza el perfil seleccionado en el contexto
         setSelectedProfile(updatedProfile);
-        // Actualiza el documento del usuario en Firestore
         await updateDoc(doc(firestore, 'NetflixUsers', auth.currentUser.email), {
           profiles: user.profiles.map((profile) => {
             if (profile.id === selectedProfile.id) {
@@ -61,11 +69,8 @@ const DetailPage = () => {
         });
         console.log('Movie removed from favorites successfully');
       } else {
-        // La película no está en favoritos, agregarla
         updatedProfile.favorites.push(movieData);
-        // Actualiza el perfil seleccionado en el contexto
         setSelectedProfile(updatedProfile);
-        // Actualiza el documento del usuario en Firestore
         await updateDoc(doc(firestore, 'NetflixUsers', auth.currentUser.email), {
           profiles: user.profiles.map((profile) => {
             if (profile.id === selectedProfile.id) {
@@ -105,6 +110,7 @@ const DetailPage = () => {
         style={{ backgroundImage: `url(${location.state.img})` }}
       >
         <div className={`${styles.background_gradient}`}>
+        <div className={`${styles.box}`}>
           <Link
             to={{ pathname: `/Trailer/${id}` }}
             state={{ entity: location.state.entity }}
@@ -118,10 +124,19 @@ const DetailPage = () => {
           </div>
           <div className={`${styles.Overview}`}>
             <h4>{location.state.value.overview}</h4>
-            <button className="btn btn-primary" onClick={addToFavorites}>
-              <BsHeartFill className="mr-2" />
-              Add to Favorites
+          </div>
+          <div className={`${styles.detailBox} row`}>
+          <button  className={`${styles.btnFav} btn btn-primary`} onClick={addToFavorites}>
+              {isMovieInFavorites() ? (
+                <BsHeartFill/>
+              ) : (
+                <BsHeart/>
+              )}
             </button>
+            <h4 className="col">Idioma: {location.state.value.original_language}</h4>
+            <h4 className="col-3">Clasificación: ☆{location.state.value.vote_average}</h4>
+            <h4 className="col-6">Fecha de lanzamiento: {location.state.value.release_date}</h4>
+          </div>
           </div>
         </div>
       </div>

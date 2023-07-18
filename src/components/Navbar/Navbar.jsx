@@ -36,7 +36,7 @@ const Navbar = () => {
     return(
         <>
         <div className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
-            <Link className="navbar-brand col-auto sm-5" to="/home">
+            <Link className="navbar-brand col-auto sm-5" to="/Home">
               <NetflixLogo className={`${styles.logo}`}/>
             </Link>
 
@@ -48,19 +48,19 @@ const Navbar = () => {
             <div className={`${styles.dropmenu} dropdown-menu collapse navbar-collapse`} id="navbarToggleExternalContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ps-3 pe-3">
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`} to="/home">Inicio</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="/Home">Inicio</Link>
             </li>
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`} to="series">Series</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="Series">Series</Link>
             </li>
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`} to="movies">Peliculas</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="Movies">Peliculas</Link>
             </li>
             <li className="nav-item">
-            <Link className={`${styles.nav_link} nav-link`} to="popular">Novedades Populares</Link>
+            <Link className={`${styles.nav_link} nav-link`} to="Popular">Novedades Populares</Link>
             </li>
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`}>Mi Lista</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="MyList">Mi Lista</Link>
             </li>
             <li className="nav-item">
               <Link className={`${styles.nav_link} nav-link`}>Explora por idiomas</Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
               <li><Link className={`${styles.dropuser} dropdown-item`} to={'/ManageProfiles'}>Editar Perfiles</Link></li>
               <li><Link className={`${styles.dropuser} dropdown-item`}>Centro de Ayuda</Link></li>
               <li><hr className="dropdown-divider"></hr></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`} onClick={closeSession}>Cerrar Session</Link></li>
+              <li><Link className={`${styles.dropuser} dropdown-item`} onClick={closeSession}>Cerrar Sessión</Link></li>
             </ul>
           </div>
       )}

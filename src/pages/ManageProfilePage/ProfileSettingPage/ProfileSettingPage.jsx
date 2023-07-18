@@ -34,23 +34,47 @@ const ProfileSetting = () => {
 
 
     const saveChanges = async () => {
+      try {
         const profileRef = doc(firestore, 'NetflixUsers', user.email);
-        try {
-          await updateDoc(profileRef, {
-            profiles: [
-              {
-                ...selectedProfile,
-                name: name,
-                avatar: avatar,
-              },
-            ],
-          });
-          console.log('Cambios guardados en Firestore.');
-          navigate('/Profiles')
-        } catch (error) {
-          console.error('Error al guardar los cambios en Firestore:', error);
+        const profileIndex = user.profiles.findIndex(
+          (profile) => profile.id === selectedProfile.id
+        );
+        if (profileIndex === -1) {
+          console.error('Perfil seleccionado no encontrado en el array de perfiles.');
+          return;
         }
-      };
+        const updatedProfiles = [...user.profiles];
+        updatedProfiles[profileIndex] = {
+          ...selectedProfile,
+          name: name,
+          avatar: avatar,
+        };
+        await updateDoc(profileRef, {
+          profiles: updatedProfiles,
+        });
+        console.log('Cambios guardados en Firestore.');
+        navigate('/Profiles');
+      } catch (error) {
+        console.error('Error al guardar los cambios en Firestore:', error);
+      }
+    };
+
+    const deleteProfile = async () => {
+      try {
+        if (selectedProfile && user) {
+          const updatedProfiles = user.profiles.filter(
+            (profile) => profile.id !== selectedProfile.id
+          );
+          await updateDoc(doc(firestore, 'NetflixUsers', user.email), {
+            profiles: updatedProfiles,
+          });
+          console.log('Perfil eliminado con éxito');
+          navigate('/Profiles');
+        }
+      } catch (error) {
+        console.error('Error al eliminar el perfil:', error);
+      }
+    };
 
 const handleAvatarChange = () => {
   navigate('/Avatar');
@@ -72,6 +96,7 @@ const handleAvatarChange = () => {
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         </div>
         <button className='btn btn-danger mt-2' onClick={saveChanges}>Guardar</button>
+        <button className="btn btn-danger mt-2 ms-5" onClick={deleteProfile}>Eliminar Perfil</button>
       </div>
     </>
   )

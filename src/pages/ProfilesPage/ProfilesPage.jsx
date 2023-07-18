@@ -9,6 +9,8 @@ const ProfilesPage = () => {
   const [user, setUser] = useState(null);
   const { setSelectedProfile } = useContext(ProfileContext);
 
+  console.log(location.state)
+
   useEffect(() => {
     const getUserProfiles = async () => {
       try {
@@ -54,14 +56,16 @@ const ProfilesPage = () => {
 
   return (
     <>
+    <div className='row' style={{maxWidth:'100%'}}>
       {user.profiles.map((profile) => (
-        <div key={profile.id} className="container-fluid" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
+        <div key={profile.id} className="container-fluid col" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
           <Link to={'/Home'} onClick={() => handleProfileSelect(profile)}>
             <img src={`${profile.avatar}`} className={`navbar-toggler-icon`} alt="Avatar" style={{ width: '20vh', height: '20vh' }} />
           </Link>
           <h3 className="pt-4">{profile.name}</h3>
         </div>
       ))}
+      </div>
     </>
   );
 };

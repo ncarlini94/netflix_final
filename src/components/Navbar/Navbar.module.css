@@ -5,7 +5,7 @@
 
 .logo{
         width: 14vh;
-        height: 10vh;
+        height: 7vh;
         padding-left: 2vh;
 }
 
@@ -13,7 +13,7 @@
   background: linear-gradient(
     to top,
     rgba(27, 27, 27, 0) 0%,
-    rgba(0, 0, 0, 0.440) 40%,
+    rgba(0, 0, 0, 0.440) 20%,
     rgba(0, 0, 0, 0.482) 100%
   );
 }
@@ -52,16 +52,17 @@
 .avatar{
   width: 4vh;
   height: 4vh;
+  margin-top: -1vh;
 }
 
 
 @media screen and (max-width:380px) {
   .navbar{
-    height: 7vh;
+    height: 6vh;
   }
 
   .navbar_dark{
-    height: 7.6vh;
+    height: 7.4vh;
   }
 
   .logo{
@@ -76,6 +77,7 @@
   .avatar{
     width: 3.4vh;
     height: 3.4vh;
+    margin-top: -1vh;
   }
 
   .dropmenu{

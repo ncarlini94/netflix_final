@@ -8,6 +8,9 @@ const ManageProfilePage = () => {
   const location = useLocation();
   const [user, setUser] = useState(null);
   const { setSelectedProfile } = useContext(ProfileContext);
+  const hasMaxProfiles = user?.profiles?.length >= 5;
+
+  console.log(user?.profiles?.length)
 
   useEffect(() => {
     const getUserProfiles = async () => {
@@ -28,7 +31,6 @@ const ManageProfilePage = () => {
         setUser(null);
       }
     });
-
     return () => unsubscribe();
   }, []);
 
@@ -55,14 +57,21 @@ const ManageProfilePage = () => {
 
   return (
     <>
+    <div className='row' style={{maxWidth:'100%'}}>
       {user.profiles.map((profile) => (
-        <div key={profile.id} className="container-fluid" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
+        <div key={profile.id} className="container-fluid col" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
           <Link to={'/ProfileSetting'} onClick={() => handleProfileSelect(profile)}>
             <img src={`${profile.avatar}`} className={`navbar-toggler-icon`} alt="Avatar" style={{ width: '20vh', height: '20vh' }} />
           </Link>
           <h3 className="pt-4">{profile.name}</h3>
         </div>
       ))}
+      {!hasMaxProfiles && (
+        <div className="container-fluid col d-flex align-items-center justify-content-center" style={{ paddingTop: '20vh'}}>
+          <Link to={'/AddProfile'} style={{ textDecoration: 'none', color: 'rgb(255,255,255)', fontSize: '12vh', paddingBottom:'6vh'}}>+ <h4 style={{fontSize:'3vh', marginLeft:'-1vh'}}>Agregar</h4></Link>
+        </div>
+      )}
+      </div>
     </>
   );
 };

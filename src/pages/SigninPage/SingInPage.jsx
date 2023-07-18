@@ -20,7 +20,7 @@ const SingInPage = () => {
 
   return (
     <>
-    <div className={`${styles.loginBox} container`}>
+    <div className={`${styles.loginBox} container text-center`}>
     <h4 style={{fontSize:'5.4vh'}}>Inicia sesión</h4>
         <form onSubmit={handleSubmit}>
             <div className="form-group text-center">
@@ -28,10 +28,10 @@ const SingInPage = () => {
             <input
                 type='text'
                 name='Email'
-                className='form-control'
+                className={`${styles.input} form-control`}
                 id='email'
                 value={email}
-                style={{borderRadius:'0.6vh', backgroundColor:'rgba(50, 50, 50, 0.941)'}}
+                style={{borderRadius:'0.6vh', backgroundColor:'rgba(50, 50, 50, 0.941)', color:'rgb(255,255,255)'}}
                 onChange={(e) => { setEmail(e.target.value)}}
             />
           </div>
@@ -40,7 +40,7 @@ const SingInPage = () => {
             <input
                 type='password'
                 name='password'
-                className='form-control'
+                className={`${styles.input} form-control`}
                 id="password"
                 value={password}
                 style={{borderRadius:'0.6vh', backgroundColor:'rgba(50, 50, 50, 0.941)'}}

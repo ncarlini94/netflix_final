@@ -1,7 +1,7 @@
 .logo{
-        width: 22vh;
-        height: 10vh;
-        margin-left: 10vh;
+        width: 18vh;
+        height: 6vh;
+        margin: 0.4vh 10vh 1vh 12vh;
 }
 
 .navbar{
@@ -14,14 +14,13 @@
 }
 
 .sesionBtn {
-        width: 20vh;
+        width: 21vh;
         height: 5.6vh;
-        margin-right: 15vh;
+        margin-right: 12vh;
         margin-bottom: 2vh;
         background: rgba(231, 0, 0, 0.918);
-        color: rgba(255, 255, 255, 0.842);
+        color: rgba(179, 179, 179, 0.842);
         font-weight: bold;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .sesionBtn a {

@@ -37,7 +37,7 @@ return(
         ) :
     (
     <div className="container-fluid">
-    <iframe className={`${styles.video}`} width="1380" height="713" src={`https://www.youtube.com/embed/${videos.key}`} title={`${videos.name}`} frameBorder="0" allow=" accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
+    <iframe className={`${styles.video}`} width="1280" height="613" src={`https://www.youtube.com/embed/${videos.key}`} title={`${videos.name}`} frameBorder="0" allow=" accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
     </div>
     )}
     </>

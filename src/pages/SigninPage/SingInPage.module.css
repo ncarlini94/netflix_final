@@ -1,12 +1,22 @@
 .loginBox{
     background-color: rgba(20, 20, 20, 0.941);
     width: 66vh;
-    padding: 7.6vh 10vh;
+    padding: 6vh 8vh 5vh 8vh;
+    border-radius: 0.7vh;
+    margin-top: 10vh;
 }
 
 .sendbtn{
     display: flex;
     justify-content: center;
+}
+
+.input{
+    background-color: rgba(50, 50, 50, 0.941);
+}
+
+.label{
+    color: rgba(179, 179, 179, 0.941);
 }
 
 .sendbtn button{
@@ -19,7 +29,7 @@
     background-color: rgba(241, 0, 0, 0.836);
     width: 60vh;
     border-radius: 0.7vh;
-    color: white;
+    color: rgba(255, 255, 255, 0.918);
 }
 
 .sendLogin{

@@ -19,10 +19,14 @@
     );
 }
 
+.box{
+    max-width: 20vh;
+}
+
 .iconplay{
     width: 15vh;
     height: 15vh;
-    color: rgba(255, 255, 255, 0.863);
+    color: rgba(255, 255, 255, 0.705);
     position:absolute;
     z-index:2;
     top: 21.5em;
@@ -33,15 +37,23 @@
     position:absolute;
     z-index:2;
     opacity:0.9;
-    top: 65vh;
+    top: 62vh;
     right: 4vh;
-    margin-left: 38vh;
-    max-height: 48vh;
-    padding-left: 2.4vh;
+    margin-left: 40vh;
+}
+
+.detailBox{
+    position:absolute;
+    z-index:3;
+    opacity:0.9;
+    bottom: 2vh;
+    left: 42vh;
+    width: 120vh;
+    margin-bottom: 1vh;
 }
 
 h4{
-    font-size: 3.6vh;
+    font-size: 2.8vh;
     color: rgb(255, 255, 255);
     text-shadow: 2vh 2vh 3.5vh #000000e8
 }
@@ -50,7 +62,7 @@ h4{
         position:absolute;
         z-index:2;
         opacity:0.9;
-        top: 55vh;
+        top: 52vh;
         margin-left: 38vh;
 }
 
@@ -59,4 +71,9 @@ h1{
     font-style: italic;
     color: rgb(255, 255, 255);
     text-shadow: 2vh 2vh 3.5vh #000000e8
+}
+
+.btnFav{
+    width: 6.5vh;
+    height: 6.5vh;
 }

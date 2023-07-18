@@ -15,3 +15,6 @@ export {default as ChangePasswordPage} from './ManageAcountPage/ChangePasswordPa
 export {default as ChangePlanPage} from './ManageAcountPage/ChangePlanPage/ChangePlanPage'
 export {default as ChangeEmailPage} from './ManageAcountPage/ChangeEmailPage/ChangeEmailPage'
 export {default as ChangeAvatarPage} from './ManageProfilePage/ProfileSettingPage/ChangeAvatarPage/ChangeAvatarPage'
+export {default as AddProfilesPage} from './ManageProfilePage/AddProfiles/AddProfilesPage'
+export {default as SelectAvatarPage} from './ManageProfilePage/AddProfiles/SelectAvatarPage/SelectAvatarPage'
+export {default as MyListPage} from './MyListPage/MyListPage'
