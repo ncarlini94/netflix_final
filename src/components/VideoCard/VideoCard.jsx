@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router";
 import apiBuilder from "../../hooks/getApi";
 import ErrorVideo from '../../assets/imagen/Error.jpg'
 import styles from './VideoCard.module.css'
+import ReactPlayer from 'react-player/youtube'
 
 
 const VideoCard = ({ language}) => {
@@ -29,15 +30,47 @@ const VideoCard = ({ language}) => {
 return(
     <>
     {
-    isLoading ? (<h1>Loading</h1>) :
+    isLoading ? (<div className={`${styles.loader_container}`}></div>) :
     !videos ? (
-        <div style={{backgroundImage:`url(${ErrorVideo})`, height: "28em", width:"auto", backgroundRepeat: "no-repeat", marginTop:"-3em"}}>
-            <h4 style={{color:"white", paddingTop:"6em", paddingLeft:"7em"}}>Ops! no se encuentra el trailer</h4>
+        <div style={{
+                backgroundImage:`url(${ErrorVideo})`,
+                height: "500px", width:"1210px",
+                backgroundRepeat: "no-repeat",
+                marginTop:"3.5em",
+                marginLeft:'3em',
+                marginBottom:'-9em',
+                }}>
+                <div className={`${styles.banner_gradient}`}>
+            <h4 style={{
+                color:"white",
+                fontSize:'1.2em',
+                 paddingTop:"10em",
+                  paddingLeft:"7em",
+                   maxWidth:'35em'
+                   }}>Lamentablemente, el video que buscas no se encuentra disponible en este momento. Sin embargo, aquí tienes algunas recomendaciones.</h4>
+            </div>
         </div>
         ) :
     (
-    <div className="container-fluid">
-    <iframe className={`${styles.video}`} width="1280" height="613" src={`https://www.youtube.com/embed/${videos.key}`} title={`${videos.name}`} frameBorder="0" allow=" accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
+    <div className={`container-fluid ${styles.boxVideo}`}>
+    <ReactPlayer
+    className={`${styles.reactPlayer}`}
+    url={`https://www.youtube.com/embed/${videos.key}`}
+    width='100%'
+    height='100%'
+    controls={true}
+    config = {{
+        youtube :
+            {playerVars :
+            {
+                showinfo : 0,
+                modestbranding: 1,
+                rel: 0,
+            }
+            }
+        }
+    }
+     />
     </div>
     )}
     </>

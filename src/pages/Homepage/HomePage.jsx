@@ -13,7 +13,7 @@ const Home = () => {
             entity={"movies"}
             state={"popular"}
             language={"spanish"}
-            quality={"backdropw1280"}
+            quality={"posterw1280"}
         />
         <Separator height={"30px"}/>
         <Carousel
@@ -44,7 +44,7 @@ const Home = () => {
             entity={"movies"}
             state={"topRated"}
             language={"spanish"}
-            title={"Peliculas mas votadas"}
+            title={"Peliculas mejor clasificadas"}
             quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
@@ -52,7 +52,7 @@ const Home = () => {
             entity={"series"}
             state={"topRated"}
             language={"spanish"}
-            title={"Series mas votadas"}
+            title={"Series mejor clasificadas"}
             quality={"backdropw1280"}
         />
         </>

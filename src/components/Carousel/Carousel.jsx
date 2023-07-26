@@ -13,7 +13,7 @@ const Carousel = ({entity, state, language, title, quality}) => {
         <>
         <div className="container-fluid">
             <div className="">
-                <h1 style={{color:"rgba(200, 200, 220, 0.6)", height:"6vh", fontSize:"5vh", paddingLeft:"2.5vh"}}>
+                <h1 style={{color:"rgba(200, 200, 220, 0.75)", height:"5vh", fontSize:"4.2vh", marginLeft:"2.4vh"}}>
                     {title}
                 </h1>
             </div>

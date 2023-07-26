@@ -4,16 +4,16 @@ import apiBuilder from "../../hooks/getApi";
 import { randomIndex } from '../../utils/Utils';
 import useApi from "../../hooks/useApi";
 import { Link } from "react-router-dom";
+import { IoPlay } from 'react-icons/io5';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 const Banner = ({entity, state, language, quality}) => {
 
     const [values, loading] = useApi(entity, state, language)
-
-
     const [randomValue, setRandomValue] = useState([])
     const [randomImg, setRandomImg] = useState([]);
     const qualityRef = useRef(quality)
-
+    const [genres, setGenres] = useState()
 
 
     useEffect(() => {
@@ -29,8 +29,18 @@ const Banner = ({entity, state, language, quality}) => {
             setRandomImg(backgroundImage);
             };
         };
-    getRandomValue();
+        getRandomValue();
 }, [values]);
+
+
+useEffect(() => {
+const getGenres = async () => {
+    const gnres = randomValue.genre_ids
+    setGenres(gnres)
+}
+getGenres()
+}, [randomValue.genre_ids]);
+
 
 
 return (
@@ -55,11 +65,13 @@ return (
 
         <div className={`${styles.banner_description}`}>
         <h2>{loading ? "Loading..." : randomValue?.overview}</h2>
+        <h4 className={`${styles.rate}`}>Clasificación: ☆ {randomValue.vote_average}</h4>
+        <h4 className={`${styles.relase}`}>Fecha de lanzamiento: {randomValue.release_date}</h4>
         </div>
 
             <div className={`${styles.banner_buttons}`}>
-            <Link to={`/Trailer/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button}>REPRODUCIR</button></Link>
-            <Link to={`/Detail/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button}>MAS INFORMACION</button></Link>
+            <Link to={`/Trailer/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button_play}><IoPlay className={`${styles.icon}`}/>REPRODUCIR</button></Link>
+            <Link to={`/Detail/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button_info}><AiOutlineInfoCircle className={`${styles.icon}`}/>MAS INFORMACION</button></Link>
             </div>
         </div>
         </div>

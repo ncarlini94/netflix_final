@@ -13,7 +13,7 @@ const PopularPage = () => {
             entity={"movies"}
             state={"upComing"}
             language={"spanish"}
-            title={"Proximas Peliculas"}
+            title={"Proximas peliculas"}
             quality={"backdropw500"}
         />
         <Separator height={"40px"}/>
@@ -21,7 +21,7 @@ const PopularPage = () => {
             entity={"movies"}
             state={"topRated"}
             language={"spanish"}
-            title={"Peliculas Rankeadas"}
+            title={"Peliculas mejor clasificadas"}
             quality={"backdropw500"}
         />
         <Separator height={"40px"}/>
@@ -29,7 +29,7 @@ const PopularPage = () => {
             entity={"series"}
             state={"topRated"}
             language={"spanish"}
-            title={"Series Rankeadas"}
+            title={"Series mejor clasificadas"}
             quality={"backdropw500"}
         />
         </>

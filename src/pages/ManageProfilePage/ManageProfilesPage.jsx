@@ -3,14 +3,14 @@ import {auth, firestore} from '../../firebase/config';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Link, useLocation } from 'react-router-dom';
 import { ProfileContext } from '../../contexts/ProfileContext';
+import styles from './ManageProfilesPage.module.css'
+import { AiFillPlusSquare } from 'react-icons/ai';
 
 const ManageProfilePage = () => {
   const location = useLocation();
   const [user, setUser] = useState(null);
   const { setSelectedProfile } = useContext(ProfileContext);
   const hasMaxProfiles = user?.profiles?.length >= 5;
-
-  console.log(user?.profiles?.length)
 
   useEffect(() => {
     const getUserProfiles = async () => {
@@ -39,7 +39,7 @@ const ManageProfilePage = () => {
   };
 
   if (!user && !location.state) {
-    return <div className='ps-5 pt-5' style={{color:'white', fontSize:'4vh'}}>Cargando perfiles...</div>;
+    return <div className={`${styles.loader_container}`}></div>;
   }
 
   if (location.state && location.state.profile ) {
@@ -57,18 +57,23 @@ const ManageProfilePage = () => {
 
   return (
     <>
-    <div className='row' style={{maxWidth:'100%'}}>
+    <div className={`${styles.box} row`}>
       {user.profiles.map((profile) => (
-        <div key={profile.id} className="container-fluid col" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
+        <div key={profile.id} className={`${styles.boxProfile} col`} style={{}}>
           <Link to={'/ProfileSetting'} onClick={() => handleProfileSelect(profile)}>
-            <img src={`${profile.avatar}`} className={`navbar-toggler-icon`} alt="Avatar" style={{ width: '20vh', height: '20vh' }} />
+            <img src={`${profile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"/>
           </Link>
-          <h3 className="pt-4">{profile.name}</h3>
+          <h3 className={`${styles.name}`}>{profile.name}</h3>
         </div>
       ))}
       {!hasMaxProfiles && (
-        <div className="container-fluid col d-flex align-items-center justify-content-center" style={{ paddingTop: '20vh'}}>
-          <Link to={'/AddProfile'} style={{ textDecoration: 'none', color: 'rgb(255,255,255)', fontSize: '12vh', paddingBottom:'6vh'}}>+ <h4 style={{fontSize:'3vh', marginLeft:'-1vh'}}>Agregar</h4></Link>
+        <div className={`${styles.boxProfile} col`}>
+          <Link to={'/AddProfile'} style={{textDecoration:'none'}}>
+          <div>
+          <AiFillPlusSquare className={`${styles.icon}`}/>
+          <h4 className={`${styles.name}`}>Agregar</h4>
+          </div>
+          </Link>
         </div>
       )}
       </div>

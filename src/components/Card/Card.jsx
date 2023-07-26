@@ -24,8 +24,8 @@ const Card = ({entity, title, imgPath, quality, id, value, language}) => {
         }}
         className={styles.card}
         >
-        <Link to={{pathname:`/Detail/${id}`}} state={{entity: entity, language:language, value:value, img: img}}>
-            <h1 className={styles.card_title}>{title}</h1>
+        <Link to={{pathname:`/Detail/${id}`}} state={{entity: entity, language:language, value:value, img: img}} style={{textDecoration:'none'}}>
+            <h1 className={styles.card_title} style={{textDecoration:'none'}}>{title}</h1>
         </Link>
         </div>
         </>

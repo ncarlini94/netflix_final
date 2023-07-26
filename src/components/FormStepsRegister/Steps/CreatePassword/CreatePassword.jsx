@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react'
 import styles from './CreatePassword.module.css'
+import { useLocation } from 'react-router'
 
 const CreatePassword = ({formData, setFormData}) => {
 
+  const location = useLocation()
+
+
   useEffect(() => {
-    setFormData((prevFormData) => ({ ...prevFormData, email: localStorage.getItem('email') || '' }));
-  },[setFormData])
+    setFormData((prevFormData) => ({ ...prevFormData, email: location.state || '' }));
+  },[setFormData, location])
 
   return (
     <>
@@ -30,6 +34,7 @@ const CreatePassword = ({formData, setFormData}) => {
             type='text'
             value={formData.email}
             placeholder='Email'
+            required
             onChange={(e) => {setFormData({...formData, email: e.target.value})}}
         /> }
       </div>
@@ -44,6 +49,7 @@ const CreatePassword = ({formData, setFormData}) => {
             type='password'
             value={formData.password}
             placeholder='Password'
+            required
             onChange={(e) => {setFormData({...formData, password: e.target.value})}}
         />
 </div>

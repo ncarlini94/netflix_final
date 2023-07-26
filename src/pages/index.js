@@ -18,3 +18,4 @@ export {default as ChangeAvatarPage} from './ManageProfilePage/ProfileSettingPag
 export {default as AddProfilesPage} from './ManageProfilePage/AddProfiles/AddProfilesPage'
 export {default as SelectAvatarPage} from './ManageProfilePage/AddProfiles/SelectAvatarPage/SelectAvatarPage'
 export {default as MyListPage} from './MyListPage/MyListPage'
+export {default as HelpPage} from './HelpPage/HelpPage'

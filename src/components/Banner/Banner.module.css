@@ -14,7 +14,7 @@
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.473) 70%,
+    rgba(0, 0, 0, 0.801) 80%,
     rgba(27, 27, 27, 0.884) 100%
   );
 }
@@ -32,7 +32,7 @@
   color: #fff;
   position: absolute;
   z-index: 2;
-  top: 50vh;
+  top: 56vh;
 }
 
 .banner_description h2 {
@@ -43,12 +43,26 @@
   padding-left: 1.4vh;
   position: absolute;
   z-index: 2;
-  top: 60vh;
+  top: 64vh;
   margin-right: 10vh;
 }
 
 h1, h2 {
   text-shadow: 2vh 2vh 3.5vh #000000e8
+}
+
+.rate{
+  position: absolute;
+  z-index: 2;
+  top: 86.5vh;
+  left: 70vh;
+}
+
+.relase{
+  position: absolute;
+  z-index: 2;
+  top: 86.5vh;
+  left: 100vh;
 }
 
 .banner_buttons {
@@ -58,16 +72,23 @@ h1, h2 {
   top: 85vh;
 }
 
-.banner_buttons button:nth-child(1) {
-  margin-right: 2vh;
+button{
+  padding-top: 0.6vh;
 }
 
-.banner_button {
-  width: 23vh;
-  height: 6vh;
+.icon{
+  width:3.5vh;
+  height:3.5vh;
+  margin-bottom:0.7vh;
+  margin-right:1vh;
+}
+
+.banner_button_play {
+  width: 25vh;
+  height: 6.5vh;
   background-color: rgba(197, 197, 197, 0.87);
   color: rgb(0, 0, 0);
-  font-size: 2.2vh;
+  font-size: 2.25vh;
   font-weight: 600;
   border: none;
   border-radius: 1.2vh;
@@ -76,12 +97,36 @@ h1, h2 {
   transition: all 0.4s ease-in-out;
 }
 
-.banner_button:hover {
+.banner_button_info{
+  width: 30vh;
+  height: 6.5vh;
+  background-color: rgba(105, 105, 105, 0.938);
+  color: rgb(192, 192, 192);
+  font-size: 2.30vh;
+  font-weight: 600;
+  border: none;
+  border-radius: 1.2vh;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all 0.4s ease-in-out;
+  margin-left: 2vh;
+}
+
+.banner_button_play:hover {
   background-color: rgba(224, 224, 224, 0.356);
   color: rgb(255, 255, 255);
 }
 
+.banner_button_info:hover{
+  background-color: rgba(224, 224, 224, 0.438);
+  color: rgb(255, 255, 255);
+}
+
 @media screen and (max-width: 900px) {
+
+  .banner_container{
+    width: 100%;
+  }
 
   .banner_gradient{
     background: linear-gradient(
@@ -109,17 +154,18 @@ h1, h2 {
     top: 80vh;
   }
 
-  .banner_button{
+  .banner_button_play .banner_button_info{
     width: 20vh;
     font-size: 1.8vh;
   }
 
 }
 
-@media screen and (max-width: 380px) and (max-width: 580px) {
+@media screen and (min-width: 380px) and (max-width: 580px) {
 
 
   .banner_container{
+    width: 100%;
     height: 42vh;
     margin-top: 6vh;
   }
@@ -129,24 +175,34 @@ h1, h2 {
   }
 
   .banner_title h1{
-    top: 13vh;
+    top: 28vh;
     font-size: 2.2vh;
   }
 
   .banner_description h2{
-    top: 16vh;
-    font-size: 1.3vh;
-    padding-left: 1vh;
+    top: 32vh;
+    font-size: 1vh;
+    padding-left: 0.5vh;
     margin-right: 2.8vh;
   }
 
   .banner_buttons{
-    top: 36vh;
+    top: 42vh;
   }
 
-  .banner_button{
-    width: 12vh;
-    height: 4vh;
+  .banner_button_play{
+    width: 10vh;
+    height: 3vh;
     font-size: 1vh;
+  }
+
+  .banner_button_info{
+    width: 13.5vh;
+    height: 3vh;
+    font-size: 1vh;
+  }
+
+  .icon{
+    width: 1.4vh;
   }
 }

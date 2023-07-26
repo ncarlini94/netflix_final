@@ -19,7 +19,8 @@ import { HomePage,
         ChangeAvatarPage,
         AddProfilesPage,
         SelectAvatarPage,
-        MyListPage
+        MyListPage,
+        HelpPage
         } from './pages';
 import PublicLayout from './layouts/PublicLayout/PublicLayout';
 import ProtectedLayout from './layouts/ProtectedLayout/ProtectedLayout';
@@ -51,7 +52,7 @@ function App() {
       <Route path='/Avatar' element={<ChangeAvatarPage/>}/>
       <Route path='/AddProfile' element={<AddProfilesPage/>}/>
       <Route path='/SelectAvatar' element={<SelectAvatarPage/>}/>
-
+      <Route path='/HelpPage' element={<HelpPage/>} />
       </Route>
 
       <Route path='*' element={<ErrorPage/>} />

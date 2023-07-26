@@ -19,7 +19,7 @@ const MyListPage = () => {
   return (
     <>
     <div className={`${styles.ListBox}`}>
-    <h2 className={`${styles.Title}`}>Lista de favoritos</h2>
+    <h2 className={`${styles.Title}`}>Favoritos</h2>
     <Slider {...settingsSlider}>
     {selectedProfile.favorites.map((value) => (
       <Card

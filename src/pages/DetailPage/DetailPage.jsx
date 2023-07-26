@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router";
 import styles from './DetailPage.module.css';
-import { FiPlayCircle } from "react-icons/fi";
-import { IconContext } from "react-icons";
+import { IoPlay } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import apiBuilder from "../../hooks/getApi";
 import Card from "../../components/Card/Card";
@@ -13,14 +12,13 @@ import { ProfileContext } from "../../contexts/ProfileContext";
 import { firestore, auth } from '../../firebase/config';
 import { BsHeartFill, BsHeart } from 'react-icons/bs';
 
+
 const DetailPage = () => {
   const { id } = useParams();
   const location = useLocation();
   const [similar, setSimilar] = useState([]);
   const { selectedProfile, setSelectedProfile } = useContext(ProfileContext);
   const [user, setUser] = useState(null);
-
-  console.log(location.state.value)
 
 
   useEffect(() => {
@@ -114,13 +112,12 @@ const DetailPage = () => {
           <Link
             to={{ pathname: `/Trailer/${id}` }}
             state={{ entity: location.state.entity }}
+            className={`${styles.iconplay}`}
           >
-            <IconContext.Provider value={{ className: `${styles.iconplay}` }}>
-              <FiPlayCircle />
-            </IconContext.Provider>
-          </Link>
+          <button className={styles.banner_button_play}>
+            <IoPlay style={{width:'3.5vh',height:'3.5vh',marginBottom:'0.4vh', marginRight:'1vh'}}/>REPRODUCIR</button></Link>
           <div className={`${styles.title}`}>
-            <h1>{location.state.value.title}</h1>
+            <h1>{location.state.value.title || location.state.value.original_name}</h1>
           </div>
           <div className={`${styles.Overview}`}>
             <h4>{location.state.value.overview}</h4>
@@ -134,7 +131,7 @@ const DetailPage = () => {
               )}
             </button>
             <h4 className="col">Idioma: {location.state.value.original_language}</h4>
-            <h4 className="col-3">Clasificación: ☆{location.state.value.vote_average}</h4>
+            <h4 className="col-3">Clasificación: ☆ {location.state.value.vote_average}</h4>
             <h4 className="col-6">Fecha de lanzamiento: {location.state.value.release_date}</h4>
           </div>
           </div>

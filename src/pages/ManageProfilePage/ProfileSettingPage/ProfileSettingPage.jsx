@@ -3,6 +3,7 @@ import { ProfileContext } from '../../../contexts/ProfileContext';
 import { auth, firestore } from '../../../firebase/config';
 import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { useLocation, useNavigate } from 'react-router';
+import styles from './ProfileSettingPage.module.css'
 
 const ProfileSetting = () => {
 
@@ -35,7 +36,7 @@ const ProfileSetting = () => {
 
     const saveChanges = async () => {
       try {
-        const profileRef = doc(firestore, 'NetflixUsers', user.email);
+        const profileRef = doc(firestore, 'NetflixUsers', user.email.toLowerCase());
         const profileIndex = user.profiles.findIndex(
           (profile) => profile.id === selectedProfile.id
         );
@@ -52,7 +53,6 @@ const ProfileSetting = () => {
         await updateDoc(profileRef, {
           profiles: updatedProfiles,
         });
-        console.log('Cambios guardados en Firestore.');
         navigate('/Profiles');
       } catch (error) {
         console.error('Error al guardar los cambios en Firestore:', error);
@@ -83,20 +83,21 @@ const handleAvatarChange = () => {
 
   return (
     <>
-        <div className='container'>
-        <h2 style={{marginTop:'10vh', color:'rgb(255,255,255)'}}>Configuración del perfil</h2>
+        <div className={`${styles.box} container`}>
+        <h2 className={`${styles.title}`} style={{ color:'rgb(255,255,255)'}}>Configuración del perfil</h2>
         <div>
           <img
-            style={{maxWidth:'15vh', marginBottom:'2vh'}}
+          className={`${styles.avatar}`}
+            style={{maxWidth:'18vh', marginBottom:'2vh'}}
             src={`${avatar}`}
             alt='avatar'
             onClick={handleAvatarChange}></img>
         </div>
         <div>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <input className={`${styles.inputName} form-control`} type="text" value={name} onChange={(e) => setName(e.target.value)} />
         </div>
-        <button className='btn btn-danger mt-2' onClick={saveChanges}>Guardar</button>
-        <button className="btn btn-danger mt-2 ms-5" onClick={deleteProfile}>Eliminar Perfil</button>
+        <button className={`${styles.btnSave} btn`} onClick={saveChanges}>Guardar</button>
+        <button className={`${styles.btnDelet} btn`} onClick={deleteProfile}>Eliminar Perfil</button>
       </div>
     </>
   )

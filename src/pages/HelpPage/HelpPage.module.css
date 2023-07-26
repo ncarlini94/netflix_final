@@ -1,0 +1,10 @@
+.boxText {
+    margin-top: 10vh;
+    margin-left: 28vh;
+    max-width: 155vh;
+    padding: 4.6vh;
+    color: rgb(255, 255, 255);
+    background-color: rgba(68, 68, 68, 0.329);
+    border-radius: 1.2vh;
+    font-size: 2.5vh;
+}

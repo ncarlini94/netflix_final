@@ -4,7 +4,6 @@ import {auth} from '../../firebase/config'
 import Navbar from './../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { useEffect } from 'react'
-import { ProfileProvider } from '../../contexts/ProfileContext'
 
 const ProtectedLayout = () => {
 
@@ -23,11 +22,9 @@ const ProtectedLayout = () => {
 
   return (
     <>
-      <ProfileProvider>
         { !isProfilePage && <Navbar/> }
         <Outlet/>
         { !isProfilePage && <Footer/> }
-      </ProfileProvider>
     </>
   )
 }

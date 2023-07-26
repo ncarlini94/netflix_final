@@ -39,6 +39,7 @@ const FormStepsRegister = () => {
                     id: userRegister.user.uid,
                     email: formData.email,
                     name: formData.name,
+                    language: 'es',
                     plan: formData.plan,
                     number: formData.number,
                     expiry: formData.expiry,

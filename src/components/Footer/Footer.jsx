@@ -12,37 +12,33 @@ const Footer = () => {
 
             <div className='col-sm'>
             <li className={`${styles.item}`}>
-            <Link className={`${styles.link}`}>
+            <Link className={`${styles.link}`} to={'/HelpPage'}>
             Preguntas frecuentes
             </Link></li>
             <li className={`${styles.item}`}>
-            <Link className={`${styles.link}`}>
+            <Link className={`${styles.link}`} to={'/HelpPage'}>
             Privacidad
             </Link></li>
             <li className={`${styles.item}`}>
-            <Link className={`${styles.link}`}>
+            <Link className={`${styles.link}`} to={'/HelpPage'}>
             Centro de ayuda
             </Link></li>
             </div>
 
             <div className='col-sm'>
             <li className={`${styles.item}`}>
-            <Link className={`${styles.link}`}>
+            <Link className={`${styles.link}`} to={'/Account'}>
             Cuenta
             </Link></li>
-            <li className={`${styles.item}`}>
-            <Link className={`${styles.link}`}>
-            Formas de ver
-            </Link></li>
             <li  className={`${styles.item}`}>
-            <Link className={`${styles.link}`}>
-            Solo en Netflix
+            <Link className={`${styles.link}`} to={'/HelpPage'}>
+            Avisos Legales
             </Link></li>
             </div>
 
             <div className='col-sm'>
             <li className={`${styles.item}`}>
-            <Link className={`${styles.link}`}>
+            <Link className={`${styles.link}`} to={'/HelpPage'}>
             Términos de uso
             </Link></li>
             <li className={`${styles.item}`}>
@@ -51,7 +47,7 @@ const Footer = () => {
             </Link></li>
             </div>
             <div className={`${styles.copyright} col-12`}>
-              <h4>Nicolás</h4>
+              <h4 style={{fontSize:'2.4vh'}}>Web creada por - Nicolás -</h4>
             </div>
         </ul>
         </div>

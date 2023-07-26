@@ -28,7 +28,7 @@ const AddProfilesPage = () => {
 }, []);
 
     const saveChanges = async () => {
-        const userRef = doc(firestore, 'NetflixUsers', user.email);
+        const userRef = doc(firestore, 'NetflixUsers', user.email.toLowerCase());
 
         try {
           const userDoc = await getDoc(userRef);

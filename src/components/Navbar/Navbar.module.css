@@ -1,12 +1,12 @@
 .navbar_dark {
-  background-color: #000000; /* Color de fondo oscuro */
-  transition: background-color 1.0s; /* Transición suave */
+  background-color: rgba(0, 0, 0, 0.825);
+  transition: background-color 1.0s;
 }
 
 .logo{
-        width: 14vh;
+        width: 12vh;
         height: 7vh;
-        padding-left: 2vh;
+        margin-left: 2.6vh;
 }
 
 .navbar{
@@ -24,7 +24,7 @@
 }
 
 .explorer{
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   font-size: 2.4vh;
 }
 
@@ -35,24 +35,27 @@
 }
 
 .nav_link {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 2vh;
 }
 
+
 .nav_link:hover{
-    color: #ffffff52;
+    color: rgba(170, 170, 170, 0.87);
 }
 
 
 .dropuser{
-  color: #ffffff;
-  font-size: 2vh;
+  color: rgba(255, 255, 255, 0.840);
+  font-size: 1.9vh;
 }
 
 .avatar{
-  width: 4vh;
-  height: 4vh;
-  margin-top: -1vh;
+  width: 4.4vh;
+  height: 4.4vh;
+  margin-top: 0.2vh;
+  margin-right: 0.4vh;
+  border-radius: 0.6vh;
 }
 
 
@@ -67,7 +70,7 @@
 
   .logo{
     width: 10vh;
-    height: 8vh;
+    height: 6vh;
   }
 
   .explorer{
@@ -75,12 +78,37 @@
   }
 
   .avatar{
-    width: 3.4vh;
-    height: 3.4vh;
-    margin-top: -1vh;
+    width: 4.4vh;
+    height: 4.4vh;
+    margin-top: 0.3vh;
+    margin-right: 0.4vh;
+    border-radius: 0.6vh;
   }
 
   .dropmenu{
-    background-color: black;
+    background-color: rgba(30,30,30,0.908);
+  }
+}
+
+@media screen and (max-width:991px) {
+  .list{
+    background-color: rgba(41, 41, 41, 0.842);
+  }
+}
+
+@media screen and (max-width:412px){
+
+  .navbar{
+    height: 6vh;
+    width: 77vh;
+  }
+
+  .logo{
+    width: 8vh;
+    height: 6vh;
+  }
+
+  .navbar_dark{
+    height: 7.4vh;
   }
 }

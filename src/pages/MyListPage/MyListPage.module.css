@@ -1,9 +1,11 @@
 .ListBox{
-    margin-top: 20vh;
+    margin-top: 25vh;
+    margin-bottom: 15vh;
 }
 
 .Title{
+    font-size: 5.2vh;
     margin-bottom: 5vh;
-    margin-left: 6vh;
+    margin-left: 10vh;
     color: rgba(194, 194, 194, 0.925);
 }

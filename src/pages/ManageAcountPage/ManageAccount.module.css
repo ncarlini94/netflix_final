@@ -1,6 +1,6 @@
 .box{
-    padding-top: 4vh;
-    padding-left: 12vh;
+    margin-top: 6vh;
+    margin-left: 16vh;
 }
 
 .title{
@@ -9,16 +9,22 @@
     padding-left: 9vh;
 }
 
+.selectedForm{
+    color: white;
+    background-color: rgba(50, 50, 50, 0.941);
+}
+
 .boxChild{
     padding: 1vh;
 }
 
 .boxChildTitle{
-    color: rgb(255, 255, 255);
-    font-size: 4.5vh;
+    color: rgba(255, 255, 255, 0.973);
+    font-size: 4.2vh;
 }
 
 .link{
-    color: rgb(255, 0, 0);
-    font-size: 3vh;
+    color: rgba(255, 0, 0, 0.932);
+    font-size: 2.8vh;
+    text-decoration: none;
 }
