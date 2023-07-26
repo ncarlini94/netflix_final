@@ -13,7 +13,6 @@ const Banner = ({entity, state, language, quality}) => {
     const [randomValue, setRandomValue] = useState([])
     const [randomImg, setRandomImg] = useState([]);
     const qualityRef = useRef(quality)
-    const [genres, setGenres] = useState()
 
 
     useEffect(() => {
@@ -31,15 +30,6 @@ const Banner = ({entity, state, language, quality}) => {
         };
         getRandomValue();
 }, [values]);
-
-
-useEffect(() => {
-const getGenres = async () => {
-    const gnres = randomValue.genre_ids
-    setGenres(gnres)
-}
-getGenres()
-}, [randomValue.genre_ids]);
 
 
 

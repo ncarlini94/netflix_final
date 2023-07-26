@@ -8,9 +8,9 @@ import mapLanguageToFull from '../../utils/mapLanguage';
 
 const ManageAccount = () => {
 
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const [user, setUser] = useState(null);
-    const [selectedLanguage, setSelectedLanguage] = useState(t.language);
+    const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
@@ -79,7 +79,7 @@ const ManageAccount = () => {
           </div>
           <hr className="col-12" style={{ marginLeft:'-14vh' ,borderTop: '1px solid rgba(255, 255, 255, 0.704)' }} />
           <div className={`${styles.boxChild} row`}>
-            <h3 className={`${styles.boxChildTitle} col-7`}>Idioma: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>{mapLanguageToFull(i18n.language)}</span></h3>
+            <h3 className={`${styles.boxChildTitle} col-7`}>Idioma: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>{mapLanguageToFull(selectedLanguage)}</span></h3>
             <select
               className={`${styles.selectedForm} form-select col`}
               value={i18n.language}
