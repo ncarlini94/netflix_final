@@ -5,8 +5,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { ProfileContext } from '../../contexts/ProfileContext';
 import styles from './ManageProfilesPage.module.css'
 import { AiFillPlusSquare } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 const ManageProfilePage = () => {
+
+  const { t } = useTranslation();
   const location = useLocation();
   const [user, setUser] = useState(null);
   const { setSelectedProfile } = useContext(ProfileContext);
@@ -71,7 +74,7 @@ const ManageProfilePage = () => {
           <Link to={'/AddProfile'} style={{textDecoration:'none'}}>
           <div>
           <AiFillPlusSquare className={`${styles.icon}`}/>
-          <h4 className={`${styles.name}`}>Agregar</h4>
+          <h4 className={`${styles.name}`}>{t('add')}</h4>
           </div>
           </Link>
         </div>

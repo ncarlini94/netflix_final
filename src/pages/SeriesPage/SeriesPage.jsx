@@ -2,10 +2,11 @@ import React from "react";
 import Carousel from "../../components/Carousel/Carousel";
 import Separator from "../../components/Separator/Separator"
 import Banner from "../../components/Banner/Banner";
+import { useTranslation } from "react-i18next";
 
 const Series = () => {
 
-
+ const { t } = useTranslation()
 
     return(
         <>
@@ -20,7 +21,7 @@ const Series = () => {
             entity={"series"}
             state={"popular"}
             language={"spanish"}
-            title={"Populares"}
+            title={t('popular')}
             quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
@@ -28,7 +29,7 @@ const Series = () => {
             entity={"series"}
             state={"topRated"}
             language={"spanish"}
-            title={"Mejor clasificadas"}
+            title={t('topRanked')}
             quality={"backdropw1280"}
         />
         </>

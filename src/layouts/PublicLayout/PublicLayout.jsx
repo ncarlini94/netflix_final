@@ -38,9 +38,9 @@ const PublicLayout = () => {
         height:"100vh",
         backgroundPosition: 'center',
         backgroundImage: path !== '/signup' ?
-        `url(https://assets.nflxext.com/ffe/siteui/vlv3/76c10fc9-7ccd-4fbf-bc59-f16a468921ca/436c7de4-6306-437e-8fd3-f2c37fd1b069/AR-es-20230529-popsignuptwoweeks-perspective_alpha_website_large.jpg)`
+        `url(https://assets.nflxext.com/ffe/siteui/vlv3/5eab1b22-c5ea-48b0-8ef4-862b3fa6df2c/c9fed70b-9392-4823-ac65-cc55c369f6dc/AR-en-20230724-popsignuptwoweeks-perspective_alpha_website_small.jpg)`
         : 'none',
-        boxShadow: path !== '/signup' ? 'inset 0 0 0 2000px rgba(0,0,0,0.36)': 'none'
+        boxShadow: path !== '/signup' ? 'inset 0 0 0 2000px rgba(0,0,0,0.56)': 'none'
         }}>
         {!isSignUpPage && <LoginNavbar />}
         {!isSignUpPage && !isSignInPage && <EmailForm />}

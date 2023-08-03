@@ -1,10 +1,11 @@
 import React from "react";
 import Carousel from "../../components/Carousel/Carousel";
-import Separator from "../../components/Separator/Separator"
+import Separator from "../../components/Separator/Separator";
+import { useTranslation } from 'react-i18next'
 
 const PopularPage = () => {
 
-
+ const { t } = useTranslation()
 
     return(
         <>
@@ -13,7 +14,7 @@ const PopularPage = () => {
             entity={"movies"}
             state={"upComing"}
             language={"spanish"}
-            title={"Proximas peliculas"}
+            title={t('upcomingMovies')}
             quality={"backdropw500"}
         />
         <Separator height={"40px"}/>
@@ -21,7 +22,7 @@ const PopularPage = () => {
             entity={"movies"}
             state={"topRated"}
             language={"spanish"}
-            title={"Peliculas mejor clasificadas"}
+            title={t('TopRatedMovies')}
             quality={"backdropw500"}
         />
         <Separator height={"40px"}/>
@@ -29,7 +30,7 @@ const PopularPage = () => {
             entity={"series"}
             state={"topRated"}
             language={"spanish"}
-            title={"Series mejor clasificadas"}
+            title={t('topRatedSeries')}
             quality={"backdropw500"}
         />
         </>

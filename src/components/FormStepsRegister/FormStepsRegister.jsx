@@ -9,9 +9,11 @@ import Avatar from '../../assets/imagen/avatares/avatar.jpg'
 import styles from "./FormStepsRegister.module.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as NetflixLogo } from '../../assets/imagen/logo.svg'
+import { useTranslation } from 'react-i18next'
 
 const FormStepsRegister = () => {
 
+    const { t } = useTranslation();
     const navigate = useNavigate()
     const [page, setPage] = useState(0)
     const [formData, setFormData] = useState({
@@ -27,6 +29,12 @@ const FormStepsRegister = () => {
         issuer: '',
     });
     const FormTitles = [ "createPassword" , "selectPlan" , "paymentMethod"];
+
+    const isPasswordValid = (password) => {
+        const minLength = 6;
+        const maxLength = 20;
+        return password.length >= minLength && password.length <= maxLength;
+      };
 
 
     const handleSubmit = async () => {
@@ -86,23 +94,34 @@ return (
                 </Link>
                 <div>
                     <button className={`${styles.sesionBtn} btn`}>
-                    <Link style={{color:'rgb(255,255,255)', textDecoration:'none'}} to="/SingIn">Iniciar Sesion</Link>
+                    <Link style={{color:'rgb(255,255,255)', textDecoration:'none'}} to="/SingIn">{t("SignIn")}</Link>
                     </button>
                 </div>
             </div>
         </nav>
         <div className={`container d-flex justify-content-center`}>
         <div className='row'>
-        <h4 className='col-sm-12 d-flex justify-content-center'> PASO {page+1} DE 3</h4>
+        <h4 className='col-sm-12 d-flex justify-content-center'>
+        {`${t("step")} ${page + 1} ${t("of")} 3`.toUpperCase()}</h4>
             <div className='col-sm-12'>
                 {PageDispley()}
             </div>
             <div className='col-sm-12 d-flex justify-content-center'>
-                <button className={`${styles.buttom} btn`}
-                onClick={() =>{page === FormTitles.length -1 ? handleSubmit() : setPage((currPage) => currPage +1)}}
-                >
-                    Siguiente
-                </button>
+            <button
+                className={`${styles.buttom} btn`}
+                onClick={() => {
+                    if (page === FormTitles.length - 1) {
+                    handleSubmit();
+                    } else {
+                    if (page === 0 && !isPasswordValid(formData.password)) {
+                    } else {
+                        setPage((currPage) => currPage + 1);
+                    }
+                    }
+                    }}
+                    >
+                    {t("next")}
+            </button>
             </div>
             </div>
         </div>

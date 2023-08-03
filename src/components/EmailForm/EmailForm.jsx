@@ -34,7 +34,7 @@ const EmailForm = () => {
       return;
     }
     if (userExists) {
-      setError('El correo electrónico ya está registrado.');
+      setError(t("errorHome"));
     } else {
       setError('');
       navigate('/signup', {state:email});
@@ -45,9 +45,9 @@ const EmailForm = () => {
     <>
       <div className={`${styles.formBox}`}>
         <div className={`${styles.text}`}>
-          <h1 className={`${styles.textTitle}`}>Películas y series ilimitadas y mucho más</h1>
-          <h3 className={`${styles.textBody}`}>Disfruta donde quieras. Cancela cuando quieras.</h3>
-          <h4 className={`${styles.textFooter}`}>¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu membresía de Netflix.</h4>
+          <h1 className={`${styles.textTitle}`}>{t("titleHome")}</h1>
+          <h3 className={`${styles.textBody}`}>{t("textBodyHome")}</h3>
+          <h4 className={`${styles.textFooter}`}>{t("textFooterHome")}</h4>
         </div>
         <form
           className={`${styles.form} row`}
@@ -66,8 +66,8 @@ const EmailForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></input>
-          <button className='btn'>{t('getStarted')}</button>
-          <h4 className='bg-danger'>{error}</h4>
+          <button className={`${styles.btnStart} btn`}>{t('getStarted')}</button>
+          <h4 className={`${styles.btnError}`}>{error}</h4>
         </form>
       </div>
     </>

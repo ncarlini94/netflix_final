@@ -4,11 +4,10 @@ import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/fire
 import { Link } from 'react-router-dom';
 import styles from './ManageAccount.module.css';
 import { useTranslation } from 'react-i18next'
-import mapLanguageToFull from '../../utils/mapLanguage';
 
 const ManageAccount = () => {
 
-    const { i18n } = useTranslation();
+    const { t,  i18n } = useTranslation();
     const [user, setUser] = useState(null);
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
@@ -58,28 +57,28 @@ const ManageAccount = () => {
   return (
     <>
       <div className='container ps-5 pt-5'>
-        {user &&
-        [
+        <h1 className={`${styles.title}`}>{t("account")}</h1>
+        {user && selectedLanguage &&
+        (
           <>
-            <h1 className={`${styles.title}`}>Cuenta</h1>
           <div key={user.id} className={`${styles.box}`}>
           <div className={`${styles.boxChild} row`}>
           <hr className="col-12" style={{ marginLeft:'-14vh' ,borderTop: '1px solid rgba(255, 255, 255, 0.704)' }} />
-            <h3 className={`${styles.boxChildTitle} col-7`}>Mail: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>{user.email}</span></h3>
-            <Link className={`${styles.link} col`}  to={'/ChangeEmail'}>Cambiar email</Link>
+            <h3 className={`${styles.boxChildTitle} col-7`}>Email: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>{user.email}</span></h3>
+            <Link className={`${styles.link} col`}  to={'/ChangeEmail'}>{t("changeEmail")}</Link>
           </div>
           <div className={`${styles.boxChild} row`}>
-            <h3 className={`${styles.boxChildTitle} col-7`}>Contraseña: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>********</span></h3>
-            <Link className={`${styles.link} col`}  to={'/ChangePassword'}>Cambiar contraseña</Link>
+            <h3 className={`${styles.boxChildTitle} col-7`}>{t("password")}: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>********</span></h3>
+            <Link className={`${styles.link} col`}  to={'/ChangePassword'}>{t("changePassword")}</Link>
           </div>
           <hr className="col-12" style={{ marginLeft:'-14vh' ,borderTop: '1px solid rgba(255, 255, 255, 0.704)' }} />
           <div className={`${styles.boxChild} row`}>
             <h3 className={`${styles.boxChildTitle} col-7`}>Plan: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>{user.plan}</span></h3>
-            <Link className={`${styles.link} col`} to={'/ChangePlan'}>Cambiar de plan</Link>
+            <Link className={`${styles.link} col`} to={'/ChangePlan'}>{t("changePlan")}</Link>
           </div>
           <hr className="col-12" style={{ marginLeft:'-14vh' ,borderTop: '1px solid rgba(255, 255, 255, 0.704)' }} />
           <div className={`${styles.boxChild} row`}>
-            <h3 className={`${styles.boxChildTitle} col-7`}>Idioma: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>{mapLanguageToFull(selectedLanguage)}</span></h3>
+            <h3 className={`${styles.boxChildTitle} col-7`}>{t("language")}: </h3>
             <select
               className={`${styles.selectedForm} form-select col`}
               value={i18n.language}
@@ -92,7 +91,7 @@ const ManageAccount = () => {
           </div>
           </div>
           </>
-        ]
+        )
         }
       </div>
     </>

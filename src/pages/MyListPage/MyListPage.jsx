@@ -4,9 +4,11 @@ import Slider from 'react-slick';
 import { settingsSlider } from './Settings';
 import Card from '../../components/Card/Card';
 import styles from './MyListPage.module.css'
+import { useTranslation } from 'react-i18next'
 
 const MyListPage = () => {
 
+  const { t } = useTranslation();
   const {selectedProfile} = useContext(ProfileContext);
 
 
@@ -19,7 +21,7 @@ const MyListPage = () => {
   return (
     <>
     <div className={`${styles.ListBox}`}>
-    <h2 className={`${styles.Title}`}>Favoritos</h2>
+    <h2 className={`${styles.Title}`}>{t('favorites')}</h2>
     <Slider {...settingsSlider}>
     {selectedProfile.favorites.map((value) => (
       <Card

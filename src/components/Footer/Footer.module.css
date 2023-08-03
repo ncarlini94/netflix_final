@@ -6,7 +6,6 @@
 
 .item{
     margin: 1.2vh 0;
-    
 }
 
 .link{
@@ -18,4 +17,16 @@
 
 .copyright{
     padding-top: 6vh;
+}
+
+@media screen and (max-width:412px) {
+    .list{
+        width: 400px;
+        margin-left: 0;
+    }
+
+    .item{
+        margin: 1vh 0;
+    }
+    
 }

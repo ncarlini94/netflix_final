@@ -51,18 +51,25 @@ h1, h2 {
   text-shadow: 2vh 2vh 3.5vh #000000e8
 }
 
+.language{
+  position: absolute;
+  z-index: 2;
+  top: 86.5vh;
+  left: 62vh;
+}
+
 .rate{
   position: absolute;
   z-index: 2;
   top: 86.5vh;
-  left: 70vh;
+  left: 85vh;
 }
 
 .relase{
   position: absolute;
   z-index: 2;
   top: 86.5vh;
-  left: 100vh;
+  left: 115vh;
 }
 
 .banner_buttons {
@@ -79,13 +86,14 @@ button{
 .icon{
   width:3.5vh;
   height:3.5vh;
-  margin-bottom:0.7vh;
+  margin-bottom:0.6vh;
   margin-right:1vh;
 }
 
 .banner_button_play {
-  width: 25vh;
+  width: auto;
   height: 6.5vh;
+padding: 0 3.4vh;
   background-color: rgba(197, 197, 197, 0.87);
   color: rgb(0, 0, 0);
   font-size: 2.25vh;

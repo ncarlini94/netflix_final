@@ -39,9 +39,9 @@ const ProfilesPage = () => {
 
   const handleProfileSelect = (profile) => {
     if(user){
-    i18n.changeLanguage(user.languge)
-    }
+    i18n.changeLanguage(user.language)
     setSelectedProfile(profile);
+    }
   };
 
 

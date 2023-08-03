@@ -4,9 +4,11 @@ import { auth, firestore } from '../../../firebase/config';
 import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { useLocation, useNavigate } from 'react-router';
 import styles from './ProfileSettingPage.module.css'
+import { useTranslation } from 'react-i18next'
 
 const ProfileSetting = () => {
 
+    const { t } = useTranslation()
     const navigate = useNavigate()
     const location = useLocation();
     const {selectedProfile} = useContext(ProfileContext);
@@ -61,15 +63,19 @@ const ProfileSetting = () => {
 
     const deleteProfile = async () => {
       try {
-        if (selectedProfile && user) {
-          const updatedProfiles = user.profiles.filter(
-            (profile) => profile.id !== selectedProfile.id
-          );
-          await updateDoc(doc(firestore, 'NetflixUsers', user.email), {
-            profiles: updatedProfiles,
-          });
-          console.log('Perfil eliminado con éxito');
-          navigate('/Profiles');
+        if (user.profiles.length > 1) {
+          if (selectedProfile && user) {
+            const updatedProfiles = user.profiles.filter(
+              (profile) => profile.id !== selectedProfile.id
+            );
+            await updateDoc(doc(firestore, 'NetflixUsers', user.email), {
+              profiles: updatedProfiles,
+            });
+            console.log('Perfil eliminado con éxito');
+            navigate('/Profiles');
+          }
+        } else {
+          console.log('No puedes eliminar el perfil')
         }
       } catch (error) {
         console.error('Error al eliminar el perfil:', error);
@@ -84,7 +90,7 @@ const handleAvatarChange = () => {
   return (
     <>
         <div className={`${styles.box} container`}>
-        <h2 className={`${styles.title}`} style={{ color:'rgb(255,255,255)'}}>Configuración del perfil</h2>
+        <h2 className={`${styles.title}`} style={{ color:'rgb(255,255,255)'}}>{t('profileSettings')}</h2>
         <div>
           <img
           className={`${styles.avatar}`}
@@ -96,8 +102,8 @@ const handleAvatarChange = () => {
         <div>
           <input className={`${styles.inputName} form-control`} type="text" value={name} onChange={(e) => setName(e.target.value)} />
         </div>
-        <button className={`${styles.btnSave} btn`} onClick={saveChanges}>Guardar</button>
-        <button className={`${styles.btnDelet} btn`} onClick={deleteProfile}>Eliminar Perfil</button>
+        <button className={`${styles.btnSave} btn`} onClick={saveChanges}>{t('save')}</button>
+        <button className={`${styles.btnDelet} btn`} onClick={deleteProfile}>{t('deleteProfile')}</button>
       </div>
     </>
   )

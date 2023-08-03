@@ -1,8 +1,10 @@
 import React,  { useEffect, useState }  from 'react'
 import styles from "./ChoosePlan.module.css"
+import {useTranslation} from 'react-i18next'
 
 const ChoosePlan = ({formData, setFormData}) => {
 
+  const { t } = useTranslation()
   const [selectedPlan, setSelectedPlan] = useState('')
 
   const handlePlanChange = (plan) => {
@@ -16,56 +18,56 @@ const ChoosePlan = ({formData, setFormData}) => {
 
   return (
     <>
-    <div className='container' style={{color:"white"}}>
+    <div className='container' style={{color:"white", marginBottom:'1vh'}}>
     <div>
-      <h2>Selecciona el plan ideal para ti</h2>
-      <p>✓ Ve todo lo que quieras. Sin anuncios.</p>
-      <p>✓ Recomendaciones exclusivas para ti.</p>
-      <p>✓ Puedes cambiar de plan o cancelar cuando quieras.</p>
+      <h2 style={{marginBottom:'2.5vh'}}>{t("titlePlanRegister")}</h2>
+      <p>✓ {t("firstTextPlanRegister")}</p>
+      <p>✓ {t("secondTextPlanRegister")}</p>
+      <p>✓ {t("thirdTextPlanRegister")}</p>
     </div>
     <div className={`${styles.boxPlan} d-flex flex-row-reverse`}>
       <div
       className={`${styles.btnPlan} col-sm-4`}
       onClick={()=>{handlePlanChange('Premium')}}
       >
-      <h4>Premium</h4>
+      <h4>{t("premium")}</h4>
       </div>
 
       <div
       className={`${styles.btnPlan} col-sm-4`}
       onClick={()=>{handlePlanChange('Standar')}}
       >
-      <h4>Standar</h4>
+      <h4>{t("standard")}</h4>
       </div>
 
       <div
       className={`${styles.btnPlan} col-sm-4`}
       onClick={()=>{handlePlanChange('Basic')}}
       >
-      <h4>Basico</h4>
+      <h4>{t("basic")}</h4>
       </div>
       </div>
 
         <div className='row pb-3'>
-          <h3 className='col-6'>Precio mensual (sin impuestos incluidos)</h3>
+          <h3 className='col-6'>{t("monthlyPrice")}</h3>
           <h3 className='col'>$ 999</h3>
           <h3 className='col'>$ 1.699</h3>
           <h3 className='col'>$ 2.399</h3>
         </div>
         <div className='row pb-3'>
-        <h3 className='col-6'>Calidad de video</h3>
-          <h3 className='col'>Buena</h3>
-          <h3 className='col'>Mejor</h3>
-          <h3 className='col'>Óptima</h3>
+        <h3 className='col-6'>{t("videoQuality")}</h3>
+          <h3 className='col'>{t("good")}</h3>
+          <h3 className='col'>{t("better")}</h3>
+          <h3 className='col'>{t("optimal")}</h3>
         </div>
         <div className='row pb-3'>
-        <h3 className='col-6'>Resolución</h3>
+        <h3 className='col-6'>{t("resolution")}</h3>
           <h3 className='col'>720p</h3>
           <h3 className='col'>1080p</h3>
           <h3 className='col'>4K+HDR</h3>
         </div>
         <div className='row pb-3'>
-        <h3 className='col-6'>Ve Netflix en tu TV, computadora, celular y tablet</h3>
+        <h3 className='col-6'>{t("watchNetflixOn")}</h3>
           <h3 className='col'>✓</h3>
           <h3 className='col'>✓</h3>
           <h3 className='col'>✓</h3>

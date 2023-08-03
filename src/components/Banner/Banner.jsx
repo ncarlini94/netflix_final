@@ -6,9 +6,11 @@ import useApi from "../../hooks/useApi";
 import { Link } from "react-router-dom";
 import { IoPlay } from 'react-icons/io5';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next'
 
 const Banner = ({entity, state, language, quality}) => {
 
+    const { t } = useTranslation();
     const [values, loading] = useApi(entity, state, language)
     const [randomValue, setRandomValue] = useState([])
     const [randomImg, setRandomImg] = useState([]);
@@ -55,13 +57,14 @@ return (
 
         <div className={`${styles.banner_description}`}>
         <h2>{loading ? "Loading..." : randomValue?.overview}</h2>
-        <h4 className={`${styles.rate}`}>Clasificación: ☆ {randomValue.vote_average}</h4>
-        <h4 className={`${styles.relase}`}>Fecha de lanzamiento: {randomValue.release_date}</h4>
+        <h4 className={`${styles.language}`}>{t("language")}: {randomValue.original_language}</h4>
+        <h4 className={`${styles.rate}`}>{t("classification")}: ☆ {randomValue.vote_average}</h4>
+        <h4 className={`${styles.relase}`}>{t("releaseDate")}: {randomValue.release_date}</h4>
         </div>
 
             <div className={`${styles.banner_buttons}`}>
-            <Link to={`/Trailer/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button_play}><IoPlay className={`${styles.icon}`}/>REPRODUCIR</button></Link>
-            <Link to={`/Detail/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button_info}><AiOutlineInfoCircle className={`${styles.icon}`}/>MAS INFORMACION</button></Link>
+            <Link to={`/Trailer/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button_play}><IoPlay className={`${styles.icon}`}/>{t("play")}</button></Link>
+            <Link to={`/Detail/${randomValue.id}`} state={{entity, value: randomValue, img: randomImg}}><button className={styles.banner_button_info}><AiOutlineInfoCircle className={`${styles.icon}`}/>{t("moreInformation")}</button></Link>
             </div>
         </div>
         </div>

@@ -11,9 +11,12 @@ import { collection, doc, getDocs, query, updateDoc, where } from "firebase/fire
 import { ProfileContext } from "../../contexts/ProfileContext";
 import { firestore, auth } from '../../firebase/config';
 import { BsHeartFill, BsHeart } from 'react-icons/bs';
+import { useTranslation } from 'react-i18next'
 
 
 const DetailPage = () => {
+
+  const { t } = useTranslation();
   const { id } = useParams();
   const location = useLocation();
   const [similar, setSimilar] = useState([]);
@@ -130,9 +133,9 @@ const DetailPage = () => {
                 <BsHeart/>
               )}
             </button>
-            <h4 className="col">Idioma: {location.state.value.original_language}</h4>
-            <h4 className="col-3">Clasificación: ☆ {location.state.value.vote_average}</h4>
-            <h4 className="col-6">Fecha de lanzamiento: {location.state.value.release_date}</h4>
+            <h4 className="col">{t("language")}: {location.state.value.original_language}</h4>
+            <h4 className="col-3">{t("classification")}: ☆ {location.state.value.vote_average}</h4>
+            <h4 className="col-6">{t("releaseDate")}: {location.state.value.release_date}</h4>
           </div>
           </div>
         </div>

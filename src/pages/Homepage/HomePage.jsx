@@ -2,9 +2,11 @@ import React from "react";
 import Carousel from "../../components/Carousel/Carousel";
 import Separator from "../../components/Separator/Separator"
 import Banner from "../../components/Banner/Banner";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
 
+    const {t} = useTranslation()
 
 
     return(
@@ -20,7 +22,7 @@ const Home = () => {
             entity={"movies"}
             state={"popular"}
             language={"spanish"}
-            title={"Peliculas Populares"}
+            title={t('opularMovies')}
             quality={"backdropw1280"}
         />
         <Separator height={"30px"}/>
@@ -28,7 +30,7 @@ const Home = () => {
             entity={"series"}
             state={"popular"}
             language={"spanish"}
-            title={"Series Populares"}
+            title={t('popularAeries')}
             quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
@@ -36,7 +38,7 @@ const Home = () => {
             entity={"movies"}
             state={"upComing"}
             language={"spanish"}
-            title={"Proximas Peliculas"}
+            title={t('upcomingMovies')}
             quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
@@ -44,7 +46,7 @@ const Home = () => {
             entity={"movies"}
             state={"topRated"}
             language={"spanish"}
-            title={"Peliculas mejor clasificadas"}
+            title={t('TopRatedMovies')}
             quality={"backdropw1280"}
         />
         <Separator height={"40px"}/>
@@ -52,7 +54,7 @@ const Home = () => {
             entity={"series"}
             state={"topRated"}
             language={"spanish"}
-            title={"Series mejor clasificadas"}
+            title={t('topRatedSeries')}
             quality={"backdropw1280"}
         />
         </>

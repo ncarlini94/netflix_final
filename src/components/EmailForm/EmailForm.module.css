@@ -6,22 +6,24 @@
 .text{
     position: absolute;
     z-index: 2;
-    bottom: 35vh;
-    left: 20vh;
+    bottom: 36vh;
+    left: 32vh;
     text-align: center;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-bottom: 2vh;
 }
 
 .textTitle{
-    font-size: 7.6vh;
+    font-size: 8vh;
 }
 
 .textBody{
-    font-size: 4vh;
+    font-size: 4.5vh;
 }
 
 .textFooter{
+    font-size: 3vh;
     padding-top: 2vh;
 }
 
@@ -29,13 +31,14 @@
     position: absolute;
     z-index: 2;
     width: 100vh;
-    bottom: 20vh;
+    bottom: 22vh;
     left: 55vh;
 }
 
 .form button{
     width: 28vh;
-    margin-left: 0.8vh;
+    height: 7vh;
+    margin-left: 1vh;
     border-radius: 0.6vh;
     background-color: rgba(238, 0, 0, 0.932);
     color: rgb(255, 255, 255);
@@ -54,15 +57,25 @@
 
 .form input::placeholder{
     color: rgb(255, 255, 255);
-    padding-left: 1.2vh;
-    font-size: 3.5vh;
+    padding-left: 0.8vh;
+    font-size: 3.2vh;
 }
 
-@media screen and (max-width:380px) {
+.btnError{
+    margin-top: 2vh;
+    font-size: 3vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10%;
+    color: rgba(221, 0, 0, 0.932);
+
+}
+
+@media screen and (max-width:412px) {
     .text{
-        left: 0.8vh;
-        right: 0.8vh;
-        top: 44vh;
+        left: 0.2vh;
+        right: 0.2vh;
+        top: 30vh;
+        max-width: 400px;
     }
 
     .textTitle {
@@ -80,20 +93,22 @@
 
     .form{
         width: 42vh;
-        left: 6vh;
+        left: 2.5vh;
         bottom: 16vh;
     }
 
     .form input {
         width: 26vh;
+        max-width: 30vh;
     }
 
     .form button{
         width: 12vh;
+        font-size: 1.5vh;
     }
 
     .form input::placeholder{
         padding-left: 0.8vh;
-        font-size: 2.4vh;
+        font-size: 2.2vh;
     }
 }

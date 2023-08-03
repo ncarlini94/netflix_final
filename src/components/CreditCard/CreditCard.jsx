@@ -7,10 +7,11 @@ import {
 } from '../../utils/cardValidation'
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import styles from "./CreditCard.module.css"
-
+import { useTranslation} from 'react-i18next'
 const CreditCard = ({formData, setFormData}) => {
 
-  const { number, expiry, cvc, name, focused, issuer } = formData
+  const { t } = useTranslation();
+  const { number, expiry, cvc, name, focused, issuer } = formData;
 
   const handleCallback = ({issuer}, isValid) => {
     if(isValid) {
@@ -47,6 +48,7 @@ const CreditCard = ({formData, setFormData}) => {
             name={name}
             focused={focused}
             callback={handleCallback}
+            placeholders={{ name: 'NAME', number: 'Card Number', expiry: 'MM/YY', cvc: 'CVC' }}
           />
           <div className={`${styles.paymentContainer}`}>
           <form>
@@ -54,7 +56,7 @@ const CreditCard = ({formData, setFormData}) => {
                 type='text'
                 name='name'
                 className={`${styles.inputForm} form-control`}
-                placeholder='Name'
+                placeholder={t('name')}
                 pattern='[a-z A-Z-]+'
                 required
                 onChange={handleInputChange}
@@ -70,7 +72,7 @@ const CreditCard = ({formData, setFormData}) => {
                 type='tel'
                 name='number'
                 className={`${styles.inputForm} form-control`}
-                placeholder='Card Number'
+                placeholder={t('cardNumber')}
                 pattern='[\d| ]{16,22}'
                 maxLength='19'
                 required
@@ -87,7 +89,7 @@ const CreditCard = ({formData, setFormData}) => {
                 type='tel'
                 name='expiry'
                 className={`${styles.inputForm} form-control`}
-                placeholder='Valid Thru'
+                placeholder={t('MM/AA')}
                 pattern='\d\d/\d\d'
                 required
                 onChange={handleInputChange}
@@ -103,7 +105,7 @@ const CreditCard = ({formData, setFormData}) => {
                 type='tel'
                 name='cvc'
                 className={`${styles.inputForm} form-control`}
-                placeholder='CVC'
+                placeholder={t('CVC')}
                 pattern='\d{3}'
                 required
                 onChange={handleInputChange}

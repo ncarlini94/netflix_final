@@ -4,10 +4,12 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import {auth, firestore} from '../../firebase/config';
 import { useNavigate } from 'react-router';
 import { collection, getDocs, query, where } from 'firebase/firestore';
+import { useTranslation } from 'react-i18next'
 
 
 const SingInPage = () => {
 
+  const { t } = useTranslation()
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -53,7 +55,7 @@ const SingInPage = () => {
   return (
     <>
     <div className={`${styles.loginBox} container text-center`}>
-    <h4 style={{fontSize:'5.4vh'}}>Inicia sesión</h4>
+    <h4 style={{fontSize:'5.4vh'}}>{t('SignIn')}</h4>
         <form onSubmit={handleSubmit}>
             <div className="form-group text-center">
             <label className={`${styles.label} pb-1`}>Mail</label>
@@ -68,7 +70,7 @@ const SingInPage = () => {
             />
           </div>
           <div className='form-group text-center'>
-            <label className={`${styles.label} pb-1`}>Contraseña</label>
+            <label className={`${styles.label} pb-1`}>{t('password')}</label>
             <input
                 type='password'
                 name='password'
@@ -80,7 +82,7 @@ const SingInPage = () => {
             />
             </div>
             <div className={`${styles.sendbtn} form-group pt-4`}>
-            <button type="submit" className={`${styles.sendLogin} btn`}>Ingresar</button>
+            <button type="submit" className={`${styles.sendLogin} btn`}>{t('login')}</button>
             </div>
             <h4 className='bg-danger mt-2'>{error}</h4>
         </form>
