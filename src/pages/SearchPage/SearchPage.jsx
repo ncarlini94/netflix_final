@@ -14,7 +14,6 @@ const SearchPage = () => {
   const [query, setQuery] = useState('');
 
   const handleSearch = async (e) => {
-    e.preventDefault();
     const value = e.target.value;
     setQuery(value);
     if (value) {
@@ -24,6 +23,12 @@ const SearchPage = () => {
       setSearchResults([]);
     }
   };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+    }
+  }; 
 
   return (
     <>
@@ -35,6 +40,7 @@ const SearchPage = () => {
           name='search'
           value={query}
           onChange={handleSearch}
+          onKeyDown={handleKeyPress}
         />
       </form>
       <div className={`${styles.resultSearch}`}>
