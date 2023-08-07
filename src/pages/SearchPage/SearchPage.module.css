@@ -1,0 +1,23 @@
+.label{
+    position: absolute;
+    z-index: 4;
+    top: 15.5vh;
+    left: 75vh;
+    color: white;
+    font-size: 3vh;
+}
+
+.input{
+    position: absolute;
+    z-index: 4;
+    top: 15vh;
+    left: 90vh;
+    background-color: rgba(77, 77, 77, 0.822);
+    color: rgba(255, 255, 255, 0.822);
+    max-width: 45vh;
+    padding-left: 3vh;
+}
+
+.resultSearch{
+    margin-top: 30vh;
+}

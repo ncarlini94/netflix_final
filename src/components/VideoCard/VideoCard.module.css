@@ -14,12 +14,12 @@
 
 .banner_gradient {
     width: auto;
-    height: 500px;
+    height: 760px;
     transition: 5ms;
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.856) 60%,
+      rgba(0, 0, 0, 0.856) 70%,
       rgba(27, 27, 27, 0.884) 100%
     );
   }

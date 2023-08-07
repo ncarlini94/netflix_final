@@ -6,7 +6,20 @@ import { useTranslation } from "react-i18next";
 
 const Home = () => {
 
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
+
+    const getLanguageName = (languageCode) => {
+        if (languageCode === "es") {
+            return "spanish";
+        } else if (languageCode === "en") {
+            return "english";
+        } else {
+            return languageCode;
+        }
+    };
+
+    const language = getLanguageName(i18n.language);
+
 
 
     return(
@@ -14,14 +27,14 @@ const Home = () => {
         <Banner
             entity={"movies"}
             state={"popular"}
-            language={"spanish"}
-            quality={"posterw1280"}
+            language={language}
+            quality={"backdropw1280"}
         />
         <Separator height={"30px"}/>
         <Carousel
             entity={"movies"}
             state={"popular"}
-            language={"spanish"}
+            language={language}
             title={t('opularMovies')}
             quality={"backdropw1280"}
         />
@@ -29,7 +42,7 @@ const Home = () => {
         <Carousel
             entity={"series"}
             state={"popular"}
-            language={"spanish"}
+            language={language}
             title={t('popularAeries')}
             quality={"backdropw1280"}
         />
@@ -37,7 +50,7 @@ const Home = () => {
         <Carousel
             entity={"movies"}
             state={"upComing"}
-            language={"spanish"}
+            language={language}
             title={t('upcomingMovies')}
             quality={"backdropw1280"}
         />
@@ -45,7 +58,7 @@ const Home = () => {
         <Carousel
             entity={"movies"}
             state={"topRated"}
-            language={"spanish"}
+            language={language}
             title={t('TopRatedMovies')}
             quality={"backdropw1280"}
         />
@@ -53,7 +66,7 @@ const Home = () => {
         <Carousel
             entity={"series"}
             state={"topRated"}
-            language={"spanish"}
+            language={language}
             title={t('topRatedSeries')}
             quality={"backdropw1280"}
         />

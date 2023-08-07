@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ReactComponent as NetflixLogo } from "../../assets/imagen/logo.svg";
 import styles from "./Navbar.module.css"
 import { Link, useNavigate } from "react-router-dom";
 import {auth} from '../../firebase/config';
-import { ProfileContext } from "../../contexts/ProfileContext";
 import { useTranslation } from 'react-i18next'
 
 const Navbar = () => {
@@ -11,7 +10,13 @@ const Navbar = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
-  const { selectedProfile } = useContext(ProfileContext);
+  const storedProfile = JSON.parse(localStorage.getItem('profile'));
+  const [profile] = useState(storedProfile);
+
+
+  const clearLocalStorage = () => {
+    localStorage.removeItem('profile');
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -23,17 +28,20 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-  if(!selectedProfile){
+  if(!profile){
     navigate('/Profiles')
   }
-  }, [navigate, selectedProfile])
+  }, [navigate, profile])
+
 
 
   const closeSession = () => {
     navigate("/");
     auth.signOut();
+    clearLocalStorage();
   }
+
+
 
     return(
         <>
@@ -65,23 +73,23 @@ const Navbar = () => {
               <Link className={`${styles.nav_link} nav-link`} to="MyList">{t("myList")}</Link>
             </li>
             <li className="nav-item">
-              <Link className={`${styles.nav_link} nav-link`}>{t("exploreByLanguage")}</Link>
+              <Link className={`${styles.nav_link} nav-link`} to="SearchPage">{t("Search")}</Link>
             </li>
             </ul>
           </div>
       </nav>
 
-      {selectedProfile && (
+      {profile && (
           <div className="col-sm-1 btn-group">
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src={`${selectedProfile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
+              <img src={`${profile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
             </button>
             <ul className="dropdown-menu dropdown-menu-end bg-dark me-1">
-              <li><h5 style={{color: 'rgba(255,255,255,1)', fontSize: "4vh", paddingLeft:"2vh", paddingBottom: "0.6vh"}}>{selectedProfile.name}</h5></li>
+              <li><h5 style={{color: 'rgba(255,255,255,1)', fontSize: "4vh", paddingLeft:"2vh", paddingBottom: "0.6vh"}}>{profile.name}</h5></li>
               <li><Link className={`${styles.dropuser} dropdown-item`} to={'/Account'}>{t("account")}</Link></li>
               <li><Link className={`${styles.dropuser} dropdown-item`} to={'/Profiles'}>{t("changeProfile")}</Link></li>
               <li><Link className={`${styles.dropuser} dropdown-item`} to={'/ManageProfiles'}>{t("editProfiles")}</Link></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`}>{t("helpCenter")}</Link></li>
+              <li><Link className={`${styles.dropuser} dropdown-item`} to={'/HelpPage'}>{t("helpCenter")}</Link></li>
               <li><hr className="dropdown-divider"></hr></li>
               <li><Link className={`${styles.dropuser} dropdown-item`} onClick={closeSession}>{t("signOff")}</Link></li>
             </ul>

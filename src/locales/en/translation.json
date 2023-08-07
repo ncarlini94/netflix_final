@@ -32,7 +32,7 @@
     "movies":"Movies",
     "popularNews":"Popular News",
     "myList":"My List",
-    "exploreByLanguage":"Explore by language",
+    "Search":"Search",
     "explore":"Explore",
     "changeProfile":"Change Profile",
     "editProfiles":"Edit Profiles",
@@ -62,6 +62,17 @@
     "profileSettings":"Profile Settings",
     "save":"Save",
     "deleteProfile":"Delete Profile",
-    "SelectAvatar":"Select the avatar"
-
+    "SelectAvatar":"Select the avatar",
+    "FAQ":"FAQ",
+    "privacy":"Privacy",
+    "legalNotices":"Legal Notices",
+    "termsOfUse":"Terms of Use",
+    "contactUs":"Contact Us",
+    "helpPagePartOne":"This web page has been created for educational purposes and with the aim of showing the programming knowledge of its author. Its main purpose is to serve as a hands-on project to apply and demonstrate web development skills using technologies like React, HTML, CSS, JavaScript, and Firebase.",
+    "helpPagePartTwo":"It is important to highlight that this page is not for commercial purposes and does not seek to obtain economic benefits. No personal data will be collected or commercial transactions carried out on any aspect of the page.",
+    "helpPagePartThree":"All content presented here, including images, text, and other resources, is used for educational purposes and under fair use or licensed where applicable.",
+    "helpPagePartFour":"Likewise, it is clarified that this page is not associated with any commercial entity or institution beyond the mentioned educational purpose. No commercial products or services are endorsed and no revenue will be sought through advertising or sponsorships.",
+    "helpPagePartFive":"I hope that the content presented can be useful for those interested in web programming and that it can serve as a practical example of technology implementation and good practices in application development.",
+    "helpPagePartSix":"Your understanding and respect for the educational purpose of this project is appreciated, and any improper or unauthorized use of the page and its content is expressly prohibited.",
+    "helpPagePartSeven":"Thank you for visiting this page!"
   }

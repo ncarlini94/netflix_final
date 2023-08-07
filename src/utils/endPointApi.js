@@ -1,10 +1,15 @@
 const apiNetflix = {
     access: {
         url: "https://api.themoviedb.org/3",
-        apiKey: "?api_key=1c2f7680691e10d54b24248f220cccce",
+        apiKey: "api_key=1c2f7680691e10d54b24248f220cccce",
         imageUrl: "https://image.tmdb.org/t/p",
         video: "/videos",
         pagination: "&page=",
+        search: "/search",
+        keyword: "/keyword",
+        multi: "/multi",
+        query: "?query=",
+        adult: "&include_adult="
     },
     entity: {
         movies: "/movie",

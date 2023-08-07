@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from "./Footer.module.css"
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
 
+    const { t } = useTranslation()
 
   return (
     <>
@@ -13,37 +15,37 @@ const Footer = () => {
             <div className='col-sm'>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
-            Preguntas frecuentes
+            {t('FAQ')}
             </Link></li>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
-            Privacidad
+            {t('privacy')}
             </Link></li>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
-            Centro de ayuda
+            {t('helpCenter')}
             </Link></li>
             </div>
 
             <div className='col-sm'>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/Account'}>
-            Cuenta
+            {t('account')}
             </Link></li>
             <li  className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
-            Avisos Legales
+            {t('legalNotices')}
             </Link></li>
             </div>
 
             <div className='col-sm'>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
-            Términos de uso
+            {t('termsOfUse')}
             </Link></li>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`}>
-            Contáctanos
+            {t('contactUs')}
             </Link></li>
             </div>
             <div className={`${styles.copyright} col-12`}>

@@ -20,7 +20,8 @@ import { HomePage,
         AddProfilesPage,
         SelectAvatarPage,
         MyListPage,
-        HelpPage
+        HelpPage,
+        SearchPage
         } from './pages';
 import PublicLayout from './layouts/PublicLayout/PublicLayout';
 import ProtectedLayout from './layouts/ProtectedLayout/ProtectedLayout';
@@ -32,6 +33,7 @@ function App() {
       <Route path='/' element={<PublicLayout/>}>
       <Route path='/SignIn' element={<SingInPage/>}/>
       <Route path='/SignUp' element={<SingUpPage/>}/>
+      <Route path='/HelpPage' element={<HelpPage/>} />
       </Route>
 
       <Route element={<ProtectedLayout/>}>
@@ -53,6 +55,7 @@ function App() {
       <Route path='/AddProfile' element={<AddProfilesPage/>}/>
       <Route path='/SelectAvatar' element={<SelectAvatarPage/>}/>
       <Route path='/HelpPage' element={<HelpPage/>} />
+      <Route path='/SearchPage' element={<SearchPage/>} />
       </Route>
 
       <Route path='*' element={<ErrorPage/>} />

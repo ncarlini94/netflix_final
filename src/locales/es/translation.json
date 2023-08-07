@@ -32,7 +32,7 @@
     "movies":"Peliculas",
     "popularNews":"Novedades Populares",
     "myList":"Mi Lista",
-    "exploreByLanguage":"Explorar por idioma",
+    "Search":"Buscar",
     "explore":"Explorar",
     "changeProfile":"Cambiar Perfil",
     "editProfiles":"Editar Perfiles",
@@ -61,5 +61,17 @@
     "profileSettings":"Configuración del perfil",
     "save":"Guardar",
     "deleteProfile":"Borrar perfil",
-    "SelectAvatar":"Selecciona el avatar"
+    "SelectAvatar":"Selecciona el avatar",
+    "FAQ":"Preguntas frecuentes",
+    "privacy":"Privacidad",
+    "legalNotices":"Avisos Legales",
+    "termsOfUse":"Términos de uso",
+    "contactUs":"Contáctenos",
+    "helpPagePartOne":"Esta página web ha sido creada con fines educativos y con el objetivo de mostrar los conocimientos en programación de su autor. Su principal propósito es servir como un proyecto práctico para aplicar y demostrar habilidades en el desarrollo web utilizando tecnologías como React, HTML, CSS, JavaScript y Firebase.",
+    "helpPagePartTwo":"Es importante resaltar que esta página no tiene fines comerciales y no busca obtener beneficios económicos. No se recopilarán datos personales ni se realizarán transacciones comerciales en ningún aspecto de la página.",
+    "helpPagePartThree":"Todo el contenido presentado aquí, incluyendo imágenes, textos y otros recursos, se utiliza con fines educativos y bajo el amparo del uso legítimo o con las licencias correspondientes cuando sea aplicable.",
+    "helpPagePartFour":"Asimismo, se aclara que esta página no está asociada a ninguna entidad comercial o institución más allá del propósito educativo mencionado. No se promocionan productos o servicios comerciales y no se buscará generar ingresos a través de publicidad o patrocinios.",
+    "helpPagePartFive":"Espero que el contenido presentado pueda ser de utilidad para aquellos interesados en la programación web y que pueda servir como un ejemplo práctico de implementación de tecnologías y buenas prácticas en el desarrollo de aplicaciones.",
+    "helpPagePartSix":"Se agradece su comprensión y respeto hacia el propósito educativo de este proyecto, y cualquier uso indebido o no autorizado de la página y su contenido queda expresamente prohibido.",
+    "helpPagePartSeven":"¡Gracias por visitar esta página!"
 }

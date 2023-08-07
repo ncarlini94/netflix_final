@@ -19,3 +19,4 @@ export {default as AddProfilesPage} from './ManageProfilePage/AddProfiles/AddPro
 export {default as SelectAvatarPage} from './ManageProfilePage/AddProfiles/SelectAvatarPage/SelectAvatarPage'
 export {default as MyListPage} from './MyListPage/MyListPage'
 export {default as HelpPage} from './HelpPage/HelpPage'
+export {default as SearchPage} from './SearchPage/SearchPage'

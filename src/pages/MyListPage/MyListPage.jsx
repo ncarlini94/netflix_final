@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { ProfileContext } from '../../contexts/ProfileContext';
+import React from 'react'
 import Slider from 'react-slick';
 import { settingsSlider } from './Settings';
 import Card from '../../components/Card/Card';
@@ -9,10 +8,10 @@ import { useTranslation } from 'react-i18next'
 const MyListPage = () => {
 
   const { t } = useTranslation();
-  const {selectedProfile} = useContext(ProfileContext);
+  const storedProfile = JSON.parse(localStorage.getItem('profile'));
 
 
-  if (!selectedProfile || !selectedProfile.favorites) {
+  if (!storedProfile || !storedProfile.favorites) {
     return <div>Loading...</div>
   }
 
@@ -23,7 +22,7 @@ const MyListPage = () => {
     <div className={`${styles.ListBox}`}>
     <h2 className={`${styles.Title}`}>{t('favorites')}</h2>
     <Slider {...settingsSlider}>
-    {selectedProfile.favorites.map((value) => (
+    {storedProfile.favorites.map((value) => (
       <Card
         entity={value.entity}
         title={value.title || value.name}

@@ -19,7 +19,9 @@ const Carousel = ({entity, state, language, title, quality}) => {
             </div>
             <Slider {...settingsSlider}>
                 {
-                    values.map((value) => (
+                    values
+                    .filter((value) => value.backdrop_path || value.poster_path)
+                    .map((value) => (
                         <Card
                         entity={entity}
                         id= {value.id}

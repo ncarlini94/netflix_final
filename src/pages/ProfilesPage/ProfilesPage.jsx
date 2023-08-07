@@ -41,6 +41,7 @@ const ProfilesPage = () => {
     if(user){
     i18n.changeLanguage(user.language)
     setSelectedProfile(profile);
+    localStorage.setItem('profile', JSON.stringify(profile))
     }
   };
 

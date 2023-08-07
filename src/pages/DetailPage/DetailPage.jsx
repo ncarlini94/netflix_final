@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router";
 import styles from './DetailPage.module.css';
 import { IoPlay } from "react-icons/io5";
@@ -8,7 +8,6 @@ import Card from "../../components/Card/Card";
 import Slider from "react-slick";
 import { settingsSlider } from "../../components/Carousel/Settings";
 import { collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
-import { ProfileContext } from "../../contexts/ProfileContext";
 import { firestore, auth } from '../../firebase/config';
 import { BsHeartFill, BsHeart } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next'
@@ -20,9 +19,14 @@ const DetailPage = () => {
   const { id } = useParams();
   const location = useLocation();
   const [similar, setSimilar] = useState([]);
-  const { selectedProfile, setSelectedProfile } = useContext(ProfileContext);
+  const storedProfile = JSON.parse(localStorage.getItem('profile'));
   const [user, setUser] = useState(null);
+  const scrollToX = 0;
+  const scrollToY = 0;
 
+  useEffect(() => {
+    window.scrollTo(scrollToX, scrollToY);
+  }, [location, scrollToX, scrollToY]);
 
   useEffect(() => {
     const getUserProfiles = async () => {
@@ -39,30 +43,36 @@ const DetailPage = () => {
     getUserProfiles()
   }, []);
 
+  const getEntity = (entity) => {
+    return entity === "movie" ? "movies" : entity === "tv" ? "series" : entity;
+  };
+
   const isMovieInFavorites = () => {
-    if (!selectedProfile || !selectedProfile.favorites) {
+    if (!storedProfile || !storedProfile.favorites) {
       return false;
     }
     const movieId = location.state.value.id;
-    return selectedProfile.favorites.some((movie) => movie.id === movieId);
+    return storedProfile.favorites.some((movie) => movie.id === movieId);
   };
+
+  const [isFavorite, setIsFavorite] = useState(isMovieInFavorites());
 
 
   const addToFavorites = async () => {
     try {
-      const movieData = { ...location.state.value, entity: location.state.entity };
-      const movieId = movieData.id;
-      const updatedProfile = { ...selectedProfile };
-      const movieIndex = updatedProfile.favorites.findIndex(
-        (movie) => movie.id === movieId
-      );
+      const movieData = { ...location.state.value, entity: getEntity(location.state.entity) };
+      const updatedProfile = { ...storedProfile };
+      const movieId = location.state.value.id;
+      const movieIndex = updatedProfile.favorites.findIndex((movie) => movie.id === movieId);
       if (movieIndex !== -1) {
-        updatedProfile.favorites.splice(movieIndex, 1);
-        setSelectedProfile(updatedProfile);
+        const updatedFavorites = updatedProfile.favorites.filter((movie) => movie.id !== movieId);
+        updatedProfile.favorites = updatedFavorites;
+        setIsFavorite(false);
+        localStorage.setItem('profile', JSON.stringify(updatedProfile));
         await updateDoc(doc(firestore, 'NetflixUsers', auth.currentUser.email), {
           profiles: user.profiles.map((profile) => {
-            if (profile.id === selectedProfile.id) {
-              return updatedProfile;
+            if (profile.id === storedProfile.id) {
+              return { ...updatedProfile };
             } else {
               return profile;
             }
@@ -71,11 +81,12 @@ const DetailPage = () => {
         console.log('Movie removed from favorites successfully');
       } else {
         updatedProfile.favorites.push(movieData);
-        setSelectedProfile(updatedProfile);
+        setIsFavorite(true);
+        localStorage.setItem('profile', JSON.stringify(updatedProfile));
         await updateDoc(doc(firestore, 'NetflixUsers', auth.currentUser.email), {
           profiles: user.profiles.map((profile) => {
-            if (profile.id === selectedProfile.id) {
-              return updatedProfile;
+            if (profile.id === storedProfile.id) {
+              return { ...updatedProfile };
             } else {
               return profile;
             }
@@ -88,15 +99,17 @@ const DetailPage = () => {
     }
   };
 
+
+
   useEffect(() => {
     const getSimilar = async () => {
       const res = await apiBuilder.tryGetSimilar(
-        location.state.entity,
+        getEntity(location.state.entity),
         id,
         location.state.language
-      );
+        );
       if (res instanceof Error) {
-        console.log(res.messange);
+        console.log(res.message);
       } else {
         setSimilar(res);
       }
@@ -118,7 +131,7 @@ const DetailPage = () => {
             className={`${styles.iconplay}`}
           >
           <button className={styles.banner_button_play}>
-            <IoPlay style={{width:'3.5vh',height:'3.5vh',marginBottom:'0.4vh', marginRight:'1vh'}}/>REPRODUCIR</button></Link>
+            <IoPlay style={{width:'3.5vh',height:'3.5vh',marginBottom:'0.4vh', marginRight:'1vh'}}/>{t('play')}</button></Link>
           <div className={`${styles.title}`}>
             <h1>{location.state.value.title || location.state.value.original_name}</h1>
           </div>
@@ -127,7 +140,7 @@ const DetailPage = () => {
           </div>
           <div className={`${styles.detailBox} row`}>
           <button  className={`${styles.btnFav} btn btn-primary`} onClick={addToFavorites}>
-              {isMovieInFavorites() ? (
+              {isFavorite ? (
                 <BsHeartFill/>
               ) : (
                 <BsHeart/>
@@ -142,12 +155,14 @@ const DetailPage = () => {
       </div>
       <div className={`${styles.similar}`}>
         <Slider {...settingsSlider}>
-          {similar.map((value) => (
+          {similar
+          .filter((value) => value.backdrop_path && value.poster_path)
+          .map((value) => (
             <Card
               entity={location.state.entity}
               title={value.title || value.name}
-              imgPath={value.backdrop_path || value.poster_path}
-              quality={"backdropw500"}
+              imgPath={value.backdrop_path}
+              quality={"backdropw1280"}
               id={value.id}
               value={value}
               key={value.id}

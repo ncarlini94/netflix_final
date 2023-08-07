@@ -16,10 +16,15 @@ const TrailerPage = () => {
     const location = useLocation()
     const [similar, setSimilar] = useState([]);
 
+
+    const getEntity = (entity) => {
+      return entity === "movie" ? "movies" : entity === "tv" ? "series" : entity;
+    };
+
     useEffect(() => {
         const getSimilar = async () => {
           const res = await apiBuilder.tryGetSimilar(
-            location.state.entity,
+            getEntity(location.state.entity),
             id,
             location.state.language
           );
@@ -40,20 +45,22 @@ const TrailerPage = () => {
                     language={"spanish"}
                 />
                       <div className={`${styles.similar}`}>
-        <Slider {...settingsSlider}>
-          {similar.map((value) => (
-            <Card
-              entity={location.state.entity}
-              title={value.title || value.name}
-              imgPath={value.backdrop_path || value.poster_path}
-              quality={"backdropw500"}
-              id={value.id}
-              value={value}
-              key={value.id}
-              language={location.state.language}
-            />
-          ))}
-        </Slider>
+                <Slider {...settingsSlider}>
+                  {similar
+                    .filter((value) => value.backdrop_path && value.poster_path)
+                    .map((value) => (
+                    <Card
+                      entity={location.state.entity}
+                      title={value.title || value.name}
+                      imgPath={value.backdrop_path || value.poster_path}
+                      quality={"backdropw1280"}
+                      id={value.id}
+                      value={value}
+                      key={value.id}
+                      language={location.state.language}
+                    />
+                  ))}
+                </Slider>
       </div>
             </div>
         </>
