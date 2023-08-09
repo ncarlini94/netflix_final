@@ -24,7 +24,6 @@
 .sesionBtn {
         width: 20vh;
         height: 5.6vh;
-        margin-right: 12vh;
         margin-bottom: 2vh;
         background: rgba(231, 0, 0, 0.918);
         color: rgba(179, 179, 179, 0.842);
@@ -41,7 +40,7 @@
         background: rgba(255, 0, 0, 0.774)
 }
 
-@media (max-width: 412px){
+@media (max-width: 1100px){
         .logo {
                 margin-left: 2vh;
                 margin-right: 8vh;
@@ -49,17 +48,25 @@
         }
 
         .selectedForm{
-                width: 14vh;
                 margin-bottom: 0.8vh;
-                max-width: 14vh;
+                max-width: 16vh;
+                color: white;
+                padding-left: 2vh;
+                background-color: rgba(50, 50, 50, 0.941);
+                font-size: 2.2vh;
         }
 
         .sesionBtn {
-                width: 14vh;
-                height: 5vh;
+                width: 20vh;
+                height: 6vh;
+                margin-right: 10vh;
+                margin-bottom: 2vh;
+                background: rgba(231, 0, 0, 0.918);
+                color: rgba(179, 179, 179, 0.842);
+                font-weight: bold;
         }
 
         .sesionBtn a {
-                font-size: 1.6vh;
+                font-size: 1.8vh;
         }
 }

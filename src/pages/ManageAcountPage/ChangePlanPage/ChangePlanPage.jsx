@@ -9,6 +9,7 @@ const ChoosePlan = () => {
     const navigate = useNavigate()
 const [selectedPlan, setSelectedPlan] = useState('')
 const [user, setUser] = useState('')
+const [clickedButton, setClickedButton] = useState('');
 
 useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -37,6 +38,7 @@ useEffect(() => {
 
 const handlePlanChange = (plan) => {
     setSelectedPlan(plan)
+    setClickedButton(plan)
 }
 
 
@@ -63,28 +65,28 @@ return (
     </div>
     <div className={`${styles.boxPlan} d-flex flex-row-reverse`}>
         <div
-        className={`${styles.btnPlan} col-sm-4`}
+        className={`${styles.btnPlan} col-sm-4 ${clickedButton === 'Premium' && styles.buttonClicked}`}
         onClick={()=>{handlePlanChange('Premium')}}
         >
         <h4>Premium</h4>
         </div>
 
         <div
-        className={`${styles.btnPlan} col-sm-4`}
+        className={`${styles.btnPlan} col-sm-4 ${clickedButton === 'Standar' && styles.buttonClicked}`}
         onClick={()=>{handlePlanChange('Standar')}}
         >
         <h4>Standar</h4>
         </div>
 
         <div
-        className={`${styles.btnPlan} col-sm-4`}
+        className={`${styles.btnPlan} col-sm-4 ${clickedButton === 'Basic' && styles.buttonClicked}`}
         onClick={()=>{handlePlanChange('Basic')}}
         >
         <h4>Basico</h4>
         </div>
         </div>
 
-        <div className='row pb-3'>
+        <div className='row pb-3 pt-3'>
             <h3 className='col-6'>Precio mensual (sin impuestos incluidos)</h3>
             <h3 className='col'>$ 999</h3>
             <h3 className='col'>$ 1.699</h3>

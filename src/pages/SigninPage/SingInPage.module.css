@@ -6,6 +6,10 @@
     margin-top: 10vh;
 }
 
+.title{
+    font-size: 4.5vh;
+}
+
 .sendbtn{
     display: flex;
     justify-content: center;
@@ -35,4 +39,16 @@
 .sendLogin{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.918);
+}
+
+
+
+@media screen and (max-width:1100px) {
+    .loginBox{
+        max-width: 38vh;
+    }
+
+    .title{
+        font-size: 3vh;
+    }
 }

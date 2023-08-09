@@ -33,10 +33,7 @@ const PublicLayout = () => {
     <div
         className={`${styles.background}`}
         style={{
-        backgroundSize: 'cover',
-        backgroundColor: '#000',
-        height:"100vh",
-        backgroundPosition: 'center',
+          width:'100%',
         backgroundImage: path !== '/signup' ?
         `url(https://assets.nflxext.com/ffe/siteui/vlv3/5eab1b22-c5ea-48b0-8ef4-862b3fa6df2c/c9fed70b-9392-4823-ac65-cc55c369f6dc/AR-en-20230724-popsignuptwoweeks-perspective_alpha_website_small.jpg)`
         : 'none',

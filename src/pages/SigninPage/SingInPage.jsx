@@ -55,7 +55,7 @@ const SingInPage = () => {
   return (
     <>
     <div className={`${styles.loginBox} container text-center`}>
-    <h4 style={{fontSize:'5.4vh'}}>{t('SignIn')}</h4>
+    <h4 className={`${styles.title}`}>{t('SignIn')}</h4>
         <form onSubmit={handleSubmit}>
             <div className="form-group text-center">
             <label className={`${styles.label} pb-1`}>Mail</label>

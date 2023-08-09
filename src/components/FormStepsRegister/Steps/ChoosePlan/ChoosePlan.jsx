@@ -6,10 +6,12 @@ const ChoosePlan = ({formData, setFormData}) => {
 
   const { t } = useTranslation()
   const [selectedPlan, setSelectedPlan] = useState('')
+  const [clickedButton, setClickedButton] = useState('');
 
   const handlePlanChange = (plan) => {
     setFormData({...formData, plan})
     setSelectedPlan(plan)
+    setClickedButton(plan)
   }
 
   useEffect(() => {
@@ -27,21 +29,21 @@ const ChoosePlan = ({formData, setFormData}) => {
     </div>
     <div className={`${styles.boxPlan} d-flex flex-row-reverse`}>
       <div
-      className={`${styles.btnPlan} col-sm-4`}
+      className={`${styles.btnPlan} col-sm-4 ${clickedButton === 'Premium' && styles.buttonClicked}`}
       onClick={()=>{handlePlanChange('Premium')}}
       >
       <h4>{t("premium")}</h4>
       </div>
 
       <div
-      className={`${styles.btnPlan} col-sm-4`}
+      className={`${styles.btnPlan} col-sm-4 ${clickedButton === 'Standar' && styles.buttonClicked}`}
       onClick={()=>{handlePlanChange('Standar')}}
       >
       <h4>{t("standard")}</h4>
       </div>
 
       <div
-      className={`${styles.btnPlan} col-sm-4`}
+      className={`${styles.btnPlan} col-sm-4 ${clickedButton === 'Basic' && styles.buttonClicked}`}
       onClick={()=>{handlePlanChange('Basic')}}
       >
       <h4>{t("basic")}</h4>

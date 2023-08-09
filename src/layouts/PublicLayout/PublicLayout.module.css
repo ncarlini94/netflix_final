@@ -1,7 +1,12 @@
 .background{
-    width:100%;
+    background-size: cover;
+    background-color: #000;
+    height:100vh;
+     background-position: center;
 }
 
-@media screen and (max-width:412px) {
-
-}
+@media  (max-width: 10500px) and (min-width:400px) {
+    .background {
+        width: 1440px;
+    }
+  }

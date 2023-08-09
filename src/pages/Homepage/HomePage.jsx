@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "../../components/Carousel/Carousel";
 import Separator from "../../components/Separator/Separator"
 import Banner from "../../components/Banner/Banner";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router";
 
 const Home = () => {
 
     const {t, i18n} = useTranslation()
+    const location = useLocation();
+    const scrollToX = 0;
+    const scrollToY = 0;
+
+    useEffect(() => {
+        window.scrollTo(scrollToX, scrollToY);
+      }, [location, scrollToX, scrollToY]);
 
     const getLanguageName = (languageCode) => {
         if (languageCode === "es") {

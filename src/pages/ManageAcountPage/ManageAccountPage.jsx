@@ -63,7 +63,7 @@ const ManageAccount = () => {
           <>
           <div key={user.id} className={`${styles.box}`}>
           <div className={`${styles.boxChild} row`}>
-          <hr className="col-12" style={{ marginLeft:'-14vh' ,borderTop: '1px solid rgba(255, 255, 255, 0.704)' }} />
+          <hr className="col-12" style={{ marginLeft:'-14vh' ,borderTop: '1px solid rgba(255, 255, 255, 0.704)', paddingBottom:'1vh' }} />
             <h3 className={`${styles.boxChildTitle} col-7`}>Email: <span style={{fontSize:'3.8vh', color:'rgba(255, 255, 255, 0.704)'}}>{user.email}</span></h3>
             <Link className={`${styles.link} col`}  to={'/ChangeEmail'}>{t("changeEmail")}</Link>
           </div>
