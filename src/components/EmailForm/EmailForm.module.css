@@ -70,9 +70,9 @@
 
 }
 
-@media screen and (max-width:412px) {
+@media screen and (min-width:200px) and (max-width:720px) {
     .text{
-        left: 0.2vh;
+        left: 28vh;
         right: 0.2vh;
         top: 30vh;
         max-width: 400px;
@@ -93,7 +93,7 @@
 
     .form{
         width: 42vh;
-        left: 2.5vh;
+        left: 50vh;
         bottom: 16vh;
     }
 
