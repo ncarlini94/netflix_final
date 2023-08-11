@@ -5,8 +5,8 @@
      background-position: center;
 }
 
-@media  (max-width: 10500px) and (min-width:400px) {
-    .background {
-        width: 1440px;
+@media screen and (min-width: 200px) and (max-width:412px) {
+    .background{
+        height: 80vh;
     }
   }

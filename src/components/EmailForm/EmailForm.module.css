@@ -72,14 +72,13 @@
 
 @media screen and (min-width:200px) and (max-width:720px) {
     .text{
-        left: 28vh;
-        right: 0.2vh;
-        top: 30vh;
-        max-width: 400px;
+        left: 2vh;
+        right: 4vh;
+        top: 20vh;
     }
 
     .textTitle {
-        font-size: 3vh;
+        font-size: 4vh;
         padding-bottom: 6vh;
     }
 
@@ -89,22 +88,22 @@
 
     .textFooter{
         font-size: 2vh;
+        margin-left: 0vh;
     }
 
     .form{
         width: 42vh;
-        left: 50vh;
-        bottom: 16vh;
+        left: 4vh;
+        bottom: 24vh;
     }
 
     .form input {
         width: 26vh;
-        max-width: 30vh;
     }
 
     .form button{
-        width: 12vh;
-        font-size: 1.5vh;
+        width: 14vh;
+        font-size: 1.8vh;
     }
 
     .form input::placeholder{

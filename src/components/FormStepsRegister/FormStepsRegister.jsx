@@ -101,7 +101,7 @@ return (
         </nav>
         <div className={`container d-flex justify-content-center`}>
         <div className='row'>
-        <h4 className='col-sm-12 d-flex justify-content-center'>
+        <h4 className={`${styles.step} col-sm-12 d-flex justify-content-center`}>
         {`${t("step")} ${page + 1} ${t("of")} 3`.toUpperCase()}</h4>
             <div className='col-sm-12'>
                 {PageDispley()}

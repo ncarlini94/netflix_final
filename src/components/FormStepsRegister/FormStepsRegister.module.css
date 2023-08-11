@@ -38,7 +38,7 @@
         background: rgba(255, 0, 0, 0.774)
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (min-width:200px) and (max-width:720px) {
         
         .logo{
                 width: 10vh;
@@ -57,5 +57,12 @@
 
         .buttom{
                 width: 35vh;
+                margin-top: -4vh;
+        }
+
+        .step{
+                margin-left: 0vh;
+                padding-top: 2vh;
+                padding-bottom: 3.4vh;
         }
 }
