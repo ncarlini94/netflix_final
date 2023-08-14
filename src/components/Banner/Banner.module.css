@@ -130,51 +130,12 @@ padding: 0 3.4vh;
   color: rgb(255, 255, 255);
 }
 
-@media screen and (max-width: 900px) {
-
-  .banner_container{
-    width: 100%;
-  }
-
-  .banner_gradient{
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.397) 40%,
-      rgba(27, 27, 27, 0.884) 100%
-    );
-  }
-
-  .banner_info{
-    padding-left: 1.8vh;
-  }
-
-  .banner_title h1{
-    top: 40vh
-  }
-
-  .banner_description h2 {
-    top: 50vh;
-    font-size: 2.8vh;
-  }
-
-  .banner_buttons {
-    top: 80vh;
-  }
-
-  .banner_button_play .banner_button_info{
-    width: 20vh;
-    font-size: 1.8vh;
-  }
-
-}
-
-@media screen and (min-width: 380px) and (max-width: 580px) {
+@media screen and (min-width: 200px) and (max-width: 412px) {
 
 
   .banner_container{
     width: 100%;
-    height: 42vh;
+    height: 48vh;
     margin-top: 6vh;
   }
 
@@ -190,24 +151,68 @@ padding: 0 3.4vh;
   .banner_description h2{
     top: 32vh;
     font-size: 1vh;
-    padding-left: 0.5vh;
-    margin-right: 2.8vh;
+  }
+
+  .language{
+    position: absolute;
+    z-index: 2;
+    top: 48vh;
+    left: -14vh;
+    font-size: 1.6vh;
+  }
+
+  .rate{
+    position: absolute;
+    z-index: 2;
+    top: 51vh;
+    left: -14vh;
+    font-size: 1.6vh;
+  }
+
+  .relase{
+    position: absolute;
+    z-index: 2;
+    top: 48vh;
+    left: 0vh;
+    font-size: 1.6vh;
   }
 
   .banner_buttons{
-    top: 42vh;
+    top: 41vh;
   }
 
-  .banner_button_play{
-    width: 10vh;
-    height: 3vh;
-    font-size: 1vh;
+  button{
+    padding-top: 0;
+  }
+
+  .banner_button_play {
+    width: 16vh;
+    height: 4vh;
+    padding: 0;
+    background-color: rgba(197, 197, 197, 0.87);
+    color: rgb(0, 0, 0);
+    font-size: 1.4vh;
+    font-weight: 600;
+    border: none;
+    border-radius: 1.2vh;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 0.4s ease-in-out;
   }
 
   .banner_button_info{
-    width: 13.5vh;
-    height: 3vh;
-    font-size: 1vh;
+    width: 20vh;
+    height: 4vh;
+    background-color: rgba(105, 105, 105, 0.938);
+    color: rgb(192, 192, 192);
+    font-size: 2vh;
+    font-weight: 600;
+    border: none;
+    border-radius: 1.2vh;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 0.4s ease-in-out;
+    margin-left: 2vh;
   }
 
   .icon{

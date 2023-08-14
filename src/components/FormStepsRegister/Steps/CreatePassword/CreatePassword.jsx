@@ -23,8 +23,7 @@ const CreatePassword = ({formData, setFormData}) => {
 
   return (
     <>
-    <div className='container-fluid pb-5'
-    style={{width:'80vh'}}>
+    <div className={`${styles.box} container-fluid`}>
         <div className="form-group pb-3">
         {formData.email !== '' ?
         <h4 style={{
@@ -67,7 +66,7 @@ const CreatePassword = ({formData, setFormData}) => {
             onChange={handleChange}
         />
         {!isPasswordValid(formData.password) && (
-            <p style={{ color: 'red' }}>
+            <p style={{ color: 'red'}}>
               {t("errorPassword")}
             </p>
           )}

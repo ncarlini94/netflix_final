@@ -131,7 +131,7 @@ const DetailPage = () => {
             className={`${styles.iconplay}`}
           >
           <button className={styles.banner_button_play}>
-            <IoPlay style={{width:'3.5vh',height:'3.5vh',marginBottom:'0.4vh', marginRight:'1vh'}}/>{t('play')}</button></Link>
+            <IoPlay className={styles.iconPlay}/>{t('play')}</button></Link>
           <div className={`${styles.title}`}>
             <h1>{location.state.value.title || location.state.value.original_name}</h1>
           </div>
@@ -139,14 +139,14 @@ const DetailPage = () => {
             <h4>{location.state.value.overview}</h4>
           </div>
           <div className={`${styles.detailBox} row`}>
-          <button  className={`${styles.btnFav} btn btn-primary`} onClick={addToFavorites}>
+          <button  className={`${styles.btnFav} col-1 btn btn-primary`} onClick={addToFavorites}>
               {isFavorite ? (
                 <BsHeartFill/>
               ) : (
                 <BsHeart/>
               )}
             </button>
-            <h4 className="col">{t("language")}: {location.state.value.original_language}</h4>
+            <h4 className="col-2">{t("language")}: {location.state.value.original_language}</h4>
             <h4 className="col-3">{t("classification")}: ☆ {location.state.value.vote_average}</h4>
             <h4 className="col-6">{t("releaseDate")}: {location.state.value.release_date}</h4>
           </div>

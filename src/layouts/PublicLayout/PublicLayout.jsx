@@ -34,16 +34,16 @@ const PublicLayout = () => {
         className={`${styles.background}`}
         style={{
           width:'100%',
-        backgroundImage: path !== '/signup' ?
-        `url(https://assets.nflxext.com/ffe/siteui/vlv3/5eab1b22-c5ea-48b0-8ef4-862b3fa6df2c/c9fed70b-9392-4823-ac65-cc55c369f6dc/AR-en-20230724-popsignuptwoweeks-perspective_alpha_website_small.jpg)`
-        : 'none',
-        boxShadow: path !== '/signup' ? 'inset 0 0 0 2000px rgba(0,0,0,0.56)': 'none'
+          backgroundImage: path !== '/signup' ?
+          `url(https://assets.nflxext.com/ffe/siteui/vlv3/5eab1b22-c5ea-48b0-8ef4-862b3fa6df2c/c9fed70b-9392-4823-ac65-cc55c369f6dc/AR-en-20230724-popsignuptwoweeks-perspective_alpha_website_small.jpg)`
+          : 'none',
+          boxShadow: path !== '/signup' ? 'inset 0 0 0 2000px rgba(0,0,0,0.56)': 'none'
         }}>
         {!isSignUpPage && <LoginNavbar />}
         {!isSignUpPage && !isSignInPage && <EmailForm />}
         <Outlet />
     </div>
-    <Footer/>
+      {!isSignUpPage && !isSignInPage && <Footer/>}
     </>
   )
 }

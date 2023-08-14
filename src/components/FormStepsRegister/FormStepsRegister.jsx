@@ -94,7 +94,7 @@ return (
                 </Link>
                 <div>
                     <button className={`${styles.sesionBtn} btn`}>
-                    <Link style={{color:'rgb(255,255,255)', textDecoration:'none'}} to="/SingIn">{t("SignIn")}</Link>
+                    <Link style={{color:'rgb(255,255,255)', textDecoration:'none'}} to="/SignIn">{t("SignIn")}</Link>
                     </button>
                 </div>
             </div>
@@ -108,7 +108,7 @@ return (
             </div>
             <div className='col-sm-12 d-flex justify-content-center'>
             <button
-                className={`${styles.buttom} btn`}
+                className={`${styles.buttom} btn mb-5`}
                 onClick={() => {
                     if (page === FormTitles.length - 1) {
                     handleSubmit();

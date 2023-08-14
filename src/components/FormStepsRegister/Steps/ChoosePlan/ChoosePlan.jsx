@@ -20,7 +20,7 @@ const ChoosePlan = ({formData, setFormData}) => {
 
   return (
     <>
-    <div className='container' style={{color:"white", marginBottom:'1vh'}}>
+    <div className={`${styles.box} container-fluid`} style={{color:"white"}}>
     <div>
       <h2 style={{marginBottom:'2.5vh'}}>{t("titlePlanRegister")}</h2>
       <p>✓ {t("firstTextPlanRegister")}</p>
@@ -50,29 +50,29 @@ const ChoosePlan = ({formData, setFormData}) => {
       </div>
       </div>
 
-        <div className='row pb-3'>
-          <h3 className='col-6'>{t("monthlyPrice")}</h3>
-          <h3 className='col'>$ 999</h3>
-          <h3 className='col'>$ 1.699</h3>
-          <h3 className='col'>$ 2.399</h3>
+        <div className={`${styles.rowBox} row pb-3}`}>
+        <h2 className={`${styles.textLegend} col-sm-6`}>{t("monthlyPrice")}</h2>
+          <h3 className='col-sm'>$ 999</h3>
+          <h3 className='col-sm'>$ 1.699</h3>
+          <h3 className='col-sm'>$ 2.399</h3>
         </div>
-        <div className='row pb-3'>
-        <h3 className='col-6'>{t("videoQuality")}</h3>
-          <h3 className='col'>{t("good")}</h3>
-          <h3 className='col'>{t("better")}</h3>
-          <h3 className='col'>{t("optimal")}</h3>
+        <div className={`${styles.rowBox} row pb-3}`}>
+          <h2 className={`${styles.textLegend} col-sm-6`}>{t("videoQuality")}</h2>
+            <h3 className='col-sm'>{t("good")}</h3>
+            <h3 className='col-sm'>{t("better")}</h3>
+            <h3 className='col-sm'>{t("optimal")}</h3>
         </div>
-        <div className='row pb-3'>
-        <h3 className='col-6'>{t("resolution")}</h3>
-          <h3 className='col'>720p</h3>
-          <h3 className='col'>1080p</h3>
-          <h3 className='col'>4K+HDR</h3>
+        <div className={`${styles.rowBox} row pb-3}`}>
+        <h2 className={`${styles.textLegend} col-sm-6`}>{t("resolution")}</h2>
+            <h3 className='col-sm'>720p</h3>
+            <h3 className='col-sm'>1080p</h3>
+            <h3 className='col-sm'>4K+HDR</h3>
         </div>
-        <div className='row pb-3'>
-        <h3 className='col-6'>{t("watchNetflixOn")}</h3>
-          <h3 className='col'>✓</h3>
-          <h3 className='col'>✓</h3>
-          <h3 className='col'>✓</h3>
+        <div className={`${styles.rowBox} row pb-3}`}>
+        <h2 className={`${styles.textLegend} col-sm-6`}>{t("watchNetflixOn")}</h2>
+            <h3 className='col-sm'>✓</h3>
+            <h3 className='col-sm'>✓</h3>
+            <h3 className='col-sm'>✓</h3>
         </div>
     </div>
     </>

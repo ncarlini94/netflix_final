@@ -59,17 +59,24 @@
 }
 
 
-@media screen and (max-width:380px) {
+@media screen and (min-width:200px) and (max-width:412px) {
   .navbar{
     height: 6vh;
+    width: 40vh;
   }
 
   .navbar_dark{
+    background-color: rgba(0, 0, 0, 0.825);
+    transition: background-color 1.0s;
     height: 7.4vh;
   }
 
+  .navbar_center{
+    padding-left: 8vh;
+  }
+
   .logo{
-    width: 10vh;
+    width: 8vh;
     height: 6vh;
   }
 
@@ -87,28 +94,5 @@
 
   .dropmenu{
     background-color: rgba(30,30,30,0.908);
-  }
-}
-
-@media screen and (max-width:991px) {
-  .list{
-    background-color: rgba(41, 41, 41, 0.842);
-  }
-}
-
-@media screen and (max-width:412px){
-
-  .navbar{
-    height: 6vh;
-    width: 77vh;
-  }
-
-  .logo{
-    width: 8vh;
-    height: 6vh;
-  }
-
-  .navbar_dark{
-    height: 7.4vh;
   }
 }

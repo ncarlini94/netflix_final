@@ -55,12 +55,12 @@ const ProfilesPage = () => {
     const { avatar, name } = location.state.profile;
     return (
       <>
-      <div className={`${styles.box} row`} style={{paddingLeft:'5em'}}>
-      <div key={location.state.key} className={`${styles.boxProfile} col`} >
+      <div className={`${styles.box} row`}>
+      <div key={location.state.key} className={`${styles.boxProfile} col-sm`} >
         <Link to={'/Home'} onClick={() => handleProfileSelect(location.state.profile)}>
-          <img src={`${avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar" style={{marginLeft:'-1.3em'}} />
+          <img src={`${avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar" />
         </Link>
-        <h3 className="pt-4">{name}</h3>
+        <h3 className={`${styles.name}`}>{name}</h3>
       </div>
       </div>
       </>
@@ -71,7 +71,7 @@ const ProfilesPage = () => {
     <>
     <div className={`${styles.box} row`}>
       {user.profiles.map((profile) => (
-        <div key={profile.id} className={`${styles.boxProfile} col`}>
+        <div key={profile.id} className={`${styles.boxProfile} col-sm`}>
           <Link to={'/Home'} onClick={() => handleProfileSelect(profile)}>
             <img src={`${profile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"/>
           </Link>

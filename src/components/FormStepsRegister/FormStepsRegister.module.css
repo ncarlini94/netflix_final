@@ -4,6 +4,10 @@
         margin-left: 10vh;
 }
 
+.step{
+        margin-bottom: 4vh;
+}
+
 .sesionBtn {
         width: 23vh;
         height: 6.5vh;
@@ -39,7 +43,6 @@
 }
 
 @media screen and (min-width:200px) and (max-width:720px) {
-        
         .logo{
                 width: 10vh;
                 margin-left: 4vh;

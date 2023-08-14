@@ -39,7 +39,7 @@ const CreditCard = ({formData, setFormData}) => {
 
     return (
         <>
-        <div key="Payment">
+        <div className='mb-5' key="Payment">
         <div className="App-payment">
         <Card
             number={number}

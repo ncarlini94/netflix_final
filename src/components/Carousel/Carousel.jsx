@@ -3,6 +3,7 @@ import Card from "../Card/Card"
 import Slider from "react-slick";
 import useApi from "../../hooks/useApi";
 import { settingsSlider } from "./Settings";
+import styles from "./Carrousel.module.css";
 
 
 const Carousel = ({entity, state, language, title, quality}) => {
@@ -12,8 +13,8 @@ const Carousel = ({entity, state, language, title, quality}) => {
     return(
         <>
         <div className="container-fluid">
-            <div className="">
-                <h1 style={{color:"rgba(200, 200, 220, 0.75)", height:"5vh", fontSize:"4.2vh", marginLeft:"2.4vh"}}>
+            <div>
+                <h1 className={`${styles.titleCarrousel}`}>
                     {title}
                 </h1>
             </div>

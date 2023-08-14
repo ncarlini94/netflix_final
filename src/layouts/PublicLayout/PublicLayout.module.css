@@ -2,11 +2,12 @@
     background-size: cover;
     background-color: #000;
     height:100vh;
-     background-position: center;
+    background-position: center;
 }
 
 @media screen and (min-width: 200px) and (max-width:412px) {
     .background{
         height: 80vh;
+        padding-bottom: 20vh;
     }
   }

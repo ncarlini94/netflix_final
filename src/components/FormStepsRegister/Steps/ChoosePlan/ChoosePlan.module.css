@@ -1,3 +1,7 @@
+.box{
+    margin-bottom: 5vh;
+}
+
 .boxPlan{
     padding-right: 6vh;
 }
@@ -20,6 +24,66 @@
     background-color: rgba(255, 0, 0, 0.514);
 }
 
-@media screen and (max-width: 380px) {
+.rowBox{
+    margin: 3vh 0;
+}
 
+.textLegend{
+    margin-right: 3vh;
+}
+
+.buttonClicked {
+    background-color: #333;
+}
+
+@media screen and (min-width:200px) and (max-width: 412px) {
+    .box{
+        max-width: 42vh;
+        height: 110vh;
+        margin-bottom: -14vh;
+    }
+
+    .boxPlan{
+        margin-left: 18vh;
+        width: 28vh;
+    }
+
+    .btnPlan{
+        display: flex;
+        justify-content: center;
+        padding: 1vh 0;
+        padding-right: 1.6vh;
+        width: 10vh;
+        height: 5vh;
+        background-color: rgb(255, 0, 0);
+        margin: 0.4vh;
+        align-self: flex-end;
+    }
+
+    .btnPlan h4 {
+        font-size: 2vh;
+        margin-left: 2vh;
+    }
+
+    .textLegend{
+        width: 10vh;
+        font-size: 2vh;
+        padding: 0;
+    }
+
+    .rowBox{
+        width: 42vh;
+    }
+
+    .rowBox h3{
+        width: 9.4vh;
+        height: 8vh;
+        margin: 0;
+        font-size: 2vh;
+        padding: 0;
+    }
+
+    .buttonClicked {
+        background-color: #333;
+    }
 }

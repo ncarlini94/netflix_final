@@ -9,8 +9,8 @@ const Footer = () => {
 
   return (
     <>
-    <div className='container-fluid pt-5'>
-        <ul className={`${styles.list} row pt-5 ps-5 pb-5`}>
+    <div className='container-fluid'>
+        <ul className={`${styles.list} row`}>
 
             <div className='col-sm'>
             <li className={`${styles.item}`}>
@@ -48,8 +48,8 @@ const Footer = () => {
             {t('contactUs')}
             </Link></li>
             </div>
-            <div className={`${styles.copyright} col-12`}>
-              <h4 style={{fontSize:'2.4vh'}}>Web creada por - Nicolás -</h4>
+            <div className={`${styles.copyright} col-sm-12`}>
+              <h3 style={{fontSize:'2.4vh'}}>Web creada por - Nicolás -</h3>
             </div>
         </ul>
         </div>

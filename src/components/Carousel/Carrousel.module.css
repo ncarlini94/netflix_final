@@ -1,0 +1,14 @@
+.titleCarrousel{
+color:rgba(200, 200, 220, 0.75);
+height: 5vh;
+font-size: 4.2vh;
+margin-left: 2.4vh;
+}
+
+@media screen and (min-width:200px) and (max-width:412px) {
+    .titleCarrousel{
+        font-size: 3vh;
+        margin-left: 2vh;
+        height: 4vh;
+    }
+}

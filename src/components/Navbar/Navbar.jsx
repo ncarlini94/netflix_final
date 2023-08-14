@@ -46,11 +46,11 @@ const Navbar = () => {
     return(
         <>
         <div className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
-            <Link className="navbar-brand col-sm-1 sm-5" to="/Home">
+            <Link className="navbar-brand col-2 " to="/Home">
               <NetflixLogo className={`${styles.logo}`}/>
             </Link>
 
-        <nav className={`${styles.navbar_center} col-sm-10 navbar navbar-expand-lg`}>
+        <nav className={`${styles.navbar_center} col-9 navbar navbar-expand-lg`}>
             <button className="navbar-toggler dropdown-toggle bg-dark" data-bs-toggle="dropdown" type="button" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className={`${styles.explorer}`}>{t("explore")}</span>
           </button>
@@ -80,7 +80,7 @@ const Navbar = () => {
       </nav>
 
       {profile && (
-          <div className="col-sm-1 btn-group">
+          <div className="col-1 btn-group">
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src={`${profile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
             </button>
