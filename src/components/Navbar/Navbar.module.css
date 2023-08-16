@@ -59,7 +59,7 @@
 }
 
 
-@media screen and (min-width:200px) and (max-width:412px) {
+@media screen and (min-width:200px) and (max-width:720px) {
   .navbar{
     max-width: 48vh;
     height: 6vh;

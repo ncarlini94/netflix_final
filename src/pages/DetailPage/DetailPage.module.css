@@ -120,7 +120,7 @@ h1{
 }
 
 
-@media screen and (min-width:200px) and (max-width:412px) {
+@media screen and (min-width:200px) and (max-width:460px) {
 
     .MovieBackground{
         margin-top: 6vh;

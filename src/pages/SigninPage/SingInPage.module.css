@@ -43,7 +43,7 @@
 
 
 
-@media screen and (max-width:1100px) {
+@media screen and (min-width:200px) and (max-width:720px) {
     .loginBox{
         background-color: rgba(20, 20, 20, 0.941);
         padding: 6vh 8vh 5vh 8vh;
