@@ -9,3 +9,17 @@
 .similar{
     margin-top: 5vh;
 }
+
+@media screen and (min-width:200px) and (max-width:412px) {
+    .MovieBackground{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 8vh;
+        margin-left: 0vh;
+    }
+
+    .similar{
+        margin-top: 3vh;
+    }
+}

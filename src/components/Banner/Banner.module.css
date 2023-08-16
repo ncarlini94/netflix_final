@@ -156,29 +156,29 @@ padding: 0 3.4vh;
   .language{
     position: absolute;
     z-index: 2;
-    top: 48vh;
-    left: -14vh;
+    top: 40.5vh;
+    left: -16vh;
     font-size: 1.6vh;
   }
 
   .rate{
     position: absolute;
     z-index: 2;
-    top: 51vh;
-    left: -14vh;
+    top: 44vh;
+    left: -16vh;
     font-size: 1.6vh;
   }
 
   .relase{
     position: absolute;
     z-index: 2;
-    top: 48vh;
-    left: 0vh;
+    top: 40.5vh;
+    left: -3vh;
     font-size: 1.6vh;
   }
 
   .banner_buttons{
-    top: 41vh;
+    top: 47.2vh;
   }
 
   button{

@@ -61,8 +61,8 @@
 
 @media screen and (min-width:200px) and (max-width:412px) {
   .navbar{
+    max-width: 48vh;
     height: 6vh;
-    width: 40vh;
   }
 
   .navbar_dark{
@@ -72,6 +72,7 @@
   }
 
   .navbar_center{
+    max-width: 29vh;
     padding-left: 8vh;
   }
 
@@ -85,10 +86,9 @@
   }
 
   .avatar{
-    width: 4.4vh;
-    height: 4.4vh;
+    width: 4.2vh;
+    height: 4.2vh;
     margin-top: 0.3vh;
-    margin-right: 0.4vh;
     border-radius: 20%;
   }
 

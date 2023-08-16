@@ -32,23 +32,15 @@ return(
     {
     isLoading ? (<div className={`${styles.loader_container}`}></div>) :
     !videos ? (
-        <div style={{
-                backgroundImage:`url(${ErrorVideo})`,
-                height:"760px",
-                width:"1210px",
-                backgroundRepeat: "no-repeat",
-                marginTop:"4em",
-                marginLeft:'5em',
-                marginBottom:'-9em',
+        <div
+            className={`${styles.error}`}
+            style={{
+                backgroundImage:`url(${ErrorVideo})`
                 }}>
                 <div className={`${styles.banner_gradient}`}>
-            <h4 style={{
-                color:"white",
-                fontSize:'1.2em',
-                paddingTop:"10em",
-                paddingLeft:"10em",
-                maxWidth:'35em'
-                }}>Lamentablemente, el video que buscas no se encuentra disponible en este momento. Sin embargo, aquí tienes algunas recomendaciones.</h4>
+            <h4 
+            className={`${styles.textError}`}
+            >Lamentablemente, el video que buscas no se encuentra disponible en este momento. Sin embargo, aquí tienes algunas recomendaciones.</h4>
             </div>
         </div>
         ) :

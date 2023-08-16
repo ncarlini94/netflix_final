@@ -130,7 +130,7 @@ const DetailPage = () => {
             state={{ entity: location.state.entity }}
             className={`${styles.iconplay}`}
           >
-          <button className={styles.banner_button_play}>
+          <button className={`${styles.banner_button_play}`}>
             <IoPlay className={styles.iconPlay}/>{t('play')}</button></Link>
           <div className={`${styles.title}`}>
             <h1>{location.state.value.title || location.state.value.original_name}</h1>
@@ -138,21 +138,19 @@ const DetailPage = () => {
           <div className={`${styles.Overview}`}>
             <h4>{location.state.value.overview}</h4>
           </div>
-          <div className={`${styles.detailBox} row`}>
-          <button  className={`${styles.btnFav} col-1 btn btn-primary`} onClick={addToFavorites}>
+          <button  className={`${styles.btnFav} btn btn-primary`} onClick={addToFavorites}>
               {isFavorite ? (
                 <BsHeartFill/>
               ) : (
                 <BsHeart/>
               )}
             </button>
-            <h4 className="col-2">{t("language")}: {location.state.value.original_language}</h4>
-            <h4 className="col-3">{t("classification")}: ☆ {location.state.value.vote_average}</h4>
-            <h4 className="col-6">{t("releaseDate")}: {location.state.value.release_date}</h4>
+            <h4 className={`${styles.language}`}>{t("language")}: {location.state.value.original_language}</h4>
+            <h4 className={`${styles.classification}`}>{t("classification")}: ☆ {location.state.value.vote_average}</h4>
+            <h4 className={`${styles.releasDate}`}>{t("releaseDate")}: {location.state.value.release_date}</h4>
           </div>
           </div>
         </div>
-      </div>
       <div className={`${styles.similar}`}>
         <Slider {...settingsSlider}>
           {similar

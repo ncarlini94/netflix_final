@@ -50,7 +50,7 @@ const Navbar = () => {
               <NetflixLogo className={`${styles.logo}`}/>
             </Link>
 
-        <nav className={`${styles.navbar_center} col-9 navbar navbar-expand-lg`}>
+        <nav className={`${styles.navbar_center} col-9 navbar navbar-expand-sm`}>
             <button className="navbar-toggler dropdown-toggle bg-dark" data-bs-toggle="dropdown" type="button" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className={`${styles.explorer}`}>{t("explore")}</span>
           </button>
@@ -80,7 +80,7 @@ const Navbar = () => {
       </nav>
 
       {profile && (
-          <div className="col-1 btn-group">
+          <div className={`${styles.boxAvatar} col-1 btn-group`}>
             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src={`${profile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
             </button>

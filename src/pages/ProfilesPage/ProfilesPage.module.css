@@ -42,12 +42,12 @@
 @media screen and (min-width:200px) and (max-width:412px) {
 
     .box{
-        max-width: 42vh;
+        max-width: 20vh;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin: 10vh 0;
+        margin: 18vh 11vh;
     }
 
     .loader_container {
@@ -62,7 +62,7 @@
 
     .boxProfile{
         max-width: 14vh;
-        padding: 0;
+        padding: 2vh 0;
         margin: 0;
     }
 

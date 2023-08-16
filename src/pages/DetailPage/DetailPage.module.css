@@ -27,7 +27,7 @@
     position:absolute;
     z-index:2;
     bottom: 3vh;
-    left: 40vh;
+    left: 32vh;
     width: 25vh;
     height: 6.5vh;
     background-color: rgba(197, 197, 197, 0.87);
@@ -41,9 +41,24 @@
     transition: all 0.4s ease-in-out;
 }
 
+.iconPlay{
+    width: 4.5vh;
+    height: 4.5vh;
+    padding-bottom: 0.4vh;
+}
+
 .iconplay:hover{
     color: rgba(187, 187, 187, 0.705);
     transition: 0.25s;
+}
+
+.btnFav{
+    position: absolute;
+    z-index: 2;
+    width: 6.5vh;
+    height: 6.5vh;
+    bottom: 3vh;
+    left: 65vh;
 }
 
 .Overview{
@@ -55,13 +70,28 @@
     right: 15vh;
 }
 
-.detailBox{
+.language{
     position:absolute;
-    z-index:3;
+    z-index:2;
     opacity:0.9;
     bottom: 3vh;
-    left: 75vh;
-    width: 120vh;
+    left: 78vh;
+}
+
+.classification{
+    position:absolute;
+    z-index:2;
+    opacity:0.9;
+    bottom: 3vh;
+    left: 98vh;
+}
+
+.releasDate{
+    position:absolute;
+    z-index:2;
+    opacity:0.9;
+    bottom: 3vh;
+    left: 128vh;
 }
 
 h4{
@@ -72,12 +102,6 @@ h4{
 
 .detailBox h4{
     padding-top: 1.5vh;
-}
-
-.iconPlay{
-    width: 4.5vh;
-    height: 4.5vh;
-    padding-bottom: 0.4vh;
 }
 
 .title{
@@ -95,16 +119,11 @@ h1{
     text-shadow: 2vh 2vh 3.5vh #000000e8
 }
 
-.btnFav{
-    width: 6.5vh;
-    height: 6.5vh;
-    margin-right: 3vh;
-    margin-left: -2vh;
-}
 
 @media screen and (min-width:200px) and (max-width:412px) {
 
     .MovieBackground{
+        margin-top: 6vh;
         width: auto;
         height: 40vh;
         background-size: cover;
@@ -132,10 +151,10 @@ h1{
     .banner_button_play {
         position:absolute;
         z-index:2;
-        bottom: 5vh;
+        bottom: 2vh;
         left: 2vh;
         width: 14vh;
-        height: 5vh;
+        height: 4vh;
         background-color: rgba(197, 197, 197, 0.87);
         color: rgb(0, 0, 0);
         font-size: 1.6vh;
@@ -147,9 +166,24 @@ h1{
         transition: all 0.4s ease-in-out;
     }
 
+    .iconPlay{
+        width: 3.4vh;
+        height: 4.5vh;
+        padding-bottom: 0.4vh;
+    }
+
     .iconplay:hover{
         color: rgba(187, 187, 187, 0.705);
         transition: 0.25s;
+    }
+
+    .btnFav{
+        position: absolute;
+        z-index: 2;
+        width: 4.3vh;
+        height: 4vh;
+        bottom: 2vh;
+        left: 18vh;
     }
 
     .Overview{
@@ -160,14 +194,31 @@ h1{
         left: -16vh;
     }
 
-    .detailBox{
+    .language{
         position:absolute;
-        z-index:3;
+        z-index:2;
         opacity:0.9;
-        bottom: 2vh;
-        left: 5vh;
-        width: 40vh;
-        margin: 0;
+        max-width: 15vh;
+        bottom: 6vh;
+        left: 8vh;
+    }
+
+    .classification{
+        position:absolute;
+        z-index:2;
+        opacity:0.9;
+        max-width: 15vh;
+        bottom: 3vh;
+        left: 8vh;
+    }
+
+    .releasDate{
+        position:absolute;
+        z-index:2;
+        opacity:0.9;
+        max-width: 15vh;
+        bottom: 0vh;
+        left: 8vh;
     }
 
     h4{
@@ -193,12 +244,6 @@ h1{
         font-style: italic;
         color: rgb(255, 255, 255);
         text-shadow: 2vh 2vh 3.5vh #000000e8
-    }
-
-    .btnFav{
-        width: 5vh;
-        height: 5vh;
-        margin: 0;
     }
 
 }
