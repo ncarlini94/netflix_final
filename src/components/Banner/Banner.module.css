@@ -130,7 +130,7 @@ padding: 0 3.4vh;
   color: rgb(255, 255, 255);
 }
 
-@media screen and (min-width: 200px) and (max-width: 412px) {
+@media screen and (min-width: 200px) and (max-width: 460px) {
 
 
   .banner_container{
@@ -156,6 +156,7 @@ padding: 0 3.4vh;
   .language{
     position: absolute;
     z-index: 2;
+    max-width: 20vh;
     top: 40.5vh;
     left: -16vh;
     font-size: 1.6vh;
@@ -164,6 +165,7 @@ padding: 0 3.4vh;
   .rate{
     position: absolute;
     z-index: 2;
+    max-width: 20vh;
     top: 44vh;
     left: -16vh;
     font-size: 1.6vh;
@@ -172,6 +174,7 @@ padding: 0 3.4vh;
   .relase{
     position: absolute;
     z-index: 2;
+    max-width: 27vh;
     top: 40.5vh;
     left: -3vh;
     font-size: 1.6vh;
