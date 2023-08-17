@@ -1,20 +1,17 @@
 import React from 'react'
 import Error from '../../assets/imagen/Error.jpg'
+import styles from './ErrorPage.module.css'
+import { Link } from 'react-router-dom'
 
 const ErrorPage = () => {
   return (
-    <div style={{
+    <div
+    className={`${styles.container} container-fluid`}
+    style={{
         backgroundImage:`url(${Error})`,
-        height: "760px",
-        width:"auto",
-        backgroundRepeat: "no-repeat",
-        marginLeft:'16vh'
         }}>
-            <h4 style={{
-                color:"white",
-                paddingTop:"40vh",
-                paddingLeft:"24vh"
-                }}>Ops! No se encueuentra la ruta</h4>
+            <h4 className={`${styles.msjError}`}>Ops! No se encueuentra la ruta</h4>
+            <Link to={'/Home'}><button className={`${styles.buttom} btn`}>Inicio</button></Link>
         </div>
   )
 }

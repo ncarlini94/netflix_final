@@ -3,6 +3,12 @@
     margin-left: 16vh;
 }
 
+.bar{
+    margin-left:-14vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.704);
+    padding-bottom:1vh;
+}
+
 .title{
     font-size: 6.2vh;
     padding-top: 9vh;
@@ -23,8 +29,61 @@
     font-size: 4.2vh;
 }
 
+.boxChildText{
+    color: rgba(255, 255, 255, 0.704);
+    font-size: 3.8vh;
+}
+
 .link{
     color: rgba(255, 0, 0, 0.932);
     font-size: 2.8vh;
     text-decoration: none;
+}
+
+
+@media screen and (min-width:200px) and (max-width:720px) {
+    .box{
+        margin:0;
+    }
+
+    .bar{
+        margin-left:-2vh;
+        border-top: 1px solid rgba(255, 255, 255, 0.704);
+        padding-bottom:1vh;
+    }
+
+    .title{
+        font-size: 6vh;
+        padding-top: 4vh;
+        padding-left: 4vh;
+    }
+
+    .selectedForm{
+        height: 6vh;
+        margin-right: 1vh;
+        color: white;
+        background-color: rgba(50, 50, 50, 0.941);
+    }
+
+    .boxChild{
+        padding: 0.5vh;
+    }
+
+    .boxChildTitle{
+        color: rgba(255, 255, 255, 0.973);
+        font-size: 2.8vh;
+        max-width: 20vh;
+        margin: 2vh 6vh 0 -2vh;
+    }
+
+    .boxChildText{
+        font-size: 2.8vh;
+    }
+
+    .link{
+        margin-top: 2vh;
+        color: rgba(255, 0, 0, 0.932);
+        font-size: 2.2vh;
+        text-decoration: none;
+    }
 }

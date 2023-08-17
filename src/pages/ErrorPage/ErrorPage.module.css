@@ -1,3 +1,52 @@
-.MsjError{
+.container{
+        height: 760px;
+        width:auto;
+        background-repeat: no-repeat;
+        margin-left: 16vh;
+        display: relative;
+        z-index: 1;
+}
+
+
+.msjError{
+    position: absolute;
+    z-index: 2;
+    top:35vh;
+    left: 40vh;
     color: white;
+}
+
+.buttom{
+    width: 12vh;
+    height: 7.8vh;
+    position: absolute;
+    z-index: 2;
+    top:33vh;
+    left: 88vh;
+    background-color: rgba(255, 0, 0, 0.863);
+    color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (min-width:200px) and (max-width:720px) {
+
+.container{
+        height: 60vh;
+        width: 100%;
+        background-repeat: no-repeat;
+        margin-left: 0;
+}
+
+.msjError{
+    width: 30vh;
+    top: 12vh;
+    left: 10vh;
+    margin: 0;
+    font-size: 2vh;
+}
+
+.buttom{
+    top: 24vh;
+    left: 18vh;
+    margin: 0;
+}
 }
