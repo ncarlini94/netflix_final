@@ -48,9 +48,19 @@ const ManageProfilePage = () => {
   if (location.state && location.state.profile ) {
     const { avatar, name } = location.state.profile;
     return (
-      <div key={location.state.key} className="container-fluid" style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
+      <div
+      key={location.state.key}
+      className="container-fluid"
+      style={{ paddingTop: '20vh', paddingLeft: '20vh' }}>
         <Link to={'/ProfileSetting'}>
-          <img src={`${avatar}`} className="navbar-toggler-icon" alt="Avatar" style={{ width: '20vh', height: '20vh' }} />
+          <img
+          src={`${avatar}`}
+          className="navbar-toggler-icon"
+          alt="Avatar"
+          style={{
+            width: '20vh',
+            height: '20vh'
+            }} />
         </Link>
         <h3 className="pt-4">{name}</h3>
       </div>

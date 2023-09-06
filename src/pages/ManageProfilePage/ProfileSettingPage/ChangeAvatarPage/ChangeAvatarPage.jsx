@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 const ChangeAvatarPage = () => {
 
-  const { t } = useTranslation;
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const avatars = [avatar, avatar1, avatar2, avatar3, avatar4, avatar5, avatar6];
 
@@ -22,8 +22,13 @@ const ChangeAvatarPage = () => {
 
   return (
     <>
-    <div style={{marginLeft:'30vh', marginTop:'15vh', maxWidth:'60em'}}>
+    <div style={{marginLeft:'34vh', marginTop:'15vh', maxWidth:'60em'}}>
       <h4 style={{color:'rgba(225,225,225,0850)', fontSize:'4.4vh'}}>{t('SelectAvatar')}</h4>
+      <div
+      style={{
+        marginLeft:'4vh',
+        marginTop:'2vh'
+      }}>
       {avatars.map((avatar, index) => (
         <img
         style={{maxWidth:'15vh', margin:'2vh'}}
@@ -33,6 +38,7 @@ const ChangeAvatarPage = () => {
           onClick={() => handleAvatarClick(avatar)}
         />
       ))}
+      </div>
       </div>
     </>
   );

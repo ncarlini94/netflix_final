@@ -145,9 +145,18 @@ const DetailPage = () => {
                 <BsHeart/>
               )}
             </button>
-            <h4 className={`${styles.language}`}>{t("language")}: {location.state.value.original_language}</h4>
-            <h4 className={`${styles.classification}`}>{t("classification")}: ☆ {location.state.value.vote_average}</h4>
-            <h4 className={`${styles.releasDate}`}>{t("releaseDate")}: {location.state.value.release_date}</h4>
+            <h4
+            className={`${styles.language}`}>
+            {t("language")}: {location.state.value.original_language}
+            </h4>
+            <h4
+            className={`${styles.classification}`}>
+            {t("classification")}: ☆ {location.state.value.vote_average}
+            </h4>
+            <h4
+            className={`${styles.releasDate}`}>
+            {t("releaseDate")}: {location.state.value.release_date}
+            </h4>
           </div>
           </div>
         </div>

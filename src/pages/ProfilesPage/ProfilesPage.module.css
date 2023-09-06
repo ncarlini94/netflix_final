@@ -39,7 +39,7 @@
 }
 
 
-@media screen and (min-width:200px) and (max-width:720px) {
+@media screen and (max-width:720px) {
 
     .box{
         max-width: 20vh;

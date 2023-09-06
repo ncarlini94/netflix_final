@@ -20,17 +20,22 @@
     color: rgb(153, 153, 153);
 }
 
-@media screen and (min-width:200px) and (max-width:720px) {
+@media screen and (max-width:720px) {
     .list{
         padding-top: 4vh;
-        max-width: 412px;
-        margin-left: 0;
+        max-width: 650px;
+        margin-left: -4vh;
         list-style: none;
         margin-top: 0vh;
     }
 
+    .box{
+        width: 14vh;
+    }
+
     .item{
-        margin: 1vh 8vh;
+        width: 10vh;
+        margin: 2.4vh 0;
     }
 
     .link{
@@ -46,5 +51,6 @@
 
     .copyright h4 {
         font-size: 2vh;
+        max-width: 25vh;
     }
 }

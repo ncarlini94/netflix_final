@@ -73,5 +73,7 @@
     "helpPagePartFour":"Asimismo, se aclara que esta página no está asociada a ninguna entidad comercial o institución más allá del propósito educativo mencionado. No se promocionan productos o servicios comerciales y no se buscará generar ingresos a través de publicidad o patrocinios.",
     "helpPagePartFive":"Espero que el contenido presentado pueda ser de utilidad para aquellos interesados en la programación web y que pueda servir como un ejemplo práctico de implementación de tecnologías y buenas prácticas en el desarrollo de aplicaciones.",
     "helpPagePartSix":"Se agradece su comprensión y respeto hacia el propósito educativo de este proyecto, y cualquier uso indebido o no autorizado de la página y su contenido queda expresamente prohibido.",
-    "helpPagePartSeven":"¡Gracias por visitar esta página!"
+    "helpPagePartSeven":"¡Gracias por visitar esta página!",
+    "emailVerify":"El correo electrónico no se encuentra registrado. Ten en cuenta las mayúsculas y minúsculas.",
+    "passwordVerify":"La contraseña es incorrecta. Por favor, verifica tu contraseña."
 }

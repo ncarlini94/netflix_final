@@ -41,6 +41,14 @@
     color: rgba(255, 255, 255, 0.918);
 }
 
+.btnError{
+    width: 55vh;
+    margin-top: 4vh;
+    margin-left: -2vh;
+    color: rgba(241, 0, 0, 0.836);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
 
 
 @media screen and (min-width:200px) and (max-width:720px) {
@@ -50,11 +58,16 @@
         border-radius: 0.7vh;
         margin-top: 10vh;
         max-width: 38vh;
-        margin-left: 3.8vh;
+        margin-left: 4.6vh;
     }
 
     .title{
         font-size: 3vh;
         margin-left: -8vh;
+    }
+
+    .btnError{
+        width: 28vh;
+        margin: 4vh 0 0 -3vh;
     }
 }

@@ -12,7 +12,7 @@ const Footer = () => {
     <div className='container-fluid'>
         <ul className={`${styles.list} row`}>
 
-            <div className='col-sm'>
+            <div className={`${styles.box} col-sm-4`}>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
             {t('FAQ')}
@@ -27,7 +27,7 @@ const Footer = () => {
             </Link></li>
             </div>
 
-            <div className='col-sm'>
+            <div className={`${styles.box} col-sm-4`}>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/Account'}>
             {t('account')}
@@ -38,7 +38,7 @@ const Footer = () => {
             </Link></li>
             </div>
 
-            <div className='col-sm'>
+            <div className={`${styles.box} col-sm-4`}>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
             {t('termsOfUse')}

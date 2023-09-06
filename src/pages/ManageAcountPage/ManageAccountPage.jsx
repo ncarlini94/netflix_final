@@ -10,6 +10,9 @@ const ManageAccount = () => {
     const { t,  i18n } = useTranslation();
     const [user, setUser] = useState(null);
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+    const [loading, setLoading] = useState(true);
+
+
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
@@ -29,6 +32,7 @@ const ManageAccount = () => {
               }
             };
             getUser()
+            setLoading(false)
           } else {
             setUser(null);
           }
@@ -52,6 +56,9 @@ const ManageAccount = () => {
 }
 
 
+if (loading) {
+  return <div className={`${styles.loader_container}`}></div>;
+}
 
 
   return (

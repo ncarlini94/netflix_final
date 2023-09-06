@@ -90,7 +90,13 @@ const handleAvatarChange = () => {
   return (
     <>
         <div className={`${styles.box} container`}>
-        <h2 className={`${styles.title}`} style={{ color:'rgb(255,255,255)'}}>{t('profileSettings')}</h2>
+        <h2
+        className={`${styles.title}`}
+        style={{
+          color:'rgb(255,255,255)'
+          }}>
+          {t('profileSettings')}
+          </h2>
         <div>
           <img
           className={`${styles.avatar}`}
@@ -100,10 +106,18 @@ const handleAvatarChange = () => {
             onClick={handleAvatarChange}></img>
         </div>
         <div>
-          <input className={`${styles.inputName} form-control`} type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <input
+          className={`${styles.inputName} form-control`}
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)} />
         </div>
-        <button className={`${styles.btnSave} btn`} onClick={saveChanges}>{t('save')}</button>
-        <button className={`${styles.btnDelet} btn`} onClick={deleteProfile}>{t('deleteProfile')}</button>
+        <button
+        className={`${styles.btnSave} btn`}
+        onClick={saveChanges}>{t('save')}</button>
+        <button
+        className={`${styles.btnDelet} btn`}
+        onClick={deleteProfile}>{t('deleteProfile')}</button>
       </div>
     </>
   )

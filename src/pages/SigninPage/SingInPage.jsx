@@ -40,14 +40,14 @@ const SingInPage = () => {
       return
     }
     if (!emailExists) {
-      setError('El correo electrónico no se encuentra registrado.');
+      setError(t('emailVerify'));
     } else {
       setError('');
       try {
         await signInWithEmailAndPassword(auth, email, password);
         navigate('/Profiles');
       } catch (error) {
-        setError('La contraseña es incorrecta. Por favor, verifica tu contraseña.');
+        setError(t('passwordVerify'));
       }
     }
   }
@@ -65,7 +65,10 @@ const SingInPage = () => {
                 className={`${styles.input} form-control`}
                 id='email'
                 value={email}
-                style={{borderRadius:'0.6vh', backgroundColor:'rgba(50, 50, 50, 0.941)', color:'rgb(255,255,255)'}}
+                style={{
+                  borderRadius:'0.6vh',
+                  backgroundColor:'rgba(50, 50, 50, 0.941)',
+                  color:'rgb(255,255,255)'}}
                 onChange={(e) => { setEmail(e.target.value)}}
             />
           </div>
@@ -77,14 +80,19 @@ const SingInPage = () => {
                 className={`${styles.input} form-control`}
                 id="password"
                 value={password}
-                style={{borderRadius:'0.6vh', backgroundColor:'rgba(50, 50, 50, 0.941)', color:'rgb(255, 255, 255)'}}
+                style={{
+                  borderRadius:'0.6vh',
+                  backgroundColor:'rgba(50, 50, 50, 0.941)',
+                  color:'rgb(255, 255, 255)'}}
                 onChange={(e) => { setPassword(e.target.value)}}
             />
             </div>
             <div className={`${styles.sendbtn} form-group pt-4`}>
-            <button type="submit" className={`${styles.sendLogin} btn`}>{t('login')}</button>
+            <button type="submit" className={`${styles.sendLogin} btn`}>
+            {t('login')}
+            </button>
             </div>
-            <h4 className='bg-danger mt-2'>{error}</h4>
+            <h4 className={`${styles.btnError}`}>{error}</h4>
         </form>
     </div>
     </>

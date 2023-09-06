@@ -45,19 +45,33 @@ const Navbar = () => {
 
     return(
         <>
-        <div className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
+        <div
+        className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
             <Link className="navbar-brand col-2 " to="/Home">
               <NetflixLogo className={`${styles.logo}`}/>
             </Link>
-
         <nav className={`${styles.navbar_center} col-9 navbar navbar-expand-sm`}>
-            <button className="navbar-toggler dropdown-toggle bg-dark" data-bs-toggle="dropdown" type="button" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className={`${styles.explorer}`}>{t("explore")}</span>
+            <button
+            className="navbar-toggler dropdown-toggle bg-dark"
+            data-bs-toggle="dropdown"
+            type="button"
+            data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span
+            className={`${styles.explorer} pe-2`}>
+            {t("explore")}
+            </span>
           </button>
 
-            <div className={`${styles.dropmenu} dropdown-menu collapse navbar-collapse`} id="navbarToggleExternalContent">
-            <ul className={`${styles.list} navbar-nav me-auto mb-2 mb-lg-0 ps-3 pe-3`}>
-            <li className="nav-item">
+            <div
+            className={`${styles.dropmenu} dropdown-menu collapse navbar-collapse`}
+            id="navbarToggleExternalContent">
+            <ul
+            className={`${styles.list} navbar-nav me-auto mb-2 mb-lg-0 ps-3 pe-3`}>
+            <li
+            className="nav-item">
               <Link className={`${styles.nav_link} nav-link`} to="/Home">{t("home")}</Link>
             </li>
             <li className="nav-item">
@@ -80,18 +94,69 @@ const Navbar = () => {
       </nav>
 
       {profile && (
-          <div className={`${styles.boxAvatar} col-1 btn-group`}>
-            <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src={`${profile.avatar}`} className={`${styles.avatar} navbar-toggler-icon`} alt="Avatar"></img>
+          <div
+            className={`${styles.boxAvatar} col-1 btn-group`}>
+            <button
+              type="button"
+              className="btn dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+                <img
+                  src={`${profile.avatar}`}
+                  className={`${styles.avatar} navbar-toggler-icon`}
+                  alt="Avatar">
+                </img>
             </button>
-            <ul className="dropdown-menu dropdown-menu-end bg-dark me-1">
-              <li><h5 style={{color: 'rgba(255,255,255,1)', fontSize: "4vh", paddingLeft:"2vh", paddingBottom: "0.6vh"}}>{profile.name}</h5></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`} to={'/Account'}>{t("account")}</Link></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`} to={'/Profiles'}>{t("changeProfile")}</Link></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`} to={'/ManageProfiles'}>{t("editProfiles")}</Link></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`} to={'/HelpPage'}>{t("helpCenter")}</Link></li>
-              <li><hr className="dropdown-divider"></hr></li>
-              <li><Link className={`${styles.dropuser} dropdown-item`} onClick={closeSession}>{t("signOff")}</Link></li>
+            <ul
+              className="dropdown-menu dropdown-menu-end bg-dark me-1">
+                <li>
+                  <h5
+                    style={{
+                      color: 'rgba(255,255,255,1)',
+                      fontSize: "4vh",
+                      paddingLeft:"2vh",
+                      paddingBottom: "0.6vh"
+                    }}>
+                    {profile.name}
+                  </h5>
+                </li>
+                <li>
+                  <Link
+                    className={`${styles.dropuser} dropdown-item`}
+                    to={'/Account'}>
+                    {t("account")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`${styles.dropuser} dropdown-item`}
+                    to={'/Profiles'}>
+                    {t("changeProfile")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`${styles.dropuser} dropdown-item`}
+                    to={'/ManageProfiles'}>
+                    {t("editProfiles")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`${styles.dropuser} dropdown-item`}
+                    to={'/HelpPage'}>
+                    {t("helpCenter")}
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider"></hr></li>
+                <li>
+                  <Link
+                    className={`${styles.dropuser} dropdown-item`}
+                    onClick={closeSession}>
+                    {t("signOff")}
+                  </Link>
+                </li>
             </ul>
           </div>
       )}

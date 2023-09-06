@@ -74,5 +74,7 @@
     "helpPagePartFour":"Likewise, it is clarified that this page is not associated with any commercial entity or institution beyond the mentioned educational purpose. No commercial products or services are endorsed and no revenue will be sought through advertising or sponsorships.",
     "helpPagePartFive":"I hope that the content presented can be useful for those interested in web programming and that it can serve as a practical example of technology implementation and good practices in application development.",
     "helpPagePartSix":"Your understanding and respect for the educational purpose of this project is appreciated, and any improper or unauthorized use of the page and its content is expressly prohibited.",
-    "helpPagePartSeven":"Thank you for visiting this page!"
+    "helpPagePartSeven":"Thank you for visiting this page!",
+    "emailVerify":"The email is not registered. Take into account the upper and lower case letters.",
+    "passwordVerify":"Incorrect password. Please verify your password."
   }

@@ -10,7 +10,7 @@ const ProtectedLayout = () => {
     const navigate = useNavigate()
     const location = useLocation();
     const path = location.pathname;
-    const isProfilePage = path === '/Profiles' || path === '/ManageProfiles';
+    const isProfilePage = path === '/Profiles' || path === '/ManageProfiles' || path === '/Avatar';
 
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
