@@ -75,5 +75,7 @@
     "helpPagePartSix":"Se agradece su comprensión y respeto hacia el propósito educativo de este proyecto, y cualquier uso indebido o no autorizado de la página y su contenido queda expresamente prohibido.",
     "helpPagePartSeven":"¡Gracias por visitar esta página!",
     "emailVerify":"El correo electrónico no se encuentra registrado. Ten en cuenta las mayúsculas y minúsculas.",
-    "passwordVerify":"La contraseña es incorrecta. Por favor, verifica tu contraseña."
+    "passwordVerify":"La contraseña es incorrecta. Por favor, verifica tu contraseña.",
+    "emailEmpty":"Debes ingresar un correo electrónico",
+    "passwordEmpty":"Debes ingresar una contraseña"
 }

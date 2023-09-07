@@ -8,3 +8,41 @@
     border-radius: 1.2vh;
     font-size: 2.5vh;
 }
+
+.logo{
+    width: 18vh;
+    height: 6vh;
+    margin: 0.4vh 10vh 1vh 12vh;
+}
+
+.navbar{
+    background: linear-gradient(
+    to bottom,
+    rgb(27, 27, 27) 0%,
+    rgba(0, 0, 0, 0.726) 75%,
+    rgba(0, 0, 0, 0) 100%
+    );
+}
+
+@media screen and (max-width:720px) {
+    .boxText {
+        margin: 1vh 0 3vh 2vh;
+        max-width: 45vh;
+        padding: 4vh 2vh;
+        max-height: 162vh;
+        color: rgb(255, 255, 255);
+        background-color: rgba(68, 68, 68, 0.329);
+        border-radius: 1.2vh;
+        font-size: 2.2vh;
+    }
+
+    .logo{
+        width: 18vh;
+        height: 6vh;
+        margin: 0h 2vh 1vh 0vh;
+    }
+
+    .Link{
+        margin-left: -10vh;
+    }
+}

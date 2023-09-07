@@ -12,7 +12,7 @@ const Footer = () => {
     <div className='container-fluid'>
         <ul className={`${styles.list} row`}>
 
-            <div className={`${styles.box} col-sm-4`}>
+            <ul className={`${styles.box} col-sm-4`}>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
             {t('FAQ')}
@@ -25,9 +25,9 @@ const Footer = () => {
             <Link className={`${styles.link}`} to={'/HelpPage'}>
             {t('helpCenter')}
             </Link></li>
-            </div>
+            </ul>
 
-            <div className={`${styles.box} col-sm-4`}>
+            <ul className={`${styles.box} col-sm-4`}>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/Account'}>
             {t('account')}
@@ -36,9 +36,9 @@ const Footer = () => {
             <Link className={`${styles.link}`} to={'/HelpPage'}>
             {t('legalNotices')}
             </Link></li>
-            </div>
+            </ul>
 
-            <div className={`${styles.box} col-sm-4`}>
+            <ul className={`${styles.box} col-sm-4`}>
             <li className={`${styles.item}`}>
             <Link className={`${styles.link}`} to={'/HelpPage'}>
             {t('termsOfUse')}
@@ -47,7 +47,7 @@ const Footer = () => {
             <Link className={`${styles.link}`}>
             {t('contactUs')}
             </Link></li>
-            </div>
+            </ul>
             <div className={`${styles.copyright} col-sm-12`}>
               <h3 style={{fontSize:'2.4vh'}}>Web creada por - Nicolás -</h3>
             </div>

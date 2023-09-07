@@ -33,7 +33,6 @@ function App() {
       <Route path='/' element={<PublicLayout/>}>
       <Route path='/SignIn' element={<SingInPage/>}/>
       <Route path='/SignUp' element={<SingUpPage/>}/>
-      <Route path='/HelpPage' element={<HelpPage/>} />
       </Route>
 
       <Route element={<ProtectedLayout/>}>
@@ -54,10 +53,10 @@ function App() {
       <Route path='/Avatar' element={<ChangeAvatarPage/>}/>
       <Route path='/AddProfile' element={<AddProfilesPage/>}/>
       <Route path='/SelectAvatar' element={<SelectAvatarPage/>}/>
-      <Route path='/HelpPage' element={<HelpPage/>} />
       <Route path='/SearchPage' element={<SearchPage/>} />
       </Route>
 
+      <Route path='/HelpPage' element={<HelpPage/>} />
       <Route path='*' element={<ErrorPage/>} />
     </Routes>
 

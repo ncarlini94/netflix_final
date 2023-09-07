@@ -72,16 +72,30 @@ if (loading) {
           <div className={`${styles.boxChild} row`}>
           <hr className={`${styles.bar} col-12`}/>
             <h3 className={`${styles.boxChildTitle} col-7`}>Email: <span className={`${styles.boxChildText}`}>{user.email}</span></h3>
-            <Link className={`${styles.link} col`}  to={'/ChangeEmail'}>{t("changeEmail")}</Link>
+            <Link
+            className={`${styles.link} col`}  to={'/ChangeEmail'}>
+            {t("changeEmail")}
+            </Link>
           </div>
           <div className={`${styles.boxChild} row`}>
             <h3 className={`${styles.boxChildTitle} col-7`}>{t("password")}: <span className={`${styles.boxChildText}`}>********</span></h3>
-            <Link className={`${styles.link} col`}  to={'/ChangePassword'}>{t("changePassword")}</Link>
+            <Link
+            className={`${styles.link} col`}
+            to={'/ChangePassword'}>
+            {t("changePassword")}
+            </Link>
           </div>
           <hr className={`${styles.bar} col-12`}/>
           <div className={`${styles.boxChild} row`}>
-            <h3 className={`${styles.boxChildTitle} col-7`}>Plan: <span className={`${styles.boxChildText}`}>{user.plan}</span></h3>
-            <Link className={`${styles.link} col`} to={'/ChangePlan'}>{t("changePlan")}</Link>
+            <h3
+              className={`${styles.boxChildTitle} col-7`}>
+              Plan: <span className={`${styles.boxChildText}`}>{user.plan}
+              </span>
+            </h3>
+            <Link
+            className={`${styles.link} col`}
+            to={'/ChangePlan'}>{t("changePlan")}
+            </Link>
           </div>
           <hr className={`${styles.bar} col-12`}/>
           <div className={`${styles.boxChild} row`}>
@@ -90,7 +104,6 @@ if (loading) {
               className={`${styles.selectedForm} form-select col`}
               value={i18n.language}
               onChange={changeLanguage}
-              style={{maxWidth:'22vh', marginLeft:'2vh'}}
             >
               <option value="en">English</option>
               <option value="es">Español</option>

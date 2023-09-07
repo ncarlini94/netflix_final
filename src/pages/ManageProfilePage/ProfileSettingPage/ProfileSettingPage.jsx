@@ -100,7 +100,6 @@ const handleAvatarChange = () => {
         <div>
           <img
           className={`${styles.avatar}`}
-            style={{maxWidth:'18vh', marginBottom:'2vh'}}
             src={`${avatar}`}
             alt='avatar'
             onClick={handleAvatarChange}></img>

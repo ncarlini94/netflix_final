@@ -34,10 +34,12 @@ const SingInPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email === '') {
+      setError(t('emailEmpty'));
       return;
     }
     if (password === '') {
-      return
+      setError(t('passwordEmpty'));
+      return;
     }
     if (!emailExists) {
       setError(t('emailVerify'));

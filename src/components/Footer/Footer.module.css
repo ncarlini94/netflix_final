@@ -4,6 +4,10 @@
     margin-left: 12vh;
 }
 
+.box{
+    list-style: none;
+}
+
 .item{
     margin: 1.2vh 0;
 }

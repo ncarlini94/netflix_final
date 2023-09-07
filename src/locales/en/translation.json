@@ -76,5 +76,7 @@
     "helpPagePartSix":"Your understanding and respect for the educational purpose of this project is appreciated, and any improper or unauthorized use of the page and its content is expressly prohibited.",
     "helpPagePartSeven":"Thank you for visiting this page!",
     "emailVerify":"The email is not registered. Take into account the upper and lower case letters.",
-    "passwordVerify":"Incorrect password. Please verify your password."
+    "passwordVerify":"Incorrect password. Please verify your password.",
+    "emailEmpty":"You must enter an email",
+    "passwordEmpty":"You must enter a password"
   }

@@ -28,6 +28,7 @@
 .selectedForm{
     color: white;
     background-color: rgba(50, 50, 50, 0.941);
+    max-width: 22vh;
 }
 
 .boxChild{
@@ -79,6 +80,7 @@
     }
 
     .selectedForm{
+        width: 8vh;
         height: 6vh;
         margin-right: 1vh;
         color: white;
