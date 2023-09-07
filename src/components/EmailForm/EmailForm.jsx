@@ -31,6 +31,7 @@ const EmailForm = () => {
   const handleEmail = (e) => {
     e.preventDefault();
     if (email === '') {
+      setError(t('emailEmpty'));
       return;
     }
     if (userExists) {

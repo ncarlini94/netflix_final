@@ -22,7 +22,7 @@ const ChoosePlan = ({formData, setFormData}) => {
     <>
     <div className={`${styles.box} container-fluid`} style={{color:"white"}}>
     <div>
-      <h2 style={{marginBottom:'2.5vh'}}>{t("titlePlanRegister")}</h2>
+      <h2>{t("titlePlanRegister")}</h2>
       <p>✓ {t("firstTextPlanRegister")}</p>
       <p>✓ {t("secondTextPlanRegister")}</p>
       <p>✓ {t("thirdTextPlanRegister")}</p>

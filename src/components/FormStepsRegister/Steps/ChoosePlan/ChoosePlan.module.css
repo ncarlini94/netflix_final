@@ -12,8 +12,9 @@
     padding: 8vh;
     width: 24vh;
     background-color: rgb(255, 0, 0);
-    margin: 1vh;
+    margin: 2vh;
     align-self: flex-end;
+    border-radius: 1vh;
 }
 
 .btnPlan h4 {
@@ -36,16 +37,24 @@
     background-color: #333;
 }
 
-@media screen and (min-width:200px) and (max-width: 720px) {
+@media screen and (max-width: 720px) {
     .box{
         max-width: 42vh;
-        height: 110vh;
-        margin-bottom: -14vh;
+        height: 95vh;
+        margin: 0 0.4vh;
+        padding: 0 0;
+    }
+
+    h2, p{
+        width: 44vh;
+        margin: 0 0 2vh 0;
     }
 
     .boxPlan{
-        margin-left: 18vh;
-        width: 28vh;
+        margin-left: 34vh;
+        margin-top: 6vh;
+        width: 12vh;
+        padding: 0;
     }
 
     .btnPlan{
@@ -56,8 +65,9 @@
         width: 10vh;
         height: 5vh;
         background-color: rgb(255, 0, 0);
-        margin: 0.4vh;
+        margin: 0.6vh;
         align-self: flex-end;
+        border-radius: 0.4vh;
     }
 
     .btnPlan h4 {
@@ -66,18 +76,18 @@
     }
 
     .textLegend{
-        width: 10vh;
+        width: 15vh;
         font-size: 2vh;
         padding: 0;
     }
 
     .rowBox{
-        width: 42vh;
+        width: 46vh;
     }
 
     .rowBox h3{
-        width: 9.4vh;
-        height: 8vh;
+        max-width: 9vh;
+        height: 5vh;
         margin: 0;
         font-size: 2vh;
         padding: 0;

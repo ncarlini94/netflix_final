@@ -38,8 +38,9 @@ const CreditCard = ({formData, setFormData}) => {
 
 
     return (
-        <>
-        <div className='mb-5' key="Payment">
+      <>
+        <div className={`${styles.paymentContainer}`}>
+        <div key="Payment">
         <div className="App-payment">
         <Card
             number={number}
@@ -50,7 +51,6 @@ const CreditCard = ({formData, setFormData}) => {
             callback={handleCallback}
             placeholders={{ name: 'NAME', number: 'Card Number', expiry: 'MM/YY', cvc: 'CVC' }}
           />
-          <div className={`${styles.paymentContainer}`}>
           <form>
           <input
                 type='text'
@@ -58,13 +58,11 @@ const CreditCard = ({formData, setFormData}) => {
                 className={`${styles.inputForm} form-control`}
                 placeholder={t('name')}
                 pattern='[a-z A-Z-]+'
-                required
+                required={true}
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
                 style={{
                   backgroundColor:'rgb(60,60,60)',
-                  padding:'2vh',
-                  borderRadius:'0.3vh',
                   color:'rgb(255,255,255)'
               }}
               />
@@ -75,13 +73,11 @@ const CreditCard = ({formData, setFormData}) => {
                 placeholder={t('cardNumber')}
                 pattern='[\d| ]{16,22}'
                 maxLength='19'
-                required
+                required={true}
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
                 style={{
                   backgroundColor:'rgb(60,60,60)',
-                  padding:'2vh',
-                  borderRadius:'0.3vh',
                   color:'rgb(255,255,255)'
               }}
               />
@@ -91,13 +87,11 @@ const CreditCard = ({formData, setFormData}) => {
                 className={`${styles.inputForm} form-control`}
                 placeholder={t('MM/AA')}
                 pattern='\d\d/\d\d'
-                required
+                required={true}
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
                 style={{
                   backgroundColor:'rgb(60,60,60)',
-                  padding:'2vh',
-                  borderRadius:'0.3vh',
                   color:'rgb(255,255,255)'
               }}
               />
@@ -107,13 +101,11 @@ const CreditCard = ({formData, setFormData}) => {
                 className={`${styles.inputForm} form-control`}
                 placeholder={t('CVC')}
                 pattern='\d{3}'
-                required
+                required={true}
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
                 style={{
                   backgroundColor:'rgb(60,60,60)',
-                  padding:'2vh',
-                  borderRadius:'0.3vh',
                   color:'rgb(255,255,255)'
               }}
               />

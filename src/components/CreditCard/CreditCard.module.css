@@ -5,27 +5,34 @@
     margin: 6vh 0;
 }
 
+form{
+    margin-top: 4vh;
+}
+
 .inputForm{
-    width: 50vh;
-    margin: 1vh 0;
     border-color: rgba(94, 94, 94, 0.863);
+    border-radius: 0.3vh;
+    width: 60vh;
+    margin: 1vh 0;
+    padding: 2vh;
 }
 
 .inputForm::placeholder{
     color: rgb(255, 255, 255);
 }
 
-@media screen and (min-width:200px) and (max-width: 720px){
+@media screen and (max-width: 720px){
     .paymentContainer {
+        width: 38vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2vh;
+        margin: 0 4vh 6vh 4vh;
     }
 
     .inputForm{
-        width: 35vh;
-        margin: 1vh 0;
+        width: 40vh;
+        margin: 1vh 5vh;
         border-color: rgba(94, 94, 94, 0.863);
     }
 

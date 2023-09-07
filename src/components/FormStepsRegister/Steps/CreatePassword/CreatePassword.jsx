@@ -44,7 +44,7 @@ const CreatePassword = ({formData, setFormData}) => {
             name='email'
             value={formData.email}
             placeholder='Email'
-            required
+            rrequired={true}
             onChange={handleChange}
         /> }
       </div>
@@ -62,7 +62,7 @@ const CreatePassword = ({formData, setFormData}) => {
             maxLength={20}
             value={formData.password}
             placeholder='Password'
-            required
+            required={true}
             onChange={handleChange}
         />
         {!isPasswordValid(formData.password) && (
