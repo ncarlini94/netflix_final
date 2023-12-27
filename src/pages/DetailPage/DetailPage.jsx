@@ -24,6 +24,10 @@ const DetailPage = () => {
   const scrollToX = 0;
   const scrollToY = 0;
 
+  console.log(user)
+  console.log(storedProfile)
+
+
   useEffect(() => {
     window.scrollTo(scrollToX, scrollToY);
   }, [location, scrollToX, scrollToY]);
@@ -54,6 +58,7 @@ const DetailPage = () => {
     const movieId = location.state.value.id;
     return storedProfile.favorites.some((movie) => movie.id === movieId);
   };
+
 
   const [isFavorite, setIsFavorite] = useState(isMovieInFavorites());
 
