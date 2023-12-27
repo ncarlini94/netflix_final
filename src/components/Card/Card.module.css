@@ -1,6 +1,6 @@
 .card {
     background-color: rgb(54, 54, 54);
-    margin: 0.4vh;
+    margin: 0.2vh;
     height: 160px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,4 +37,12 @@
     opacity: 1;
     padding-top: 6vh;
     padding-left: 2vh;
+}
+
+
+@media screen and (min-width:200px) and (max-width:720px) {
+
+    .card{
+        height: 120px;
+    }
 }

@@ -43,7 +43,7 @@
   padding-left: 1.4vh;
   position: absolute;
   z-index: 2;
-  top: 64vh;
+  top: 63.5vh;
   margin-right: 10vh;
 }
 
@@ -54,21 +54,21 @@ h1, h2 {
 .language{
   position: absolute;
   z-index: 2;
-  top: 86.5vh;
+  top: 89.5vh;
   left: 66vh;
 }
 
 .rate{
   position: absolute;
   z-index: 2;
-  top: 86.5vh;
+  top: 89.5vh;
   left: 85vh;
 }
 
 .relase{
   position: absolute;
   z-index: 2;
-  top: 86.5vh;
+  top: 89.5vh;
   left: 115vh;
 }
 
@@ -76,7 +76,7 @@ h1, h2 {
   transition: 0.3s;
   position: absolute;
   z-index: 2;
-  top: 85vh;
+  top: 88vh;
 }
 
 button{

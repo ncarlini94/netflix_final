@@ -8,10 +8,10 @@ import { IoPlay } from 'react-icons/io5';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { useTranslation } from 'react-i18next'
 
-const Banner = ({entity, state, language, quality}) => {
+const Banner = ({entity, state, language, quality, page}) => {
 
     const { t } = useTranslation();
-    const [values, loading] = useApi(entity, state, language)
+    const [values, loading] = useApi(entity, state, language, page='1')
     const [randomValue, setRandomValue] = useState([])
     const [randomImg, setRandomImg] = useState([]);
     const qualityRef = useRef(quality)
@@ -32,6 +32,7 @@ const Banner = ({entity, state, language, quality}) => {
         };
         getRandomValue();
 }, [values]);
+
 
 
 

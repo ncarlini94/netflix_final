@@ -49,6 +49,7 @@ const SingInPage = () => {
         await signInWithEmailAndPassword(auth, email, password);
         navigate('/Profiles');
       } catch (error) {
+        console.error(error.message)
         setError(t('passwordVerify'));
       }
     }

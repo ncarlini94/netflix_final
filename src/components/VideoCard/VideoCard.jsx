@@ -52,6 +52,7 @@ return(
     width='100%'
     height='100%'
     controls={true}
+    playing={true}
     config = {{
         youtube :
             {playerVars :

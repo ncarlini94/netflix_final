@@ -6,13 +6,12 @@ import { settingsSlider } from "./Settings";
 import styles from "./Carrousel.module.css";
 
 
-const Carousel = ({entity, state, language, title, quality}) => {
+const Carousel = ({entity, state, language, title, quality, page}) => {
 
-    const [values] = useApi(entity, state, language)
+    const [values] = useApi(entity, state, language, page='1')
 
     return(
         <>
-        <div className="container-fluid">
             <div>
                 <h1 className={`${styles.titleCarrousel}`}>
                     {title}
@@ -36,7 +35,6 @@ const Carousel = ({entity, state, language, title, quality}) => {
                     ))
                 }
             </Slider>
-            </div>
         </>
     )
 
