@@ -18,7 +18,7 @@ const LoginNavbar = () => {
         <nav className={`${styles.navbar} navbar navbar-expand`}>
       <div className="container-fluid">
         <Link className="" to="/">
-          <img src={NetflixLogo} className={`${styles.logo}`} />
+          <img src={NetflixLogo} alt="logo" className={`${styles.logo}`}/>
         </Link>
         <div className={`${styles.box} row`}>
           <div className="col-auto" style={{width:'auto'}}>

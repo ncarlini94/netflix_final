@@ -48,7 +48,7 @@ const Navbar = () => {
         <div
         className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
             <Link className="navbar-brand col-2 " to="/Home">
-              <img src={NetflixLogo} className={`${styles.logo}`}/>
+              <img src={NetflixLogo} alt="logo" className={`${styles.logo}`}/>
             </Link>
         <nav className={`${styles.navbar_center} col-9 navbar navbar-expand-sm`}>
             <button
