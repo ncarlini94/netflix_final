@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as NetflixLogo } from "../../assets/imagen/logo.svg";
+import NetflixLogo  from "../../assets/imagen/logo2.jpg";
 import styles from "./LoginNavbar.module.css"
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -18,10 +18,10 @@ const LoginNavbar = () => {
         <nav className={`${styles.navbar} navbar navbar-expand`}>
       <div className="container-fluid">
         <Link className="" to="/">
-          <NetflixLogo className={`${styles.logo}`} />
+          <img src={NetflixLogo} className={`${styles.logo}`} />
         </Link>
-        <div className="row">
-          <div className="col-sm-auto" style={{width:'auto'}}>
+        <div className={`${styles.box} row`}>
+          <div className="col-auto" style={{width:'auto'}}>
             <select
               className={`${styles.selectedForm} form-select`}
               value={i18n.language}
@@ -32,7 +32,7 @@ const LoginNavbar = () => {
               <option value="es">Español</option>
             </select>
           </div>
-          <div className="col-sm-auto" style={{width:'auto'}}>
+          <div className={`col-auto`}>
             <button className={`${styles.sesionBtn} btn`}>
               <Link
                 style={{ color: "rgb(255,255,255,0.9)", textDecoration: "none" }}

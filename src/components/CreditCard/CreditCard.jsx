@@ -57,10 +57,17 @@ const CreditCard = ({formData, setFormData}) => {
                 name='name'
                 className={`${styles.inputForm} form-control`}
                 placeholder={t('name')}
-                pattern='[a-z A-Z-]+'
+                pattern='[A-Za-z -]+'
                 required={true}
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
+                onKeyPress={(e) => {
+                  const pattern = /[A-Za-z -]/;
+                  const inputChar = String.fromCharCode(e.charCode);
+                  if (!pattern.test(inputChar)) {
+                      e.preventDefault();
+                  }
+                }}
                 style={{
                   backgroundColor:'rgb(60,60,60)',
                   color:'rgb(255,255,255)'

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ReactComponent as NetflixLogo } from "../../assets/imagen/logo.svg";
+import NetflixLogo from "../../assets/imagen/logo2.jpg";
 import styles from "./Navbar.module.css"
 import { Link, useNavigate } from "react-router-dom";
 import {auth} from '../../firebase/config';
@@ -48,7 +48,7 @@ const Navbar = () => {
         <div
         className={`nav row fixed-top ${isScrolled ? `${styles.navbar_dark}` : `${styles.navbar}`}`}>
             <Link className="navbar-brand col-2 " to="/Home">
-              <NetflixLogo className={`${styles.logo}`}/>
+              <img src={NetflixLogo} className={`${styles.logo}`}/>
             </Link>
         <nav className={`${styles.navbar_center} col-9 navbar navbar-expand-sm`}>
             <button
