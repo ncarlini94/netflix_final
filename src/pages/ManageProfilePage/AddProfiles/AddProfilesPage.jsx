@@ -3,9 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import { auth, firestore } from '../../../firebase/config';
 import Avatar from '../../../assets/imagen/avatares/avatar.jpg'
+import styles from './AddProfilesPage.module.css'
+import { useTranslation } from 'react-i18next';
 
 const AddProfilesPage = () => {
 
+    const { t } = useTranslation()
     const navigate = useNavigate()
     const location = useLocation();
     const [user, setUser] = useState(null);
@@ -61,20 +64,32 @@ const AddProfilesPage = () => {
       
         return (
           <>
-              <div className='container'>
-              <h2 style={{marginTop:'10vh', color:'rgb(255,255,255)'}}>Configuración del perfil</h2>
-              <div>
-                <img
-                  style={{maxWidth:'15vh', marginBottom:'2vh'}}
-                  src={`${avatar}`}
-                  alt='avatar'
-                  onClick={handleAvatarChange}></img>
-              </div>
-              <div>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-              </div>
-              <button className='btn btn-danger mt-2' onClick={saveChanges}>Guardar</button>
-            </div>
+                  <div className={`${styles.box} container`}>
+        <h2
+        className={`${styles.title}`}
+        style={{
+          color:'rgb(255,255,255)'
+          }}>
+          {t('profileSettings')}
+          </h2>
+        <div>
+          <img
+          className={`${styles.avatar}`}
+            src={`${avatar}`}
+            alt='avatar'
+            onClick={handleAvatarChange}></img>
+        </div>
+        <div>
+          <input
+          className={`${styles.inputName} form-control`}
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)} />
+        </div>
+        <button
+        className={`${styles.btnSave} btn`}
+        onClick={saveChanges}>{t('save')}</button>
+      </div>
           </>
         )
       }

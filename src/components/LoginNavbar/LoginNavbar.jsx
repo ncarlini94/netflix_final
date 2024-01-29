@@ -1,5 +1,5 @@
 import React from "react";
-import NetflixLogo  from "../../assets/imagen/logo2.jpg";
+import NetflixLogo  from "../../assets/imagen/logo.jpg";
 import styles from "./LoginNavbar.module.css"
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";

@@ -103,7 +103,7 @@ const CreditCard = ({formData, setFormData}) => {
               }}
               />
               <input
-                type='tel'
+                type='password'
                 name='cvc'
                 className={`${styles.inputForm} form-control`}
                 placeholder={t('CVC')}

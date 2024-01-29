@@ -1,0 +1,143 @@
+.box{
+    height: 75vh;
+    width: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    z-index: 1;
+    background-color: rgba(51, 51, 51, 0.404);
+    margin-top: 14vh;
+    border-radius: 2vh;
+}
+
+.title{
+    position: absolute;
+    z-index: 3;
+    top: 8vh;
+    left: 10vh;
+    color: rgba(241, 241, 241, 0.897);
+}
+
+.avatar{
+    position: absolute;
+    top: 26vh;
+    left: 32vh;
+    z-index: 3;
+    width: 18vh;
+}
+
+.inputName{
+    position: absolute;
+    z-index: 4;
+    top: 30vh;
+    left: 60vh;
+    background-color: rgba(77, 77, 77, 0.822);
+    color: rgba(255, 255, 255, 0.822);
+    max-width: 24vh;
+}
+
+.btnSave{
+    position: absolute;
+    z-index: 2;
+    bottom: 14vh;
+    left: 40vh;
+    color: rgba(255, 255, 255);
+    background-color: rgba(255, 17, 17, 0.918);
+}
+
+.btnSave:hover{
+    transition: 0.8s;
+    background-color: rgba(255, 17, 17, 0.74);
+    color: rgba(255, 255, 255);
+}
+
+.btnDelet{
+    position: absolute;
+    z-index: 2;
+    bottom: 14vh;
+    left: 56vh;
+    margin-left: 2vh;
+    color: rgba(255, 255, 255);
+    background-color: rgba(255, 17, 17, 0.918);
+}
+
+.btnDelet:hover{
+    transition: 0.8s;
+    background-color: rgba(255, 17, 17, 0.74);
+    color: rgba(255, 255, 255);
+}
+
+@media screen and (max-width:720px) {
+
+    .box{
+        height: 62vh;
+        width: 42vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+        z-index: 1;
+        background-color: rgba(51, 51, 51, 0.404);
+        margin: 10vh 2vh 0 2vh;
+        border-radius: 2vh;
+    }
+
+    .title{
+        font-size: 3.2vh;
+        position: absolute;
+        z-index: 3;
+        top: 5vh;
+        left: 2.4vh;
+        color: rgba(241, 241, 241, 0.897);
+    }
+
+    .avatar{
+        position: absolute;
+        top: 20vh;
+        left: 2vh;
+        z-index: 3;
+        width: 16vh;
+    }
+
+    .inputName{
+        position: absolute;
+        z-index: 4;
+        top: 24vh;
+        left: 20vh;
+        background-color: rgba(77, 77, 77, 0.822);
+        color: rgba(255, 255, 255, 0.822);
+        max-width: 20vh;
+    }
+
+    .btnSave{
+        position: absolute;
+        z-index: 2;
+        bottom: 12vh;
+        left: 3vh;
+        color: rgba(255, 255, 255);
+        background-color: rgba(255, 17, 17, 0.918);
+    }
+
+    .btnSave:hover{
+        transition: 0.8s;
+        background-color: rgba(255, 17, 17, 0.74);
+        color: rgba(255, 255, 255);
+    }
+
+    .btnDelet{
+        position: absolute;
+        z-index: 2;
+        bottom: 12vh;
+        left: 18vh;
+        margin-left: 2vh;
+        color: rgba(255, 255, 255);
+        background-color: rgba(255, 17, 17, 0.918);
+    }
+
+    .btnDelet:hover{
+        transition: 0.8s;
+        background-color: rgba(255, 17, 17, 0.74);
+        color: rgba(255, 255, 255);
+    }
+}

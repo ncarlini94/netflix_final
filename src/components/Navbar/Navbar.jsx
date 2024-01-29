@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NetflixLogo from "../../assets/imagen/logo2.jpg";
+import NetflixLogo from "../../assets/imagen/logo.jpg";
 import styles from "./Navbar.module.css"
 import { Link, useNavigate } from "react-router-dom";
 import {auth} from '../../firebase/config';

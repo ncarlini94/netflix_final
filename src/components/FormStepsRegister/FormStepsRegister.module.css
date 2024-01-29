@@ -1,5 +1,9 @@
+.navbar{
+        margin: 0 0 3vh 0;
+}
+
 .logo{
-        width: 22vh;
+        width: 16vh;
         height: 10vh;
         margin-left: 10vh;
 }
@@ -43,6 +47,11 @@
 }
 
 @media screen and (min-width:200px) and (max-width:720px) {
+
+        .navbar{
+                margin: 0 0 0 0;
+        }
+
         .logo{
                 width: 10vh;
                 margin-left: 4vh;

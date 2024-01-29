@@ -8,7 +8,7 @@ import { doc, getDoc, setDoc } from 'firebase/firestore'
 import Avatar from '../../assets/imagen/avatares/avatar.jpg'
 import styles from "./FormStepsRegister.module.css"
 import { Link, useNavigate } from 'react-router-dom'
-import { ReactComponent as NetflixLogo } from '../../assets/imagen/logo.svg'
+import NetflixLogo from '../../assets/imagen/logo.jpg'
 import { useTranslation } from 'react-i18next'
 
 const FormStepsRegister = () => {
@@ -90,7 +90,7 @@ return (
     <nav className={`${styles.navbar} navbar navbar-expand-sm`}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                <NetflixLogo className={`${styles.logo}`}/>
+                <img src={NetflixLogo} alt='logo' className={`${styles.logo}`}/>
                 </Link>
                 <div>
                     <button className={`${styles.sesionBtn} btn`}>
