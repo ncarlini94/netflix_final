@@ -44,7 +44,7 @@ const CreatePassword = ({formData, setFormData}) => {
             name='email'
             value={formData.email}
             placeholder='Email'
-            rrequired={true}
+            required={true}
             onChange={handleChange}
         /> }
       </div>
