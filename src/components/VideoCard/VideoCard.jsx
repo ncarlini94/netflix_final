@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router";
 import apiBuilder from "../../hooks/getApi";
 import ErrorVideo from '../../assets/imagen/Error.jpg'
 import styles from './VideoCard.module.css'
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player'
 
 
 const VideoCard = ({ language}) => {
