@@ -24,9 +24,6 @@ const DetailPage = () => {
   const scrollToX = 0;
   const scrollToY = 0;
 
-  console.log(user)
-  console.log(storedProfile)
-
 
   useEffect(() => {
     window.scrollTo(scrollToX, scrollToY);

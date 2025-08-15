@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "../Card/Card"
 import Slider from "react-slick";
 import useApi from "../../hooks/useApi";
